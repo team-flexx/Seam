@@ -92,7 +92,7 @@ First use
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src='https://ibb.co/YLzY3zV' title='Wireframe' width=600 alt='Wireframe' />
+<img src="hhttps://ibb.co/YLzY3zV.png" width=600><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 
