@@ -92,7 +92,7 @@ First use
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://ibb.co/YLzY3zV.png" width=600><br>
+<img src="https://github.com/team-flexx/Seam/blob/master/Wireframe.jpg" width=600><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 
