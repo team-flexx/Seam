@@ -91,7 +91,6 @@ First use
    * [see 2. Screen Archetypes]
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="https://github.com/team-flexx/Seam/blob/master/Wireframe.jpg" width=600><br>
 
 ### [BONUS] Digital Wireframes & Mockups
