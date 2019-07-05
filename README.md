@@ -13,7 +13,7 @@ Tinder for Jobs. Job Hunting in the 21st Century
 
 ### App Evaluation
    - **Category:** everything
-   - **Mobile:** yes?
+   - **Mobile:** yes
    - **Story:** Have you ever wanted to apply for a job, but had to take hours to fill out the application? Companies only send 60 seconds on a resume anyway. Why should you require extra time to go in person, fill out an application, and turn in your resume?
    - **Market:** the unemployed and employers   
    - **Habit:** Daily
@@ -42,12 +42,10 @@ JOB SEEKER
 
 
 **Optional Nice-to-have Stories**
-
-* [fill in your required user stories here]
 * 1) linking to LinkedIn, Github, resume (option)
 * 2) email feature
 * 3) more filters to search within job postings
-* 4) general use for company side:
+* 4) general use for COMPANY SIDE:
         * 1) login - choose company
         * 2) location preferences
         * 3) time preferences- part time/ full time job openings
