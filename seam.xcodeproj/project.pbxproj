@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -113,8 +113,14 @@
 				01E1124D9ECD2A07D8849A74 /* Pods-seamUITests.debug.xcconfig */,
 				C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9743F7CC22DD2D71002FFB7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9794866A22D5070700E90DBD = {
@@ -142,6 +148,7 @@
 		9794867522D5070700E90DBD /* seam */ = {
 			isa = PBXGroup;
 			children = (
+				9743F7CC22DD2D71002FFB7E /* Models */,
 				9794867622D5070700E90DBD /* AppDelegate.h */,
 				9794867722D5070700E90DBD /* AppDelegate.m */,
 				9794867922D5070700E90DBD /* ViewController.h */,
