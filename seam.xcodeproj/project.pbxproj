@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6EBD0D6E9A9916D53399AB /* Pods_seam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713710A9F6691A1B402F9C4C /* Pods_seam.framework */; };
+		3C083B67A26ADBAA9CFA5A99 /* Pods_seamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */; };
+		53788022358DD74F500DD3A5 /* Pods_seamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */; };
 		9794867822D5070700E90DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867722D5070700E90DBD /* AppDelegate.m */; };
 		9794867B22D5070700E90DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867A22D5070700E90DBD /* ViewController.m */; };
 		9794867E22D5070700E90DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794867C22D5070700E90DBD /* Main.storyboard */; };
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E1124D9ECD2A07D8849A74 /* Pods-seamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamUITests.debug.xcconfig"; path = "Target Support Files/Pods-seamUITests/Pods-seamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0989C353BC2E9924A4B1B063 /* Pods-seam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seam.debug.xcconfig"; path = "Target Support Files/Pods-seam/Pods-seam.debug.xcconfig"; sourceTree = "<group>"; };
+		2A7D78D84A3A69E46F3E2E61 /* Pods-seamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.debug.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		713710A9F6691A1B402F9C4C /* Pods_seam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794867322D5070700E90DBD /* seam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794867622D5070700E90DBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9794867722D5070700E90DBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +59,10 @@
 		9794869622D5070800E90DBD /* seamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794869A22D5070800E90DBD /* seamUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seamUITests.m; sourceTree = "<group>"; };
 		9794869C22D5070800E90DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamUITests.release.xcconfig"; path = "Target Support Files/Pods-seamUITests/Pods-seamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C95F73BD51DED80BF23C5E72 /* Pods-seam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seam.release.xcconfig"; path = "Target Support Files/Pods-seam/Pods-seam.release.xcconfig"; sourceTree = "<group>"; };
+		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6EBD0D6E9A9916D53399AB /* Pods_seam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C083B67A26ADBAA9CFA5A99 /* Pods_seamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53788022358DD74F500DD3A5 /* Pods_seamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2389F87C1A2DDE0D53E0FC70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				713710A9F6691A1B402F9C4C /* Pods_seam.framework */,
+				F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */,
+				7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41D5026568ADF447DB0BB902 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0989C353BC2E9924A4B1B063 /* Pods-seam.debug.xcconfig */,
+				C95F73BD51DED80BF23C5E72 /* Pods-seam.release.xcconfig */,
+				2A7D78D84A3A69E46F3E2E61 /* Pods-seamTests.debug.xcconfig */,
+				E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */,
+				01E1124D9ECD2A07D8849A74 /* Pods-seamUITests.debug.xcconfig */,
+				C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9794866A22D5070700E90DBD = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				9794868E22D5070800E90DBD /* seamTests */,
 				9794869922D5070800E90DBD /* seamUITests */,
 				9794867422D5070700E90DBD /* Products */,
+				41D5026568ADF447DB0BB902 /* Pods */,
+				2389F87C1A2DDE0D53E0FC70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9794869F22D5070800E90DBD /* Build configuration list for PBXNativeTarget "seam" */;
 			buildPhases = (
+				6C20B064ADC15F0EF2903472 /* [CP] Check Pods Manifest.lock */,
 				9794866F22D5070700E90DBD /* Sources */,
 				9794867022D5070700E90DBD /* Frameworks */,
 				9794867122D5070700E90DBD /* Resources */,
+				51B97C733241D21D048EF477 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 979486A222D5070800E90DBD /* Build configuration list for PBXNativeTarget "seamTests" */;
 			buildPhases = (
+				F77FFE98679E7356AE08317A /* [CP] Check Pods Manifest.lock */,
 				9794868722D5070800E90DBD /* Sources */,
 				9794868822D5070800E90DBD /* Frameworks */,
 				9794868922D5070800E90DBD /* Resources */,
@@ -174,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 979486A522D5070800E90DBD /* Build configuration list for PBXNativeTarget "seamUITests" */;
 			buildPhases = (
+				6BA57EAF6A179AC65888AA09 /* [CP] Check Pods Manifest.lock */,
 				9794869222D5070800E90DBD /* Sources */,
 				9794869322D5070800E90DBD /* Frameworks */,
 				9794869422D5070800E90DBD /* Resources */,
@@ -256,6 +301,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51B97C733241D21D048EF477 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seam/Pods-seam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seam/Pods-seam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seam/Pods-seam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BA57EAF6A179AC65888AA09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seamUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C20B064ADC15F0EF2903472 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F77FFE98679E7356AE08317A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9794866F22D5070700E90DBD /* Sources */ = {
@@ -433,6 +564,7 @@
 		};
 		979486A022D5070800E90DBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0989C353BC2E9924A4B1B063 /* Pods-seam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +582,7 @@
 		};
 		979486A122D5070800E90DBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C95F73BD51DED80BF23C5E72 /* Pods-seam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +600,7 @@
 		};
 		979486A322D5070800E90DBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A7D78D84A3A69E46F3E2E61 /* Pods-seamTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +620,7 @@
 		};
 		979486A422D5070800E90DBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +640,7 @@
 		};
 		979486A622D5070800E90DBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E1124D9ECD2A07D8849A74 /* Pods-seamUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8674VL4L69;
@@ -523,6 +659,7 @@
 		};
 		979486A722D5070800E90DBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8674VL4L69;
