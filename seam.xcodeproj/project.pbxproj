@@ -10,7 +10,7 @@
 		1F6EBD0D6E9A9916D53399AB /* Pods_seam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713710A9F6691A1B402F9C4C /* Pods_seam.framework */; };
 		3C083B67A26ADBAA9CFA5A99 /* Pods_seamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */; };
 		53788022358DD74F500DD3A5 /* Pods_seamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */; };
-		9743F7CF22DD3590002FFB7E /* JobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* JobListing.m */; };
+		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9794867822D5070700E90DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867722D5070700E90DBD /* AppDelegate.m */; };
 		9794867B22D5070700E90DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867A22D5070700E90DBD /* ViewController.m */; };
 		9794867E22D5070700E90DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794867C22D5070700E90DBD /* Main.storyboard */; };
@@ -19,6 +19,7 @@
 		9794868622D5070800E90DBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868522D5070800E90DBD /* main.m */; };
 		9794869022D5070800E90DBD /* seamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868F22D5070800E90DBD /* seamTests.m */; };
 		9794869B22D5070800E90DBD /* seamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794869A22D5070800E90DBD /* seamUITests.m */; };
+		E4E0594022DEC7B1004834A1 /* SMJobsDataAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,8 @@
 		2A7D78D84A3A69E46F3E2E61 /* Pods-seamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.debug.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		713710A9F6691A1B402F9C4C /* Pods_seam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9743F7CD22DD3590002FFB7E /* JobListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobListing.h; sourceTree = "<group>"; };
-		9743F7CE22DD3590002FFB7E /* JobListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobListing.m; sourceTree = "<group>"; };
+		9743F7CD22DD3590002FFB7E /* SMJobListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobListing.h; sourceTree = "<group>"; };
+		9743F7CE22DD3590002FFB7E /* SMJobListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobListing.m; sourceTree = "<group>"; };
 		9794867322D5070700E90DBD /* seam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794867622D5070700E90DBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9794867722D5070700E90DBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamUITests.release.xcconfig"; path = "Target Support Files/Pods-seamUITests/Pods-seamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C95F73BD51DED80BF23C5E72 /* Pods-seam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seam.release.xcconfig"; path = "Target Support Files/Pods-seam/Pods-seam.release.xcconfig"; sourceTree = "<group>"; };
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobsDataAPIManager.h; sourceTree = "<group>"; };
+		E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobsDataAPIManager.m; sourceTree = "<group>"; };
+		E4E0594122DF9845004834A1 /* ManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerProtocol.h; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,8 +126,8 @@
 		9743F7CC22DD2D71002FFB7E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9743F7CD22DD3590002FFB7E /* JobListing.h */,
-				9743F7CE22DD3590002FFB7E /* JobListing.m */,
+				9743F7CD22DD3590002FFB7E /* SMJobListing.h */,
+				9743F7CE22DD3590002FFB7E /* SMJobListing.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +167,9 @@
 				9794868122D5070800E90DBD /* LaunchScreen.storyboard */,
 				9794868422D5070800E90DBD /* Info.plist */,
 				9794868522D5070800E90DBD /* main.m */,
+				E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */,
+				E4E0594122DF9845004834A1 /* ManagerProtocol.h */,
+				E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */,
 			);
 			path = seam;
 			sourceTree = "<group>";
@@ -405,10 +412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9743F7CF22DD3590002FFB7E /* JobListing.m in Sources */,
+				9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */,
 				9794867B22D5070700E90DBD /* ViewController.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,
 				9794867822D5070700E90DBD /* AppDelegate.m in Sources */,
+				E4E0594022DEC7B1004834A1 /* SMJobsDataAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
