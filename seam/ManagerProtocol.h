@@ -1,23 +1,22 @@
 //
 //  ManagerProtocol.h
-//  seam
+//  
 //
 //  Created by festusojo on 7/17/19.
-//  Copyright © 2019 codepath. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@protocol ManagerProtocol
+@protocol ManagerProtocol <NSObject>
 
+@required
 - (void)newJobsWithCompletion:(void(^)(NSArray *jobListings, NSError *error))completion;
-- (void)onSwipeRight:(NSArray *);
-- (void)ifSwipedRight:(NSArray *);
-- (void)ifSwipedLeft:(NSArray *);
+- (void)ifSwipedRight:(NSArray*)alteredApplicantArray;
+- (void)ifSwipedLeft:(NSArray*)shorterJobArray;
 - (void)ifMatchOccurs:(NSArray*)applicantArray :(NSArray*)employerArray;
 
 @end
 
-@interface Manager Protocol : NSObject
+@interface ManagerProtocol : NSObject
 
 @end

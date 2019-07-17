@@ -14,10 +14,10 @@
 
 @implementation SMJobsDataAPIManager
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    // Do any additional setup after loading the view.
+//}
 
 /*
 #pragma mark - Navigation
@@ -28,5 +28,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)ifMatchOccurs:(NSArray *)applicantArray :(NSArray *)employerArray {
+}
+
+- (void)ifSwipedLeft:(NSArray *)shorterJobArray {
+}
+
+- (void)ifSwipedRight:(NSArray *)alteredApplicantArray {
+}
+
+- (void)newJobsWithCompletion:(void (^)(NSArray *, NSError *))completion {
+}
 
 @end
