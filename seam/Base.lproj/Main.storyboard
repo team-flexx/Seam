@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="-678" y="1019"/>
         </scene>
-        <!--View Controller-->
+        <!--Swiping Screen View Controller-->
         <scene sceneID="3I5-mY-bqk">
             <objects>
-                <viewController id="y8E-NZ-tlf" sceneMemberID="viewController">
+                <viewController id="y8E-NZ-tlf" customClass="SwipingScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eLJ-Ty-mrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpv-02-7AJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028.985507246377" y="1018.5267857142857"/>
+            <point key="canvasLocation" x="1312" y="1135"/>
         </scene>
         <!--Profile-->
         <scene sceneID="hZw-qQ-CPi">
@@ -268,7 +268,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgG-uX-RCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="1019"/>
+            <point key="canvasLocation" x="519" y="1195"/>
         </scene>
     </scenes>
 </document>

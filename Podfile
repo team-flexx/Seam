@@ -7,6 +7,7 @@ target 'seam' do
 
   # Pods for seam
     pod 'Parse'
+    pod 'MDCSwipeToChoose'
 
   target 'seamTests' do
     inherit! :search_paths
