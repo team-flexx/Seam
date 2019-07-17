@@ -10,10 +10,11 @@
 
 @protocol ManagerProtocol
 
-- (void)newJobsWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion;
+- (void)newJobsWithCompletion:(void(^)(NSArray *jobListings, NSError *error))completion;
 - (void)onSwipeRight:(NSArray *);
 - (void)ifSwipedRight:(NSArray *);
 - (void)ifSwipedLeft:(NSArray *);
+- (void)ifMatchOccurs:(NSArray*)applicantArray :(NSArray*)employerArray;
 
 @end
 

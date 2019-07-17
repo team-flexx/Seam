@@ -14,6 +14,9 @@
 @dynamic description;
 @dynamic location;
 @dynamic dates;
-@dynamic ob_id;
+@dynamic job_id;
+
+NSMutableArray *applicant_swipes = [[NSMutableArray alloc] init];
+NSMutableArray *employer_swipes = [[NSMutableArray alloc] init];
 
 @end

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SMTestJobsDataAPIManager : NSObject <ManagerProtocol>
+@interface SMJobsDataAPIManager : NSObject <ManagerProtocol>
 
 //is this where we would be initializing the dummy data?
 return [[[SMJobListing alloc]
