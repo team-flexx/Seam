@@ -68,6 +68,7 @@
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobsDataAPIManager.h; sourceTree = "<group>"; };
 		E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobsDataAPIManager.m; sourceTree = "<group>"; };
+		E4E0594122DF9845004834A1 /* ManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerProtocol.h; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,6 +168,7 @@
 				9794868422D5070800E90DBD /* Info.plist */,
 				9794868522D5070800E90DBD /* main.m */,
 				E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */,
+				E4E0594122DF9845004834A1 /* ManagerProtocol.h */,
 				E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */,
 			);
 			path = seam;

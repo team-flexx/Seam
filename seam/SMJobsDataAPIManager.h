@@ -7,23 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ManagerProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-//where does this go?
-//@protocol SMJobsDataAPIManager
-//
-//- (NSArray)newJobs:();
-//- (void)onSwipeRight:(NSArray *);
-//- (void)ifSwipedRight:(NSArray *);
-//- (void)ifSwipedLeft:(NSArray *);
-
-@interface SMTestJobsDataAPIManager : NSObject <SMJobsDataAPIManager>
+@interface SMTestJobsDataAPIManager : NSObject <ManagerProtocol>
 
 //is this where we would be initializing the dummy data?
-//return [[[SMJobListing alloc]
-//         initWithTitle: "Test Listing"
-//         initWithDesc: "Test desc"]] ;
+return [[[SMJobListing alloc]
+         initWithTitle: "Test Listing"
+         initWithDesc: "Test desc"]] ;
 
 @end
 
