@@ -16,9 +16,4 @@
 @dynamic dates;
 @dynamic jobID;
 
-+ (void)initialize {
-    NSMutableArray *applicant_swipes = [[NSMutableArray alloc] init];
-    NSMutableArray *employer_swipes = [[NSMutableArray alloc] init];
-}
-
 @end

@@ -18,12 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *dates;
 @property (nonatomic, strong) NSString *jobID;
 
-//check available data to create properties
-//job name
-//job description
-//time slot for job
-
-
 @end
 
 NS_ASSUME_NONNULL_END

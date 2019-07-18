@@ -21,6 +21,7 @@
 - (void)onUninterestedInJob:(NSArray*)shorterJobArray;
 
 //compare employer and employee arrays for identical items to form a match 
-- (void)onMatch:(NSArray*)applicantArray :(NSArray*)employerArray;
+- (void)onMatch:(NSArray *)applicantArray :(NSArray *)employerArray :(NSArray *)matchArray;
+
 
 @end
