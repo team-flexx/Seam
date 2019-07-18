@@ -13,7 +13,6 @@
 		9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122078D22E0FC0500FB25CB /* ProfileViewController.m */; };
 		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */; };
-		9743F7D822DFA3C0002FFB7E /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9743F7D722DFA3C0002FFB7E /* photo.png */; };
 		9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7DB22DFBD98002FFB7E /* SMJobCard.m */; };
 		9794867822D5070700E90DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867722D5070700E90DBD /* AppDelegate.m */; };
 		9794867E22D5070700E90DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794867C22D5070700E90DBD /* Main.storyboard */; };
@@ -55,7 +54,6 @@
 		9743F7CE22DD3590002FFB7E /* SMJobListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobListing.m; sourceTree = "<group>"; };
 		9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipingScreenViewController.h; sourceTree = "<group>"; };
 		9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipingScreenViewController.m; sourceTree = "<group>"; };
-		9743F7D722DFA3C0002FFB7E /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo.png; path = ../../../Downloads/photo.png; sourceTree = "<group>"; };
 		9743F7DA22DFBD98002FFB7E /* SMJobCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobCard.h; sourceTree = "<group>"; };
 		9743F7DB22DFBD98002FFB7E /* SMJobCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobCard.m; sourceTree = "<group>"; };
 		9794867322D5070700E90DBD /* seam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +143,6 @@
 		9743F7D022DFA16A002FFB7E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9794867922D5070700E90DBD /* ViewController.h */,
-				9794867A22D5070700E90DBD /* ViewController.m */,
 				9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */,
 				9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */,
 			);
@@ -195,7 +191,6 @@
 				9794867622D5070700E90DBD /* AppDelegate.h */,
 				9794867722D5070700E90DBD /* AppDelegate.m */,
 				9794867C22D5070700E90DBD /* Main.storyboard */,
-				9743F7D722DFA3C0002FFB7E /* photo.png */,
 				9122078C22E0FC0500FB25CB /* ProfileViewController.h */,
 				9122078D22E0FC0500FB25CB /* ProfileViewController.m */,
 				9794867F22D5070800E90DBD /* Assets.xcassets */,
@@ -204,7 +199,6 @@
 				9794868522D5070800E90DBD /* main.m */,
 				E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */,
 				E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */,
-				E4E0594122DF9845004834A1 /* ManagerProtocol.h */,
 			);
 			path = seam;
 			sourceTree = "<group>";
@@ -336,7 +330,6 @@
 			files = (
 				9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */,
 				9794868022D5070800E90DBD /* Assets.xcassets in Resources */,
-				9743F7D822DFA3C0002FFB7E /* photo.png in Resources */,
 				9794867E22D5070700E90DBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +443,6 @@
 			files = (
 				9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */,
 				9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */,
-				9794867B22D5070700E90DBD /* ViewController.m in Sources */,
 				9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,
 				E4E0594E22DFA2B3004834A1 /* ManagerProtocol.m in Sources */,
