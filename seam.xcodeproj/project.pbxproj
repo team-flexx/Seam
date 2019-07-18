@@ -10,12 +10,12 @@
 		1F6EBD0D6E9A9916D53399AB /* Pods_seam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713710A9F6691A1B402F9C4C /* Pods_seam.framework */; };
 		3C083B67A26ADBAA9CFA5A99 /* Pods_seamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */; };
 		53788022358DD74F500DD3A5 /* Pods_seamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */; };
+		9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122078D22E0FC0500FB25CB /* ProfileViewController.m */; };
 		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */; };
 		9743F7D822DFA3C0002FFB7E /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9743F7D722DFA3C0002FFB7E /* photo.png */; };
 		9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7DB22DFBD98002FFB7E /* SMJobCard.m */; };
 		9794867822D5070700E90DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867722D5070700E90DBD /* AppDelegate.m */; };
-		9794867B22D5070700E90DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867A22D5070700E90DBD /* ViewController.m */; };
 		9794867E22D5070700E90DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794867C22D5070700E90DBD /* Main.storyboard */; };
 		9794868022D5070800E90DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9794867F22D5070800E90DBD /* Assets.xcassets */; };
 		9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794868122D5070800E90DBD /* LaunchScreen.storyboard */; };
@@ -49,6 +49,8 @@
 		2A7D78D84A3A69E46F3E2E61 /* Pods-seamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.debug.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		713710A9F6691A1B402F9C4C /* Pods_seam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9122078C22E0FC0500FB25CB /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		9122078D22E0FC0500FB25CB /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		9743F7CD22DD3590002FFB7E /* SMJobListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobListing.h; sourceTree = "<group>"; };
 		9743F7CE22DD3590002FFB7E /* SMJobListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobListing.m; sourceTree = "<group>"; };
 		9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipingScreenViewController.h; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		9794867322D5070700E90DBD /* seam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794867622D5070700E90DBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9794867722D5070700E90DBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9794867922D5070700E90DBD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9794867A22D5070700E90DBD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9794867D22D5070700E90DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9794867F22D5070800E90DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9794868222D5070800E90DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,6 +196,8 @@
 				9794867722D5070700E90DBD /* AppDelegate.m */,
 				9794867C22D5070700E90DBD /* Main.storyboard */,
 				9743F7D722DFA3C0002FFB7E /* photo.png */,
+				9122078C22E0FC0500FB25CB /* ProfileViewController.h */,
+				9122078D22E0FC0500FB25CB /* ProfileViewController.m */,
 				9794867F22D5070800E90DBD /* Assets.xcassets */,
 				9794868122D5070800E90DBD /* LaunchScreen.storyboard */,
 				9794868422D5070800E90DBD /* Info.plist */,
@@ -452,6 +454,7 @@
 				9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,
 				E4E0594E22DFA2B3004834A1 /* ManagerProtocol.m in Sources */,
+				9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */,
 				9794867822D5070700E90DBD /* AppDelegate.m in Sources */,
 				E4E0594022DEC7B1004834A1 /* SMJobsDataAPIManager.m in Sources */,
 			);

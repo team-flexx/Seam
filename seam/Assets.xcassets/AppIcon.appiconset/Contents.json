@@ -1,9 +1,8 @@
 {
   "images" : [
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Screen Shot 2019-07-17 at 11.36.24 AM.png",
+      "size" : "20x20",
       "scale" : "2x"
     },
     {
@@ -17,9 +16,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Screen Shot 2019-07-17 at 11.36.24 AM-1.png",
+      "size" : "29x29",
       "scale" : "3x"
     },
     {
@@ -28,9 +26,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Screen Shot 2019-07-17 at 11.36.24 AM-2.png",
+      "size" : "40x40",
       "scale" : "3x"
     },
     {
