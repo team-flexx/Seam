@@ -69,8 +69,8 @@
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobsDataAPIManager.h; sourceTree = "<group>"; };
 		E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobsDataAPIManager.m; sourceTree = "<group>"; };
-		E4E0594C22DFA2B3004834A1 /* ManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ManagerProtocol.h; path = /Users/festusojo/Desktop/Seam/seam/ManagerProtocol.h; sourceTree = "<absolute>"; };
-		E4E0594D22DFA2B3004834A1 /* ManagerProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ManagerProtocol.m; path = /Users/festusojo/Desktop/Seam/seam/ManagerProtocol.m; sourceTree = "<absolute>"; };
+		E4E0594C22DFA2B3004834A1 /* ManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ManagerProtocol.h; path = /Users/festusojo/Desktop/Seam/Seam/seam/ManagerProtocol.h; sourceTree = "<absolute>"; };
+		E4E0594D22DFA2B3004834A1 /* ManagerProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ManagerProtocol.m; path = /Users/festusojo/Desktop/Seam/Seam/seam/ManagerProtocol.m; sourceTree = "<absolute>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
