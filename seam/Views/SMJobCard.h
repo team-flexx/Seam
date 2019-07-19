@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SMJobCard : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *jobDescriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *anotherLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END

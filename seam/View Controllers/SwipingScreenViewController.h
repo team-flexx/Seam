@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+//#import "SMJobCard.h"
 
-@interface SwipingScreenViewController : UIViewController
+@interface SwipingScreenViewController : UIViewController // <MDCSwipeToChooseDelegate>
+
+/*
+@property (nonatomic, strong) JobApplicant *currentPerson;
+@property (nonatomic, strong) ChoosePersonView *frontCardView;
+@property (nonatomic, strong) ChoosePersonView *backCardView;
+*/
 
 @end
 

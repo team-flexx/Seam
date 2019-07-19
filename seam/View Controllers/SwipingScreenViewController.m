@@ -8,8 +8,10 @@
 
 #import "SwipingScreenViewController.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import "SMJobCard.h"
 
 @interface SwipingScreenViewController ()
+@property (weak, nonatomic) IBOutlet SMJobCard *cardView; //the job applicant
 
 @property (nonatomic, strong) NSMutableArray *jobs; //stores the model, an array of JobListings
 @end
@@ -38,6 +40,8 @@
                                                                      options:options];
     view.imageView.image = [UIImage imageNamed:@"photo"]; //used photo.png as a card placeholder for swipign
     [self.view addSubview:view];
+    
+    _cardView.jobDescriptionLabel.text = @"ldakfjladsjkfadlskfjkads";
 }
 
 //user didn't fully swipe left or right
