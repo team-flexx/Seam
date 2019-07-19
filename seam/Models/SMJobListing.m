@@ -10,10 +10,24 @@
 
 @implementation SMJobListing
 
-@dynamic title;
-@dynamic description;
-@dynamic location;
-@dynamic dates;
-@dynamic jobID;
+- (instancetype)initWithJobCompany:(NSString *)jobCompany
+                             title:(NSString *)title
+                    jobDescription:(NSString *)jobDescription
+                          location:(NSString *)location
+                             dates:(NSString *)dates
+                            duties:(NSString *)duties
+                             jobID:(NSString *)jobID
+{
+    if ((self = [super init])) {
+        _title = title;
+        _jobCompany = jobCompany;
+        _jobDescription = jobDescription;
+        _location = location;
+        _dates = dates;
+        _duties = duties;
+        _jobID = jobID;
+    }
+    return self;
+}
 
 @end

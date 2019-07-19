@@ -20,7 +20,16 @@
 @implementation SMFakeJobsDataManager
 
 - (void)fetchJobsWithCompletion:(void (^)(NSArray *jobListings, NSError *error))completion {
-    NSArray *jobListings = [NSArray new];
+    NSArray *jobListings = @[
+                             [[SMJobListing alloc]
+                              initWithJobCompany:@"Facebook"
+                              title:@"Facebook Python Developer"
+                              jobDescription:@"Work on projects tackling problems with Python"
+                              location:@"Austin, TX, USA"
+                              dates:@"August 2019"
+                              duties:@"Excitement and eagerness to learn new technology. Passion for IT development and desire to gain in-depth knowledge"
+                              jobID:@"1"],
+                             ];
     completion(jobListings, nil);
 }
 
