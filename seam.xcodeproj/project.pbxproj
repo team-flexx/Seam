@@ -21,7 +21,6 @@
 		9794868622D5070800E90DBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868522D5070800E90DBD /* main.m */; };
 		9794869022D5070800E90DBD /* seamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868F22D5070800E90DBD /* seamTests.m */; };
 		9794869B22D5070800E90DBD /* seamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794869A22D5070800E90DBD /* seamUITests.m */; };
-		E47E7DFA22E1207C00826126 /* Seam in Resources */ = {isa = PBXBuildFile; fileRef = E47E7DF922E1207C00826126 /* Seam */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +70,6 @@
 		9794869C22D5070800E90DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamUITests.release.xcconfig"; path = "Target Support Files/Pods-seamUITests/Pods-seamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C95F73BD51DED80BF23C5E72 /* Pods-seam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seam.release.xcconfig"; path = "Target Support Files/Pods-seam/Pods-seam.release.xcconfig"; sourceTree = "<group>"; };
-		E47E7DF922E1207C00826126 /* Seam */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Seam; sourceTree = SOURCE_ROOT; };
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,7 +177,6 @@
 		9794867522D5070700E90DBD /* seam */ = {
 			isa = PBXGroup;
 			children = (
-				E47E7DF922E1207C00826126 /* Seam */,
 				9743F7D922DFBBD5002FFB7E /* Views */,
 				9743F7D022DFA16A002FFB7E /* View Controllers */,
 				9743F7CC22DD2D71002FFB7E /* Models */,
@@ -192,8 +189,6 @@
 				9794868122D5070800E90DBD /* LaunchScreen.storyboard */,
 				9794868422D5070800E90DBD /* Info.plist */,
 				9794868522D5070800E90DBD /* main.m */,
-				E4E0593E22DEC7B1004834A1 /* SMJobsDataAPIManager.h */,
-				E4E0593F22DEC7B1004834A1 /* SMJobsDataAPIManager.m */,
 			);
 			path = seam;
 			sourceTree = "<group>";
@@ -325,7 +320,6 @@
 			files = (
 				9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */,
 				9794868022D5070800E90DBD /* Assets.xcassets in Resources */,
-				E47E7DFA22E1207C00826126 /* Seam in Resources */,
 				9794867E22D5070700E90DBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +435,6 @@
 				9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */,
 				9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,
-				E4E0594E22DFA2B3004834A1 /* ManagerProtocol.m in Sources */,
 				9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */,
 				9794867822D5070700E90DBD /* AppDelegate.m in Sources */,
 			);
