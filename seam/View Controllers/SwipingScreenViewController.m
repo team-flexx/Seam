@@ -11,6 +11,8 @@
 #import "SMJobCard.h"
 #import "SMFakeJobsDataManager.h"
 #import "SMJobListing.h"
+#import <QuartzCore/QuartzCore.h> //use for converting uiview to uiimage
+
 
 @interface SwipingScreenViewController ()
 @property (weak, nonatomic) IBOutlet SMJobCard *cardView; //the job applicant
@@ -54,12 +56,6 @@
         }
     };
     
-    //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
-    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.view.bounds
-                                                                     options:options];
-    view.imageView.image = [UIImage imageNamed:@"photo"]; //used photo.png as a card placeholder for swipign
-    [self.view addSubview:view];
-    
     
     //testing fake data
     //create a SMFakeJobsDataManager.h object
@@ -69,6 +65,17 @@
     _cardView.jobScheduleLabel.text = jobPointer.dates;
     _cardView.locationLabel.text = jobPointer.location;
     _cardView.dutiesLabel.text = jobPointer.duties;
+    
+    //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
+    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.view.bounds
+                                                                     options:options];
+    //convert uiview to uiimage in order for it to show up as a card
+    view.imageView.image = [self imageWithView:self.cardView];
+    //[UIImage imageNamed:@"photo"]; //used photo.png as a card placeholder for swiping
+    
+    //used photo.png as a card placeholder for swipign
+    [self.view addSubview:view];
+    
 }
 
 //user didn't fully swipe left or right
@@ -100,6 +107,20 @@
         NSLog(@"Photo saved!");
     }
 }
+
+//convert uiiview to uiimage
+- (UIImage *)imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+
 /*
 #pragma mark - Navigation
 
