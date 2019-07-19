@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *jobDescriptionLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *anotherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jobScheduleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dutiesLabel;
 
 @end
 

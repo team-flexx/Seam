@@ -41,7 +41,11 @@
     view.imageView.image = [UIImage imageNamed:@"photo"]; //used photo.png as a card placeholder for swipign
     [self.view addSubview:view];
     
+    //testing to see if we can access objects from SMJobCardView
     _cardView.jobDescriptionLabel.text = @"ldakfjladsjkfadlskfjkads";
+    _cardView.jobScheduleLabel.text = @"test 1";
+    _cardView.locationLabel.text = @"test 3";
+    _cardView.dutiesLabel.text = @"test 4";
 }
 
 //user didn't fully swipe left or right
