@@ -28,5 +28,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)addPhotoClique:(id)sender {
+}
+
+- (IBAction)editPressed:(id)sender {
+    //Add Profile button comes back up, and you can re-edit things in profile.
+}
+
+
 
 @end
