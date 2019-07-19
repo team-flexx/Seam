@@ -7,34 +7,37 @@
 //
 
 #import "SMFakeJobsDataManager.h"
+#import "SMJobListing.h"
 
 @interface SMFakeJobsDataManager ()
 
+@property (nonatomic, strong) NSMutableArray<SMJobListing *> *applicantSwipes;
+@property (nonatomic, strong) NSMutableArray<SMJobListing *> *employerSwipes;
+@property (nonatomic, strong) NSMutableArray<SMJobListing *> *matchArray;
 @end
+
 
 @implementation SMFakeJobsDataManager
 
-- (void)fetchJobsWithCompletion:(void (^)(NSArray *, NSError *))completion {
-    // Success, initalizes both arrays for employer and user
-    NSMutableArray *applicant_swipes = [[NSMutableArray alloc] init];
-    NSMutableArray *employer_swipes = [[NSMutableArray alloc] init];
+- (void)fetchJobsWithCompletion:(void (^)(NSArray *jobListings, NSError *error))completion {
+    NSArray *jobListings = [NSArray new];
     completion(jobListings, nil);
-} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-    // There was a problem, this goes in to the error output
-    completion(nil, error);
 }
 
 //add items swiped right on to the applicant's array
-- (void)onApplyForJob:(NSArray *)alteredApplicantArray {
-    [alteredApplicantArray addObject:jobListing];
+- (void)onApplyForJob:(NSArray*)alteredApplicantArray {
+    [self.applicantSwipes addObjectsFromArray:alteredApplicantArray];
+    //matching functionality - creates set of both arrays and then this will give you only the objects that are in both sets
+    NSMutableSet* set1 = [NSMutableSet setWithArray:self.applicantSwipes];
+    NSMutableSet* set2 = [NSMutableSet setWithArray:self.employerSwipes];
+    [set1 intersectSet:set2];
+    [self.matchArray addObject:set1];
 }
 
-//creates set of both arrays and then this will give you only the objects that are in both sets
-- (void)onMatch:(NSArray *)applicantArray :(NSArray *)employerArray :(NSArray *)matchArray{
-    NSMutableSet* set1 = [NSMutableSet setWithArray:applicantArray];
-    NSMutableSet* set2 = [NSMutableSet setWithArray:employerArray];
-    Intersection = [set1 intersectSet:set2];
-    [matchArray addObject:intersection];
+//loades matches on match view controller
+- (void)fetchMatchesWithCompletion:(void (^)(NSArray *matches, NSError *error))completion {
+    NSArray *matches= [NSArray new];
+    completion(matches, nil);
 }
 
 /*

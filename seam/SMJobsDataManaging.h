@@ -20,8 +20,8 @@
 //removes job from general job array
 - (void)onUninterestedInJob:(NSArray*)shorterJobArray;
 
-//compare employer and employee arrays for identical items to form a match 
-- (void)onMatch:(NSArray *)applicantArray :(NSArray *)employerArray :(NSArray *)matchArray;
+//fetch jobs on main matching screen upon loading
+- (void)fetchMatchesWithCompletion:(void (^)(NSArray *matches, NSError *error))completion;
 
 
 @end
