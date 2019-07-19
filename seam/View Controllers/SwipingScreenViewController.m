@@ -9,6 +9,8 @@
 #import "SwipingScreenViewController.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "SMJobCard.h"
+#import "SMFakeJobsDataManager.h"
+#import "SMJobListing.h"
 
 @interface SwipingScreenViewController ()
 @property (weak, nonatomic) IBOutlet SMJobCard *cardView; //the job applicant
@@ -22,6 +24,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //set cardView delegate and dataSource to self
+    
+    //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
+    [[SMFakeJobsDataManager shared] fetchJobsWithCompletion:^(NSArray *jobListings, NSError *error) {
+        if (jobListings){
+            self.jobs = jobListings; //an array of dictionaries
+            //test to see if self.jobs successfully contains data
+            for (SMJobListing *job1 in jobListings) {
+                NSString *text = job1.jobCompany;
+                NSLog(@"%@", text);
+            }
+        }
+        else {
+            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+        }}];
+    
+        
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
@@ -41,11 +60,15 @@
     view.imageView.image = [UIImage imageNamed:@"photo"]; //used photo.png as a card placeholder for swipign
     [self.view addSubview:view];
     
-    //testing to see if we can access objects from SMJobCardView
-    _cardView.jobDescriptionLabel.text = @"ldakfjladsjkfadlskfjkads";
-    _cardView.jobScheduleLabel.text = @"test 1";
-    _cardView.locationLabel.text = @"test 3";
-    _cardView.dutiesLabel.text = @"test 4";
+    
+    //testing fake data
+    //create a SMFakeJobsDataManager.h object
+    //usually this is where we dequeue a reusable cell but for now we are focusing on passing data to one card
+    SMJobListing *jobPointer = self.jobs[0];
+    _cardView.jobDescriptionLabel.text = jobPointer.jobDescription;
+    _cardView.jobScheduleLabel.text = jobPointer.dates;
+    _cardView.locationLabel.text = jobPointer.location;
+    _cardView.dutiesLabel.text = jobPointer.duties;
 }
 
 //user didn't fully swipe left or right
