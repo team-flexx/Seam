@@ -10,6 +10,7 @@
 
 @implementation SMJobListing
 
+//instantiates the jobListing type and passes the values into themselves to be viewable
 - (instancetype)initWithJobCompany:(NSString *)jobCompany
                              title:(NSString *)title
                     jobDescription:(NSString *)jobDescription

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SMJobListing : NSObject
 
+//properties used in SMJobCard
 @property (nonatomic, strong) NSString *jobCompany;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *jobDescription;
