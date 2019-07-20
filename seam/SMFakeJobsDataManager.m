@@ -19,7 +19,7 @@
 
 @implementation SMFakeJobsDataManager
 
-//this fetches the data to load on the matches page 
+//this fetches the data to load on the matches page
 - (void)fetchJobsWithCompletion:(void (^)(NSArray *jobListings, NSError *error))completion {
     NSArray *jobListings = @[
                              [[SMJobListing alloc]

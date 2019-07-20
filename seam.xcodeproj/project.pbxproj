@@ -14,7 +14,6 @@
 		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */; };
 		9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7DB22DFBD98002FFB7E /* SMJobCard.m */; };
-		9743F7E222E24AF7002FFB7E /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9743F7E122E24AF7002FFB7E /* photo.png */; };
 		9794867822D5070700E90DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867722D5070700E90DBD /* AppDelegate.m */; };
 		9794867E22D5070700E90DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794867C22D5070700E90DBD /* Main.storyboard */; };
 		9794868022D5070800E90DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9794867F22D5070800E90DBD /* Assets.xcassets */; };
@@ -57,7 +56,6 @@
 		9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipingScreenViewController.m; sourceTree = "<group>"; };
 		9743F7DA22DFBD98002FFB7E /* SMJobCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobCard.h; sourceTree = "<group>"; };
 		9743F7DB22DFBD98002FFB7E /* SMJobCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobCard.m; sourceTree = "<group>"; };
-		9743F7E122E24AF7002FFB7E /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo.png; path = ../../../Downloads/photo.png; sourceTree = "<group>"; };
 		9794867322D5070700E90DBD /* seam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794867622D5070700E90DBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9794867722D5070700E90DBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				9794867622D5070700E90DBD /* AppDelegate.h */,
 				9794867722D5070700E90DBD /* AppDelegate.m */,
 				9794867C22D5070700E90DBD /* Main.storyboard */,
-				9743F7E122E24AF7002FFB7E /* photo.png */,
 				9122078C22E0FC0500FB25CB /* ProfileViewController.h */,
 				9122078D22E0FC0500FB25CB /* ProfileViewController.m */,
 				9794867F22D5070800E90DBD /* Assets.xcassets */,
@@ -333,7 +330,6 @@
 			files = (
 				9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */,
 				9794868022D5070800E90DBD /* Assets.xcassets in Resources */,
-				9743F7E222E24AF7002FFB7E /* photo.png in Resources */,
 				9794867E22D5070700E90DBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
