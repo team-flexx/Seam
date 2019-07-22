@@ -45,18 +45,15 @@ _saveButton.hidden = YES;
 //}
 
 - (IBAction)editPressed:(id)sender {
-
-_about.editable = YES;
-_education.editable = YES;
-_jobTitle.editable = YES;
-_company.editable = YES;
-_jobDescription.editable = YES;
-_skills.editable = YES;
-_saveButton.hidden = NO;
+    _about.editable = YES;
+    _education.editable = YES;
+    _jobTitle.editable = YES;
+    _company.editable = YES;
+    _jobDescription.editable = YES;
+    _skills.editable = YES;
+    _saveButton.hidden = NO;
 }
-
 - (IBAction)saveData:(id)sender {
-
     _about.editable = NO;
     _education.editable = NO;
     _jobTitle.editable = NO;
@@ -64,7 +61,6 @@ _saveButton.hidden = NO;
     _jobDescription.editable = NO;
     _skills.editable = NO;
     _saveButton.hidden = YES;
-
 }
 
 - (IBAction)addPhotoClique:(id)sender {
