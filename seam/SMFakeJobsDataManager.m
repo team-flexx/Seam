@@ -24,12 +24,28 @@
     NSArray *jobListings = @[
                              [[SMJobListing alloc]
                               initWithJobCompany:@"Facebook"
-                              title:@"Facebook Python Developer"
+                              title:@"Python Developer"
                               jobDescription:@"Work on projects tackling problems with Python"
                               location:@"Austin, TX, USA"
                               dates:@"August 2019"
                               duties:@"Excitement and eagerness to learn new technology. Passion for IT development and desire to gain in-depth knowledge"
                               jobID:@"1"],
+                             [[SMJobListing alloc]
+                              initWithJobCompany:@"Lyft"
+                              title:@"AI Engineer"
+                              jobDescription:@"Develop solutions utilizing machine learning"
+                              location:@"San Francisco, CA, USA"
+                              dates:@"August 2019"
+                              duties:@"Excitement and eagerness to learn new technology. Understanding of machine learning principles."
+                              jobID:@"2"],
+                             [[SMJobListing alloc]
+                              initWithJobCompany:@"Deloitte"
+                              title:@"Technical Consultant"
+                              jobDescription:@"Discuss business solutions in a technical space"
+                              location:@"London, England, UK"
+                              dates:@"August 2019"
+                              duties:@"Deep understanding of technical problems and"
+                              jobID:@"3"],
                              ];
     completion(jobListings, nil);
 }
@@ -42,6 +58,7 @@
     NSMutableSet* set2 = [NSMutableSet setWithArray:self.employerSwipes];
     [set1 intersectSet:set2];
     [self.matchArray addObject:set1];
+    NSLog(@"%@",_matchArray); 
 }
 
 //loades matches on match view controller
