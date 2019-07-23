@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="158" y="-424"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
@@ -107,7 +107,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYw-Yc-JIa"/>
-                                    <segue destination="o4F-ie-ZQT" kind="presentation" id="vtn-tf-YGl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't Have an Account? Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qn-kw-KjA">
@@ -128,9 +127,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="mbj-Yz-dmW"/>
                     <connections>
                         <outlet property="loginTextField" destination="LgL-j7-eIY" id="nMj-0F-8Po"/>
                         <outlet property="passwordTextField" destination="XHe-Tr-R7u" id="T5X-nl-s62"/>
+                        <segue destination="o4F-ie-ZQT" kind="presentation" id="aTt-Gm-las"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

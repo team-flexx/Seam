@@ -6,6 +6,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Parse/Parse.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
@@ -25,16 +26,16 @@
     NSString *password = self.passwordTextField.text;//@"a";
     
     //with parse
-//    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
-//        if (error != nil) {
-//            NSLog(@"User log in failed: %@", error.localizedDescription);
-//        } else {
-//            NSLog(@"User logged in successfully");
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged in successfully");
     
             // display view controller that needs to shown after successful login
-//            [self performSegueWithIdentifier:@"showTabBar" sender:nil];
-//        }
-//    }];
+            [self performSegueWithIdentifier:@"showTabBar" sender:nil];
+        }
+    }];
 }
 
 //the log in BUTTON is how and why I created the action, every button is an action. this action for login in is calling the loginUser method

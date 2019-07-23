@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "Parse/Parse.h"
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -25,23 +26,23 @@
 - (void)registerUser {
     //  initialize a user object
     //with parse
-//    PFUser *newUser = [PFUser user];
-//
-//    // set user properties
-//    newUser.username = self.username.text;
-//    newUser.email = self.email.text;
-//    newUser.password = self.password.text;
-//
-//    // call sign up function on the object
-//    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-//        if (error != nil) {
-//            NSLog(@"Error: %@", error.localizedDescription);
-//        } else {
-//            NSLog(@"User registered successfully");
-//            // manually segue to logged in view
-//        }
-//    }];
-//    [self dismissViewControllerAnimated:YES completion:nil];
+    PFUser *newUser = [PFUser user];
+
+    // set user properties
+    newUser.username = self.username.text;
+    newUser.email = self.email.text;
+    newUser.password = self.password.text;
+
+    // call sign up function on the object
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+        if (error != nil) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User registered successfully");
+            // manually segue to logged in view
+        }
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //the Cancel button is the action, you dismiss the animation and go back to login origional page
