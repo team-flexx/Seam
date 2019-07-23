@@ -11,7 +11,6 @@
 		3C083B67A26ADBAA9CFA5A99 /* Pods_seamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */; };
 		53788022358DD74F500DD3A5 /* Pods_seamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */; };
 		9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122078D22E0FC0500FB25CB /* ProfileViewController.m */; };
-		9122079B22E68CDE00FB25CB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122079A22E68CDE00FB25CB /* LoginViewController.m */; };
 		9122079E22E68E6E00FB25CB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122079D22E68E6E00FB25CB /* SignUpViewController.m */; };
 		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */; };
@@ -24,6 +23,7 @@
 		9794868622D5070800E90DBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868522D5070800E90DBD /* main.m */; };
 		9794869022D5070800E90DBD /* seamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868F22D5070800E90DBD /* seamTests.m */; };
 		9794869B22D5070800E90DBD /* seamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794869A22D5070800E90DBD /* seamUITests.m */; };
+		E4556F0422E7BC9C00C50526 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F0322E7BC9C00C50526 /* LoginViewController.m */; };
 		E475CE7E22E249C800756451 /* SMFakeJobsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E475CE7B22E249C800756451 /* SMFakeJobsDataManager.m */; };
 		E475CE7F22E249C800756451 /* SMJobsDataManaging.m in Sources */ = {isa = PBXBuildFile; fileRef = E475CE7C22E249C800756451 /* SMJobsDataManaging.m */; };
 /* End PBXBuildFile section */
@@ -53,8 +53,6 @@
 		7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9122078C22E0FC0500FB25CB /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		9122078D22E0FC0500FB25CB /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		9122079922E68CDE00FB25CB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "/Users/alexamorales/Desktop/Seam/seam/View Controllers/LoginViewController.h"; sourceTree = "<absolute>"; };
-		9122079A22E68CDE00FB25CB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "/Users/alexamorales/Desktop/Seam/seam/View Controllers/LoginViewController.m"; sourceTree = "<absolute>"; };
 		9122079C22E68E6E00FB25CB /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9122079D22E68E6E00FB25CB /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		9743F7CD22DD3590002FFB7E /* SMJobListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobListing.h; sourceTree = "<group>"; };
@@ -80,6 +78,8 @@
 		9794869C22D5070800E90DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7A456CA1091FCD42768AE8D /* Pods-seamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamUITests.release.xcconfig"; path = "Target Support Files/Pods-seamUITests/Pods-seamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C95F73BD51DED80BF23C5E72 /* Pods-seam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seam.release.xcconfig"; path = "Target Support Files/Pods-seam/Pods-seam.release.xcconfig"; sourceTree = "<group>"; };
+		E4556F0222E7BC9C00C50526 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E4556F0322E7BC9C00C50526 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E475CE7A22E249C800756451 /* SMFakeJobsDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFakeJobsDataManager.h; sourceTree = "<group>"; };
 		E475CE7B22E249C800756451 /* SMFakeJobsDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMFakeJobsDataManager.m; sourceTree = "<group>"; };
 		E475CE7C22E249C800756451 /* SMJobsDataManaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMJobsDataManaging.m; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 			children = (
 				9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */,
 				9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */,
-				9122079922E68CDE00FB25CB /* LoginViewController.h */,
-				9122079A22E68CDE00FB25CB /* LoginViewController.m */,
+				E4556F0222E7BC9C00C50526 /* LoginViewController.h */,
+				E4556F0322E7BC9C00C50526 /* LoginViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -460,10 +460,10 @@
 				9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */,
 				9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,
-				9122079B22E68CDE00FB25CB /* LoginViewController.m in Sources */,
 				9122079E22E68E6E00FB25CB /* SignUpViewController.m in Sources */,
 				9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */,
 				9794867822D5070700E90DBD /* AppDelegate.m in Sources */,
+				E4556F0422E7BC9C00C50526 /* LoginViewController.m in Sources */,
 				E475CE7E22E249C800756451 /* SMFakeJobsDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

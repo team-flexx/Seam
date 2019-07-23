@@ -131,7 +131,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="LgL-j7-eIY" id="nMj-0F-8Po"/>
                         <outlet property="passwordTextField" destination="XHe-Tr-R7u" id="T5X-nl-s62"/>
-                        <segue destination="o4F-ie-ZQT" kind="presentation" id="aTt-Gm-las"/>
+                        <segue destination="o4F-ie-ZQT" kind="presentation" identifier="showTabBar" id="aTt-Gm-las"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -206,7 +206,7 @@
         <!--Home-->
         <scene sceneID="egU-WD-6lb">
             <objects>
-                <navigationController id="yto-LU-Xo8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthenticatedViewController" id="yto-LU-Xo8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="zug-tE-Ajb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CeE-Ws-162">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

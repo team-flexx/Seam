@@ -18,18 +18,13 @@
     
     [Parse initializeWithConfiguration:config];
     
-    NSLog(@"here");
-    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
-    gameScore[@"score"] = @1337;
-    gameScore[@"playerName"] = @"Sean Plott";
-    gameScore[@"cheatMode"] = @NO;
-    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Object saved!");
-        } else {
-            NSLog(@"Error: %@", error.description);
-        }
-    }];
+    // Code to initialize Parse
+    if (PFUser.currentUser) {
+        //this verifies the user is authenticated after logging in
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //this (after setting up what the Authenticated View should be) allows the user to stay logged in
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+    }
     
     return YES;
 }
