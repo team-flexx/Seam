@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwipingScreenViewController : UIViewController<MDCSwipeToChooseDelegate>
 
-@property (nonatomic, strong) SMJobListing *currentJobListing;
-@property (nonatomic, strong) SMJobCard *frontCardView;
-@property (nonatomic, strong) SMJobCard *backCardView;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -19,6 +19,17 @@
 
 @implementation SMFakeJobsDataManager
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _applicantSwipes = [NSMutableArray new];
+        _employerSwipes = [NSMutableArray new];
+        _matchArray = [NSMutableArray new];
+    }
+    return self;
+}
+
+
 //this fetches the data to load on the matches page
 - (void)fetchJobsWithCompletion:(void (^)(NSArray *jobListings, NSError *error))completion {
     NSArray *jobListings = @[
@@ -53,7 +64,10 @@
 //add items swiped right on to the applicant's array and handles
 //matching functionality using set of both arrays and then this will give you only the objects that are in both sets
 - (void)onApplyForJob:(NSArray*)alteredApplicantArray {
+    
     [self.applicantSwipes addObjectsFromArray:alteredApplicantArray];
+    NSLog(@"applicant swipes: %@",_applicantSwipes);
+    
     NSMutableSet* set1 = [NSMutableSet setWithArray:self.applicantSwipes];
     NSMutableSet* set2 = [NSMutableSet setWithArray:self.employerSwipes];
     [set1 intersectSet:set2];
