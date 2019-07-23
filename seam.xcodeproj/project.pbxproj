@@ -14,6 +14,7 @@
 		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */; };
 		9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7DB22DFBD98002FFB7E /* SMJobCard.m */; };
+		977DA93222E654F5000BD66B /* CardViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977DA93122E654F5000BD66B /* CardViewXIB.xib */; };
 		9794867822D5070700E90DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794867722D5070700E90DBD /* AppDelegate.m */; };
 		9794867E22D5070700E90DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9794867C22D5070700E90DBD /* Main.storyboard */; };
 		9794868022D5070800E90DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9794867F22D5070800E90DBD /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipingScreenViewController.m; sourceTree = "<group>"; };
 		9743F7DA22DFBD98002FFB7E /* SMJobCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobCard.h; sourceTree = "<group>"; };
 		9743F7DB22DFBD98002FFB7E /* SMJobCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobCard.m; sourceTree = "<group>"; };
+		977DA93122E654F5000BD66B /* CardViewXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewXIB.xib; sourceTree = "<group>"; };
 		9794867322D5070700E90DBD /* seam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794867622D5070700E90DBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9794867722D5070700E90DBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				9743F7DA22DFBD98002FFB7E /* SMJobCard.h */,
 				9743F7DB22DFBD98002FFB7E /* SMJobCard.m */,
+				977DA93122E654F5000BD66B /* CardViewXIB.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977DA93222E654F5000BD66B /* CardViewXIB.xib in Resources */,
 				9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */,
 				9794868022D5070800E90DBD /* Assets.xcassets in Resources */,
 				9794867E22D5070700E90DBD /* Main.storyboard in Resources */,
