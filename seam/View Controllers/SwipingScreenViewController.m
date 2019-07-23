@@ -59,33 +59,37 @@
         }
     };
     
+    //*********************************************************CARD CREATION ************************************************************
+    int numOfJobs = [self.jobs count]; //number of jobs user can swipe on
+    //based on the numOfJobs, a new card is created every time to show up in the swiping sreen view controller
+    for (int i =0; i < numOfJobs; i++)
+    {
+        //define size of card. we are using the placeholderView's frame from the storyboard
+        //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
+        MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
+                                                                         options:options];
+    
+        //parameters for label: x, y, width, height
+        SMJobCard *cardView = [[SMJobCard alloc] init];
+        //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
+        cardView.frame = self.placeholderView.frame;
+    
+        //testing fake data
+        //create a SMFakeJobsDataManager.h object
+        //usually this is where we dequeue a reusable cell but for now we are focusing on passing data to one card
+        SMJobListing *jobPointer = self.jobs[i];
+        cardView.jobDescriptionLabel.text = jobPointer.jobDescription;
+        cardView.jobScheduleLabel.text = jobPointer.dates;
+        cardView.locationLabel.text = jobPointer.location;
+        cardView.dutiesLabel.text = jobPointer.duties;
     
     
-    //define size of card. we are using the placeholderView's frame from the storyboard
-    //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
-    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
-                                                                     options:options];
-   
-    //parameters for label: x, y, width, height
-    SMJobCard *cardView = [[SMJobCard alloc] init];
-    //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
-    cardView.frame = self.placeholderView.frame;
+        //convert uiview to uiimage in order for it to show up as a card
+        //use the view file we created with CardViewXIB.xib and SMJobCard.m
+        view.imageView.image = [self imageWithView:cardView];
     
-    //testing fake data
-    //create a SMFakeJobsDataManager.h object
-    //usually this is where we dequeue a reusable cell but for now we are focusing on passing data to one card
-    SMJobListing *jobPointer = self.jobs[0];
-    cardView.jobDescriptionLabel.text = jobPointer.jobDescription;
-    cardView.jobScheduleLabel.text = jobPointer.dates;
-    cardView.locationLabel.text = jobPointer.location;
-    cardView.dutiesLabel.text = jobPointer.duties;
-    
-    
-    //convert uiview to uiimage in order for it to show up as a card
-    //use the view file we created with CardViewXIB.xib and SMJobCard.m
-    view.imageView.image = [self imageWithView:cardView];
-    
-    [self.view addSubview:view];
+        [self.view addSubview:view];
+    }
     
 }
 
