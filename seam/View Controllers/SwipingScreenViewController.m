@@ -16,6 +16,9 @@
 
 @interface SwipingScreenViewController ()
 @property (weak, nonatomic) IBOutlet SMJobCard *cardView; //the job applicant
+@property (weak, nonatomic) IBOutlet UIView *placeholderView;
+
+
 
 @property (nonatomic, strong) NSMutableArray *jobs; //stores the model, an array of JobListings
 @end
@@ -57,23 +60,31 @@
     };
     
     
+    
+    //define size of card. we are using the placeholderView's frame from the storyboard
+    //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
+    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
+                                                                     options:options];
+   
+    //parameters for label: x, y, width, height
+    SMJobCard *cardView = [[SMJobCard alloc] init];
+    //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
+    cardView.frame = self.placeholderView.frame;
+    
     //testing fake data
     //create a SMFakeJobsDataManager.h object
     //usually this is where we dequeue a reusable cell but for now we are focusing on passing data to one card
     SMJobListing *jobPointer = self.jobs[0];
-    _cardView.jobDescriptionLabel.text = jobPointer.jobDescription;
-    _cardView.jobScheduleLabel.text = jobPointer.dates;
-    _cardView.locationLabel.text = jobPointer.location;
-    _cardView.dutiesLabel.text = jobPointer.duties;
+    cardView.jobDescriptionLabel.text = jobPointer.jobDescription;
+    cardView.jobScheduleLabel.text = jobPointer.dates;
+    cardView.locationLabel.text = jobPointer.location;
+    cardView.dutiesLabel.text = jobPointer.duties;
     
-    //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
-    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.view.bounds
-                                                                     options:options];
+    
     //convert uiview to uiimage in order for it to show up as a card
-    view.imageView.image = [self imageWithView:self.cardView];
-    //[UIImage imageNamed:@"photo"]; //used photo.png as a card placeholder for swiping
+    //use the view file we created with CardViewXIB.xib and SMJobCard.m
+    view.imageView.image = [self imageWithView:cardView];
     
-    //used photo.png as a card placeholder for swipign
     [self.view addSubview:view];
     
 }
