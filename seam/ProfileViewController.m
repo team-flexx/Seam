@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "Parse/Parse.h"
 
 @interface ProfileViewController () <UITextViewDelegate>
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *jobDescription;
 @property (weak, nonatomic) IBOutlet UITextView *skills;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *jobFilters;
 
 @end
 
@@ -25,25 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    _about.delegate = self;
-//    _education.delegate = self;
-//    _jobTitle.delegate = self;
-//    _company.delegate = self;
-//    _jobDescription.delegate = self;
-//    _skills.delegate = self;
-    
 _saveButton.hidden = YES;
+_jobFilters.hidden =YES;
 }
-
-//- (void)textViewDidBeginEditing:(UITextView *) editPressed{
-//    // user taps text view to type text
-//}
-//
-//- (void)textViewDidEndEditing:(UITextView *) saveData {
-//    //handle text editing finished the saved button
-//}
-
 - (IBAction)editPressed:(id)sender {
     _about.editable = YES;
     _education.editable = YES;
@@ -52,6 +38,7 @@ _saveButton.hidden = YES;
     _jobDescription.editable = YES;
     _skills.editable = YES;
     _saveButton.hidden = NO;
+    _jobFilters.hidden = NO;
 }
 - (IBAction)saveData:(id)sender {
     _about.editable = NO;
@@ -61,9 +48,16 @@ _saveButton.hidden = YES;
     _jobDescription.editable = NO;
     _skills.editable = NO;
     _saveButton.hidden = YES;
+    _jobFilters.hidden =YES;
 }
-
-- (IBAction)addPhotoClique:(id)sender {
+//method to log out
+- (void)logoutUser{
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];}
+//press logout button, this action calls the method that eraes the user then dismisses
+- (IBAction)logout:(id)sender {
+    [self logoutUser];
 }
-
 @end
