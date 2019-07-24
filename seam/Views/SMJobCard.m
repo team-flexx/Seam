@@ -15,14 +15,6 @@
 
 
 @implementation SMJobCard
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 //the three methods below overides both initializers and calls our own customInit
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {

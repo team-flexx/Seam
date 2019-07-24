@@ -83,7 +83,7 @@
     NSLog(@"applicant rejections: %@",_applicantRejections);
     NSMutableSet* set1 = [NSMutableSet setWithArray:self.applicantRejections];
     [self.jobStack removeObject:set1];
-    NSLog(@"%@",_jobStack);
+    NSLog(@"reject jobs: %@",_applicantRejections);
 }
 
 //loades matches on match view controller

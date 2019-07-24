@@ -16,12 +16,11 @@
 
 
 @interface SwipingScreenViewController ()
+
 @property (weak, nonatomic) IBOutlet SMJobCard *cardView; //the job applicant
 @property (weak, nonatomic) IBOutlet UIView *placeholderView;
-
-
-
 @property (nonatomic, strong) NSMutableArray *jobs; //stores the model, an array of JobListings
+
 @end
 
 @implementation SwipingScreenViewController {
@@ -48,10 +47,8 @@
         {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
-        
     }];
     
-        
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
@@ -62,8 +59,9 @@
     options.likedColor = [UIColor blueColor];
     options.nopeText = @"Delete";
     options.onPan = ^(MDCPanState *state){
+    //dont think we need this
     if (state.thresholdRatio == 1.f && state.direction == MDCSwipeDirectionLeft) {
-            NSLog(@"Let go now to delete the photo!"); //printed everytime your'e holding card down but not swiping it either direction
+            //NSLog(@"Let go now to delete the photo!"); //printed everytime your'e holding card down but not swiping it either direction
         }
     };
     
@@ -96,7 +94,6 @@
         //use the view file we created with CardViewXIB.xib and SMJobCard.m
         view.imageView.image = [self imageWithView:cardView];
         [self.view addSubview:view];
-     
     }
 }
 
@@ -107,16 +104,19 @@
 }
 // This is called then a user swipes the view fully left or right.
 - (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
-    if (direction == MDCSwipeDirectionLeft) {
+    if (direction == MDCSwipeDirectionLeft)
+    {
+        [[SMFakeJobsDataManager shared] onRejectJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo deleted!");
         _currentCardIndex++;
-    } else {
+    }
+    else
+    {
         [[SMFakeJobsDataManager shared] onApplyForJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo saved!");
         _currentCardIndex++;
     }
 }
-
 //convert uiiview to uiimage
 - (UIImage *)imageWithView:(UIView *)view
 {
@@ -126,15 +126,4 @@
     UIGraphicsEndImageContext();
     return img;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

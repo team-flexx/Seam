@@ -14,20 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @class SMJobListing;
 
 @interface SMJobCard : MDCSwipeToChooseView//UIView
-
-
 //use for xib
 @property (strong, nonatomic) IBOutlet UIView *cardDetailsView;
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
-
 //used this for storyboard
-
 @property (weak, nonatomic) IBOutlet UILabel *jobDescriptionLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobScheduleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dutiesLabel;
-
 @property (strong, nonatomic) SMJobListing *listing;
 
 @end
