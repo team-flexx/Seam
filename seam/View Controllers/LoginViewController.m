@@ -28,21 +28,30 @@
     //with parse
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
-            NSLog(@"User log in failed: %@", error.localizedDescription);
-            //we want to actually tell the user what they did wrong, so let's use a Alert Controller embedded in code to do so
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid Information"
-                                                                           message:[NSString stringWithFormat:@"%@", error.localizedDescription]
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            //this creates an alert action that tells the user if there's something wrong and what it is
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:^{}];
+            //alert
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"User log in failed"
+                                                                           message:@"Please try your username and password again"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
+
+            // create an OK action
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 // handle response here.
+                                                             }];
+            // add the OK action to the alert controller
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:^{
+                // optional code for what happens after the alert controller has finished presenting
+            
+            }];
+
         } else {
             NSLog(@"User logged in successfully");
     
             // display view controller that needs to shown after successful login
             [self performSegueWithIdentifier:@"showTabBar" sender:nil];
+
         }
     }];
 }

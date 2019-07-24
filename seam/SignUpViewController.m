@@ -36,22 +36,29 @@
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
-            NSLog(@"Error: %@", error.localizedDescription);
-            //we want to actually tell the user what they did wrong, so let's use a Alert Controller embedded in code to do so
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid Information"
-                                                                           message:[NSString stringWithFormat:@"%@", error.localizedDescription]
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            //this creates an alert action that tells the user if there's something wrong and what it is
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:^{}];
+
+            //alert
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not able to create your account"
+                                                                           message:@"Username alread taken or email address format invalid, please try again"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
+            
+            // create an OK action
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 // handle response here.
+                                                             }];
+            // add the OK action to the alert controller
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:^{
+                // optional code for what happens after the alert controller has finished presenting
+                
+            }];
         } else {
             NSLog(@"User registered successfully");
             // manually segue to logged in view
         }
     }];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //the Cancel button is the action, you dismiss the animation and go back to login origional page
