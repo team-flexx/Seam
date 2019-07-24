@@ -12,8 +12,10 @@
 @interface SMFakeJobsDataManager ()
 
 @property (nonatomic, strong) NSMutableArray<SMJobListing *> *applicantSwipes;
+@property (nonatomic, strong) NSMutableArray<SMJobListing *> *applicantRejections;
 @property (nonatomic, strong) NSMutableArray<SMJobListing *> *employerSwipes;
 @property (nonatomic, strong) NSMutableArray<SMJobListing *> *matchArray;
+@property (nonatomic, strong) NSMutableArray<SMJobListing *> *jobStack;
 @end
 
 
@@ -23,8 +25,10 @@
 {
     if (self = [super init]) {
         _applicantSwipes = [NSMutableArray new];
+        _applicantRejections = [NSMutableArray new];
         _employerSwipes = [NSMutableArray new];
         _matchArray = [NSMutableArray new];
+        _jobStack = [NSMutableArray new];
     }
     return self;
 }
@@ -58,21 +62,28 @@
                               duties:@"Deep understanding of technical problems and"
                               jobID:@"3"],
                              ];
+    [self.jobStack addObject:jobListings];
     completion(jobListings, nil);
 }
 
 //add items swiped right on to the applicant's array and handles
 //matching functionality using set of both arrays and then this will give you only the objects that are in both sets
 - (void)onApplyForJob:(NSArray*)alteredApplicantArray {
-    
     [self.applicantSwipes addObjectsFromArray:alteredApplicantArray];
     NSLog(@"applicant swipes: %@",_applicantSwipes);
-    
     NSMutableSet* set1 = [NSMutableSet setWithArray:self.applicantSwipes];
     NSMutableSet* set2 = [NSMutableSet setWithArray:self.employerSwipes];
     [set1 intersectSet:set2];
     [self.matchArray addObject:set1];
     NSLog(@"%@",_matchArray); 
+}
+
+- (void)onRejectJob:(NSArray*)alteredApplicantArray {
+    [self.applicantRejections addObjectsFromArray:alteredApplicantArray];
+    NSLog(@"applicant rejections: %@",_applicantRejections);
+    NSMutableSet* set1 = [NSMutableSet setWithArray:self.applicantRejections];
+    [self.jobStack removeObject:set1];
+    NSLog(@"%@",_jobStack);
 }
 
 //loades matches on match view controller

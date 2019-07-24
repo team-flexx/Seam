@@ -37,6 +37,15 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
+            //we want to actually tell the user what they did wrong, so let's use a Alert Controller embedded in code to do so
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid Information"
+                                                                           message:[NSString stringWithFormat:@"%@", error.localizedDescription]
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            //this creates an alert action that tells the user if there's something wrong and what it is
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:^{}];
         } else {
             NSLog(@"User registered successfully");
             // manually segue to logged in view

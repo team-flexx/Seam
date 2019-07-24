@@ -17,6 +17,9 @@
 //add jobs users swipe right on to their personal array
 - (void)onApplyForJob:(NSArray*)alteredApplicantArray;
 
+//add jobs users swipe left on to their personal array
+- (void)onRejectJob:(NSArray*)alteredApplicantArray;
+
 //removes job from general job array
 - (void)onUninterestedInJob:(NSArray*)shorterJobArray;
 

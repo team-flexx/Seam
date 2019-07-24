@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)onApplyForJob:(NSArray*)alteredApplicantArray;
 
+- (void)onRejectJob:(NSArray *)alteredApplicantArray:(NSArray*)alteredApplicantArray;
 
 - (void)fetchMatchesWithCompletion:(void (^)(NSArray *matches, NSError *error))completion;
 
