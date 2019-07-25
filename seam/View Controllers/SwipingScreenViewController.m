@@ -13,7 +13,7 @@
 #import "SMJobsDataManaging.h" 
 #import "SMJobListing.h"
 #import <QuartzCore/QuartzCore.h> //use for converting uiview to uiimage
-
+#import "Parse/Parse.h"
 
 @interface SwipingScreenViewController ()
 
@@ -31,6 +31,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+    
     [[SMFakeJobsDataManager shared] fetchJobsWithCompletion:^(NSArray *jobListings, NSError *error)
     {
         if (jobListings)
@@ -48,6 +53,10 @@
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
+    
+    //making URL request
+    [[SMRealJobsDataManager shared] fetchJobs];
+    
     
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.

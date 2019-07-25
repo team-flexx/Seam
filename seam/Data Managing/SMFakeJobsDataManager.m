@@ -35,6 +35,8 @@
 
 
 //this fetches the data to load on the matches page
+//this returns a dictionary of a job listing that we can use in the view controller (SwipingScreenViewController.m) to send this data to display on UI
+//Note: the Model file SMJobListing.h contains a method that initializes a jobListing which is called in this .m file.
 - (void)fetchJobsWithCompletion:(void (^)(NSArray *jobListings, NSError *error))completion {
     NSArray *jobListings = @[
                              [[SMJobListing alloc]

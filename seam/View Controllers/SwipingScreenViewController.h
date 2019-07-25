@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "SMJobCard.h"
 #import "SMJobListing.h"
+#import "SMFakeJobsDataManager.h"
+#import "SMRealJobsDataManager.h"
+
 NS_ASSUME_NONNULL_BEGIN
 //#import "SMJobCard.h"
 
 @interface SwipingScreenViewController : UIViewController<MDCSwipeToChooseDelegate>
+
+//@property (nonatomic, strong) SMFakeJobsDataManager *fakeDataManager;
+//@property(nonatomic, strong) SMRealJobsDataManager *realDataManager;
 
 
 @end

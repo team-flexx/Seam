@@ -26,5 +26,6 @@
 //fetch jobs on main matching screen upon loading
 - (void)fetchMatchesWithCompletion:(void (^)(NSArray *matches, NSError *error))completion;
 
++ (instancetype)shared;
 
 @end
