@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SMUserProfile.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileViewController : UIViewController
+
+@property SMUserProfile *userProfile;
 
 @end
 

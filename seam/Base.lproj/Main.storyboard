@@ -335,6 +335,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
+                                            <action selector="onSave:" destination="839-ve-Hi3" eventType="touchUpInside" id="zw7-PA-hlF"/>
                                             <action selector="saveData:" destination="839-ve-Hi3" eventType="touchUpInside" id="Knj-b1-W70"/>
                                         </connections>
                                     </button>
