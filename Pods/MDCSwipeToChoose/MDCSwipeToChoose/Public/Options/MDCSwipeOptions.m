@@ -60,7 +60,8 @@
                              state.view.frame = destination;
                          } completion:^(BOOL finished) {
                              if (finished) {
-                                 [state.view removeFromSuperview];
+                                 NSLog(@"removed from superview");
+                                 //[state.view removeFromSuperview];
                                  state.onCompletion();
                              }
                          }];

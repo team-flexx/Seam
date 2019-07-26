@@ -29,3 +29,5 @@
 + (instancetype)shared;
 
 @end
+
+//id<JobsDataManaging> testProtocol

@@ -32,9 +32,9 @@
         if (!error) {
             //JSON is a format that encodes objects in a string. Serialization means to convert an object into that string, and deserialization is its inverse operation.
             NSArray *serializedData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error][@"main"];
-            NSLog(@"read serialized data from url request: %@", serializedData);
+            //NSLog(@"read serialized data from url request: %@", serializedData);
         } else {
-            NSLog(@"unable to make url request");
+            //NSLog(@"unable to make url request");
         }
     }];
     [task resume];

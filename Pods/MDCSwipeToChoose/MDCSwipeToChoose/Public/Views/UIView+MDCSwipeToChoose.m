@@ -206,11 +206,12 @@ const void * const MDCViewStateKey = &MDCViewStateKey;
     switch (direction) {
         case MDCSwipeDirectionLeft:
             return CGPointMake(-offset, 0);
+            
         case MDCSwipeDirectionRight:
             return CGPointMake(offset, 0);
         default:
             [NSException raise:NSInternalInconsistencyException
-                        format:@"Invallid direction argument."];
+                        format:@"Invalid direction argument."];
             return CGPointZero;
     }
 }

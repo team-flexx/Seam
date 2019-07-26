@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwipingScreenViewController : UIViewController<MDCSwipeToChooseDelegate>
 
-//@property (nonatomic, strong) SMFakeJobsDataManager *fakeDataManager;
-//@property(nonatomic, strong) SMRealJobsDataManager *realDataManager;
-
 
 @end
 

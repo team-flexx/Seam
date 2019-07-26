@@ -63,6 +63,14 @@
                               dates:@"August 2019"
                               duties:@"Deep understanding of technical problems and"
                               jobID:@"3"],
+                             [[SMJobListing alloc]
+                              initWithJobCompany:@"test"
+                              title:@"test"
+                              jobDescription:@"test"
+                              location:@"test"
+                              dates:@"test"
+                              duties:@"test"
+                              jobID:@"test"],
                              ];
     [self.jobStack addObject:jobListings];
     completion(jobListings, nil);
