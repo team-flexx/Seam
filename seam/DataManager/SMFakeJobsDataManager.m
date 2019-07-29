@@ -36,7 +36,7 @@
 
 //this fetches the data to load on the matches page
 //this returns a dictionary of a job listing that we can use in the view controller (SwipingScreenViewController.m) to send this data to display on UI
-//Note: the Model file SMJobListing.h contains a method that initializes a jobListing which is called in this .m file.
+//Note: the Mrodel file SMJobListing.h contains a method that initializes a jobListing which is called in this .m file.
 - (void)fetchJobsWithCompletion:(void (^)(NSArray *jobListings, NSError *error))completion {
     NSArray *jobListings = @[
                              [[SMJobListing alloc]
@@ -94,15 +94,6 @@
     completion(matches, nil);
 }
 
-//make this once so we can keep acessing the shared
-+ (instancetype)shared {
-    static SMFakeJobsDataManager *sharedManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedManager = [[self alloc] init];
-    });
-    return sharedManager;
-}
 
 /*
  #pragma mark - Navigation

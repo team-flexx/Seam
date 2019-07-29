@@ -10,7 +10,8 @@
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "SMJobCard.h"
 #import "SMFakeJobsDataManager.h"
-#import "SMJobsDataManaging.h" 
+#import "SMJobsDataManaging.h"
+#import "SMJobsDataManagerProvider.h"
 #import "SMJobListing.h"
 #import <QuartzCore/QuartzCore.h> //use for converting uiview to uiimage
 #import "Parse/Parse.h"
@@ -33,14 +34,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
-    _currentCardIndex=0;
+    _currentCardIndex=0; //index of job listing array
     _currentCardTrackerIndex=1;
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];
     
-    [[SMFakeJobsDataManager shared] fetchJobsWithCompletion:^(NSArray *jobListings, NSError *error)
+    [[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:^(NSArray *jobListings, NSError *error)
     {
         if (jobListings)
         {
@@ -59,32 +60,34 @@
     }];
     
     //making URL request
-    [[SMRealJobsDataManager shared] fetchJobs];
+    //[[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:nil];
     
     //create first card
     NSLog(@"about to make first card, at index: %d", _currentCardIndex);
-    [self createSingleCardWithJobListingIndex:_currentCardIndex];
-    [self createStackOfCards];
+    [self createSingleCardWithJobListingIndex:_currentCardIndex]; //create 1st card
+    
+    [self createStackOfCards]; //create rest of cards if there's any left
 }
 
 -(void) createStackOfCards{
         NSLog(@"something may have deleted");
-    if(_currentCardIndex == [_jobs count])
+    if(_currentCardIndex == [_jobs count]) //BASE CASE
     {
         NSLog(@"done");
     }
     else
     {
-        NSLog(@"did it go through");
         if (_currentCardIndex == _currentCardTrackerIndex)
         {
+            NSLog(@"create new card because one just got deleted");
             _currentCardTrackerIndex++;
             [self createSingleCardWithJobListingIndex:_currentCardIndex];
         }
     }
 }
+
+
 -(void) createSingleCardWithJobListingIndex:(int) jobListIndex{
-    NSLog(@"got in");
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
@@ -94,12 +97,6 @@
     options.likedText = @"Get job";
     options.likedColor = [UIColor blueColor];
     options.nopeText = @"Delete";
-//    options.onPan = ^(MDCPanState *state){
-//        //dont think we need this
-//        if (state.thresholdRatio == 1.f && state.direction == MDCSwipeDirectionLeft) {
-//            //NSLog(@"Let go now to delete the photo!"); //printed everytime your'e holding card down but not swiping it either direction
-//        }
-//    };
     
     //define size of card. we are using the placeholderView's frame from the storyboard
     //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
@@ -134,11 +131,12 @@
 - (BOOL)view:(UIView *)view shouldBeChosenWithDirection:(MDCSwipeDirection)direction {
     return YES;
 }
+
 // This is called then a user swipes the view fully left or right.
 - (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
     if (direction == MDCSwipeDirectionLeft)
     {
-        [[SMFakeJobsDataManager shared] onRejectJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
+        [[SMJobsDataManagerProvider sharedDataManager] onRejectJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo deleted!");
          _currentCardIndex++;
         [self createStackOfCards];
@@ -146,13 +144,14 @@
     }
     else
     {
-        [[SMFakeJobsDataManager shared] onApplyForJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
+        [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo saved!");
         _currentCardIndex++;
         NSLog(@"current card index after incfrement: %d, ", _currentCardIndex);
         [self createStackOfCards];
     }
 }
+
 //convert uiiview to uiimage
 - (UIImage *)imageWithView:(UIView *)view
 {

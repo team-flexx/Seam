@@ -1,18 +1,19 @@
 //
-//  SMRealJobsDataManager.h
+//  SMJobsDataManagerProvider.h
 //  seam
 //
-//  Created by laurenjle on 7/25/19.
+//  Created by laurenjle on 7/29/19.
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "SMJobsDataManaging.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SMRealJobsDataManager : NSObject <SMJobsDataManaging>
+@interface SMJobsDataManagerProvider : NSObject
 
-- (void)fetchJobs;
++ (id<SMJobsDataManaging>)sharedDataManager;
 
 @end
 

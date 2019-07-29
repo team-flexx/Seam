@@ -11,7 +11,7 @@
 @implementation SMRealJobsDataManager
 
 //can make a url request. currently requesting data from a weather api. waiting to get access to job listings api.
-- (void)fetchJobs{
+- (void)fetchJobsWithCompletion:(void (^)(NSArray *, NSError *))completion{
     //store the url as an NSString
     NSString *urlString = @"https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22";
     
@@ -59,15 +59,5 @@
 - (void)fetchMatchesWithCompletion:(void (^)(NSArray *matches, NSError *error))completion{
     
 }
-
-+ (instancetype)shared {
-    static SMRealJobsDataManager *sharedManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedManager = [[self alloc] init];
-    });
-    return sharedManager;
-}
-
 
 @end
