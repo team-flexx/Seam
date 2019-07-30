@@ -25,6 +25,7 @@
               applicantSwipes:(NSMutableArray *)applicantSwipes
           applicantRejections:(NSMutableArray *)applicantRejections
                    matchArray:(NSMutableArray *)matchArray
+
 {
     if ((self = [super init])) {
         _about = about;

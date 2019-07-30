@@ -64,9 +64,11 @@
     _saveButton.hidden = YES;
     _jobFilters.hidden =YES;
 }
+
 //method to log out
 - (void)logoutUser{
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        
         // PFUser.current() will now be nil
         [self dismissViewControllerAnimated:YES completion:nil];
     }];}
@@ -74,6 +76,7 @@
 //show alert controller
 -(void)showAlertViewController:(BOOL *)value{
     if (value == NO) {
+        
         //alert
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Profile save failed"
                                                                        message:@"Please try again later"
@@ -83,12 +86,12 @@
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-                                                             // handle response here.
                                                          }];
+        
         // add the OK action to the alert controller
         [alert addAction:okAction];
         [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
+        // optional code for what happens after the alert controller has finished presenting
             
         }];
     }
@@ -131,4 +134,5 @@
 - (IBAction)logout:(id)sender {
     [self logoutUser];
 }
+
 @end

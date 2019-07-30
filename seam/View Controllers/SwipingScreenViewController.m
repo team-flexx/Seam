@@ -34,13 +34,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _currentCardIndex=0; //index of job listing array
     _currentCardTrackerIndex=1;
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
+        
+    // PFUser.current() will now be nil
     }];
     
     [[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:^(NSArray *jobListings, NSError *error)
@@ -90,11 +92,14 @@
 
 
 -(void) createSingleCardWithJobListingIndex:(int) jobListIndex{
+    
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
+    
     //set the delegate to this view controller in order to detect the swiping direction per view to work
     options.delegate = self;
+    
     //text box you see at the top left or right corner of card in the home screen when you're swiping
     options.likedText = @"Get job";
     options.likedColor = [UIColor blueColor];
@@ -105,6 +110,7 @@
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
                                                                      options:options];
     SMJobCard *cardView = [[SMJobCard alloc] init];
+    
     //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
     cardView.frame = self.placeholderView.frame;
     
@@ -122,7 +128,6 @@
     //use the view file we created with CardViewXIB.xib and SMJobCard.m
     view.imageView.image = [self imageWithView:cardView];
     [self.view addSubview:view];
-    
     NSLog(@"current card index: %d", _currentCardIndex);
     NSLog(@"tracker index, %d", _currentCardTrackerIndex);
     

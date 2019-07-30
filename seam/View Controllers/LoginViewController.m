@@ -19,16 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+
 //method to login User
 - (void)loginUser {
-    NSString *username = self.loginTextField.text;//@"a";
-    NSString *password = self.passwordTextField.text;//@"a";
+    NSString *username = self.loginTextField.text;
+    NSString *password = self.passwordTextField.text;
     
     //with parse
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
+            
             //alert
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"User log in failed"
                                                                            message:@"Please try your username and password again"
@@ -40,11 +41,12 @@
                                                              handler:^(UIAlertAction * _Nonnull action) {
                                                                  // handle response here.
                                                              }];
+            
             // add the OK action to the alert controller
             [alert addAction:okAction];
             [self presentViewController:alert animated:YES completion:^{
-                // optional code for what happens after the alert controller has finished presenting
-            
+                
+            // optional code for what happens after the alert controller has finished presenting
             }];
 
         } else {
@@ -61,14 +63,5 @@
 - (IBAction)loginin:(id)sender {
     [self loginUser];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

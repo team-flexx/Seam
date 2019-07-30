@@ -13,6 +13,7 @@
 @end
 
 @implementation SMJobCard
+
 //the three methods below overides both initializers and calls our own customInit
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {

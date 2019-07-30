@@ -14,6 +14,7 @@
 
 //getter
 - (SMUserProfile*)userProfile {
+    
     //alloc
     return
     [[SMUserProfile alloc]

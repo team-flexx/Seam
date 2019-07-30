@@ -21,10 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+
 //method for signing up user
 - (void)registerUser {
+    
     //  initialize a user object
     //with parse
     PFUser *newUser = [PFUser user];
@@ -47,16 +48,17 @@
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                style:UIAlertActionStyleDefault
                                                              handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
                                                              }];
+            
             // add the OK action to the alert controller
             [alert addAction:okAction];
             [self presentViewController:alert animated:YES completion:^{
-                // optional code for what happens after the alert controller has finished presenting
                 
+                // optional code for what happens after the alert controller has finished presenting
             }];
         } else {
             NSLog(@"User registered successfully");
+            
             // manually segue to logged in view
         }
     }];
@@ -71,14 +73,5 @@
 - (IBAction)registerUser:(id)sender {
     [self registerUser];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
