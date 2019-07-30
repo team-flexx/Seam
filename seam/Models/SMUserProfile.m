@@ -7,7 +7,9 @@
 //
 
 #import "SMUserProfile.h"
+
 #import "Parse/Parse.h"
+
 #import <Foundation/Foundation.h>
 #include <UIKit/UIKit.h>
 
@@ -19,6 +21,10 @@
                       company:(NSString *)company
                jobDescription:(NSString *)jobDescription
                        skills:(NSString *)skills
+                     jobStack:(NSMutableArray *)jobStack
+              applicantSwipes:(NSMutableArray *)applicantSwipes
+          applicantRejections:(NSMutableArray *)applicantRejections
+                   matchArray:(NSMutableArray *)matchArray
 {
     if ((self = [super init])) {
         _about = about;
@@ -27,6 +33,10 @@
         _company = company;
         _jobDescription = jobDescription;
         _skills = skills;
+        _jobStack= jobStack;
+        _applicantSwipes = applicantSwipes;
+        _applicantRejections = applicantRejections;
+        _matchArray = matchArray;
     }
     return self;
 }

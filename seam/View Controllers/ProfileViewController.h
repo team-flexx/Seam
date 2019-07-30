@@ -1,17 +1,18 @@
 //
-//  PFUser+SMUserProfile.h
+//  ProfileViewController.h
 //  seam
 //
-//  Created by festusojo on 7/24/19.
+//  Created by alexamorales on 7/18/19.
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
 #import "SMUserProfile.h"
-#import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PFUser (SMUserProfile)
+@interface ProfileViewController : UIViewController
 
 @property SMUserProfile *userProfile;
 

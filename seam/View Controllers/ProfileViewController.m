@@ -7,10 +7,11 @@
 //
 
 #import "ProfileViewController.h"
+
 #import "Parse/Parse.h"
 #import "PFUser+SMUserProfile.h"
-#import "SMUserProfile.h"
 #import "ProgressHUD.h"
+#import "SMUserProfile.h"
 
 @interface ProfileViewController () <UITextViewDelegate>
 

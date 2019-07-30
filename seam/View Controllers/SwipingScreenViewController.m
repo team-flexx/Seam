@@ -7,14 +7,16 @@
 //
 
 #import "SwipingScreenViewController.h"
-#import <MDCSwipeToChoose/MDCSwipeToChoose.h>
-#import "SMJobCard.h"
-#import "SMFakeJobsDataManager.h"
-#import "SMJobsDataManaging.h"
-#import "SMJobsDataManagerProvider.h"
-#import "SMJobListing.h"
-#import <QuartzCore/QuartzCore.h> //use for converting uiview to uiimage
+
 #import "Parse/Parse.h"
+#import "SMFakeJobsDataManager.h"
+#import "SMJobCard.h"
+#import "SMJobsDataManagerProvider.h"
+#import "SMJobsDataManaging.h"
+#import "SMJobListing.h"
+
+#import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import <QuartzCore/QuartzCore.h> //use for converting uiview to uiimage
 
 @interface SwipingScreenViewController ()
 

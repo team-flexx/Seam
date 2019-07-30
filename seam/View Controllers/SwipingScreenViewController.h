@@ -6,11 +6,12 @@
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SMFakeJobsDataManager.h"
 #import "SMJobCard.h"
 #import "SMJobListing.h"
-#import "SMFakeJobsDataManager.h"
 #import "SMRealJobsDataManager.h"
+
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 //#import "SMJobCard.h"

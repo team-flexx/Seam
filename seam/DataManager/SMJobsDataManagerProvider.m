@@ -7,6 +7,7 @@
 //
 
 #import "SMJobsDataManagerProvider.h"
+
 #import "SMFakeJobsDataManager.h"
 #import "SMRealJobsDataManager.h"
 

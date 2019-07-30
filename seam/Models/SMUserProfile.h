@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *company;
 @property (nonatomic, strong) NSString *jobDescription;
 @property (nonatomic, strong) NSString *skills;
+@property (nonatomic, strong) NSMutableArray *jobStack;
+@property (nonatomic, strong) NSMutableArray *applicantSwipes;
+@property (nonatomic, strong) NSMutableArray *applicantRejections;
+@property (nonatomic, strong) NSMutableArray *matchArray;
 
 //init 
 - (instancetype)initWithAbout:(NSString *)about
@@ -25,7 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
                         title:(NSString *)title
                       company:(NSString *)company
                jobDescription:(NSString *)jobDescription
-                       skills:(NSString *)skills;
+                       skills:(NSString *)skills
+                     jobStack:(NSMutableArray *)jobStack
+              applicantSwipes:(NSMutableArray *)applicantSwipes
+          applicantRejections:(NSMutableArray *)applicantRejections
+                   matchArray:(NSMutableArray *)matchArray;
 
 @end
 

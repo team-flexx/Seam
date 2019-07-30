@@ -6,8 +6,9 @@
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "SMJobsDataManaging.h"
+
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

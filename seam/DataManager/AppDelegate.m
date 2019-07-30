@@ -1,8 +1,6 @@
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
 
-
-
 @interface AppDelegate ()
 
 @end
