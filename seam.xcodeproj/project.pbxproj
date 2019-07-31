@@ -30,6 +30,7 @@
 		E4556F3E22EADFB100C50526 /* SMUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F3D22EADFB100C50526 /* SMUserProfile.m */; };
 		E4556F4122EADFD500C50526 /* SMFakeJobsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F4022EADFD500C50526 /* SMFakeJobsDataManager.m */; };
 		E4556F4722EAE05700C50526 /* SMRealJobsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F4622EAE05700C50526 /* SMRealJobsDataManager.m */; };
+		E4556F5722F101AB00C50526 /* SMJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F5622F101AB00C50526 /* SMJobs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		E4556F4522EAE05700C50526 /* SMRealJobsDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRealJobsDataManager.h; sourceTree = "<group>"; };
 		E4556F4622EAE05700C50526 /* SMRealJobsDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRealJobsDataManager.m; sourceTree = "<group>"; };
 		E4556F5422EFC3F400C50526 /* SMJobsDataManaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMJobsDataManaging.h; sourceTree = "<group>"; };
+		E4556F5522F101AB00C50526 /* SMJobs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobs.h; sourceTree = "<group>"; };
+		E4556F5622F101AB00C50526 /* SMJobs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobs.m; sourceTree = "<group>"; };
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +163,8 @@
 				97B6FE3122ECFB5E0030241A /* PFUser+SMUserProfile.h */,
 				97B6FE3022ECFB5E0030241A /* PFUser+SMUserProfile.m */,
 				E4556F3C22EADFB100C50526 /* SMUserProfile.h */,
+				E4556F5522F101AB00C50526 /* SMJobs.h */,
+				E4556F5622F101AB00C50526 /* SMJobs.m */,
 				E4556F3D22EADFB100C50526 /* SMUserProfile.m */,
 			);
 			path = Models;
@@ -497,6 +502,7 @@
 				E4556F3E22EADFB100C50526 /* SMUserProfile.m in Sources */,
 				9122079E22E68E6E00FB25CB /* SignUpViewController.m in Sources */,
 				9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */,
+				E4556F5722F101AB00C50526 /* SMJobs.m in Sources */,
 				9794867822D5070700E90DBD /* AppDelegate.m in Sources */,
 				E4556F0422E7BC9C00C50526 /* LoginViewController.m in Sources */,
 			);
