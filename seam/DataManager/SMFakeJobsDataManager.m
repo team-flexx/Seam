@@ -138,15 +138,5 @@
     }];
 }
 
-//make this once so we can keep acessing the shared
-+ (instancetype)shared {
-    static SMFakeJobsDataManager *sharedManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedManager = [[self alloc] init];
-    });
-    return sharedManager;
-}
-
 @end
 
