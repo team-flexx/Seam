@@ -17,7 +17,7 @@
 {
     static id<SMJobsDataManaging> sharedManager = nil;
     static dispatch_once_t onceToken;
-    BOOL isDemoMode = YES;
+    BOOL isDemoMode = NO;
     dispatch_once(&onceToken, ^{
         if (isDemoMode) {
             sharedManager = [[SMFakeJobsDataManager alloc] init];
