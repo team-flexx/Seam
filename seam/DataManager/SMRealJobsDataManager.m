@@ -6,12 +6,10 @@
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
-#import "SMRealJobsDataManager.h"
-#import "SMJobListing.h"
-
 #import "Parse/Parse.h"
 #import "PFUser+SMUserProfile.h"
-
+#import "SMJobListing.h"
+#import "SMRealJobsDataManager.h"
 #import "SMUserProfile.h"
 
 @interface SMRealJobsDataManager ()
@@ -53,51 +51,38 @@
     //make a a URL load request
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    //defines the behavior and policies to use when uploading and downloading data.(use this object to configure the timeout values, caching policies, connection requirements, and other types of information)
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
     //provide an API for downloading data from and uploading data to endpoints indicated by URLs
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     
     //A data task returns data directly to the app (in memory) as one or more NSData objects
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                                  {
-                                      if (!error)
-                                      {
-                                          //JSON is a format that encodes objects in a string. Serialization means to convert an object into that string, and deserialization is its inverse operation.
-                                          NSArray *serializedData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error][@"listings"][@"listing"];
-                                          NSLog(@"%@", serializedData);
-                                          
-                                          //NSLog(@"read serialized data from url request: %@", serializedData);
-                                          for (id obj in serializedData)
-                                          {
-                                              //                                              NSLog(@"JOB TITLE: %@", obj[@"title"]);
-                                              //                                              NSLog(@"COMPANY NAME: %@", obj[@"company"][@"name"]);
-                                              //                                              NSLog(@"LOCATION: %@", obj[@"company"][@"location"][@"name"]);
-                                              //                                              NSLog(@"\n");
-                                              
-                                              SMJobListing *aRealJob =
-                                              [[SMJobListing alloc]
-                                               initWithJobCompany:obj[@"company"][@"location"][@"name"]
-                                               title:obj[@"title"]
-                                               jobDescription:@"need to display html text"
-                                               location:obj[@"company"][@"location"][@"name"]
-                                               dates:@"N/A"
-                                               duties:@"t"
-                                               jobID:@"id"];
-                                              
-                                              [realJobListings addObject:aRealJob];
-                                              //NSLog(@"TITLE: %@, \nLOCATION: %@", aRealJob.title, aRealJob.location);
-                                              
-                                              
-                                          }
-                                          completion(realJobListings, nil);
-                                      }
-                                      else
-                                      {
-                                          NSLog(@"unable to make url request");
-                                      }
-                                  }];
+    {
+        if (!error)
+        {
+          //JSON is a format that encodes objects in a string. Serialization means to convert an object into that string, and deserialization is its inverse operation.
+          NSArray *serializedData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error][@"listings"][@"listing"];
+          
+          for (id obj in serializedData)
+          {
+              SMJobListing *aRealJob =
+              [[SMJobListing alloc]
+               initWithJobCompany:obj[@"company"][@"location"][@"name"]
+               title:obj[@"title"]
+               jobDescription:[self flattenHTML:obj[@"description"]]
+               location:obj[@"company"][@"location"][@"name"]
+               dates:@"N/A"
+               duties:@"t"
+               jobID:@"id"];
+              
+              [realJobListings addObject:aRealJob];
+          }
+          completion(realJobListings, nil);
+        }
+        else
+        {
+            NSLog(@"unable to make url request");
+        }
+    }];
     [task resume];
 }
 
@@ -126,6 +111,27 @@
 - (void)fetchMatchesWithCompletion:(void (^)(NSArray *matches, NSError *error))completion{
     NSArray *matches= [NSArray new];
     completion(matches, nil);
+}
+
+//convert HTML string
+- (NSString *)flattenHTML:(NSString *)html {
+    
+    NSScanner *theScanner;
+    NSString *text = nil;
+    theScanner = [NSScanner scannerWithString:html];
+    
+    while ([theScanner isAtEnd] == NO) {
+        
+        [theScanner scanUpToString:@"<" intoString:NULL] ;
+        
+        [theScanner scanUpToString:@">" intoString:&text] ;
+        
+        html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@""];
+    }
+    //
+    html = [html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return html;
 }
 
 @end

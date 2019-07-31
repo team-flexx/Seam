@@ -9,7 +9,6 @@
 #import "SwipingScreenViewController.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "SMJobCard.h"
-//#import "SMFakeJobsDataManager.h"
 #import "SMRealJobsDataManager.h"
 #import "SMJobsDataManaging.h"
 #import "SMJobsDataManagerProvider.h"
@@ -24,27 +23,24 @@
 @property (weak, nonatomic) IBOutlet UIView *placeholderView;
 @property (nonatomic, strong) NSMutableArray *jobs; //stores the model, an array of JobListings
 @property (nonatomic, strong) NSMutableArray<SMJobListing *> *realJobListings;
+@property (nonatomic, strong) UIView *frontCard;
+@property (nonatomic, strong) UIView *backCard;
 @end
 
 @implementation SwipingScreenViewController {
     NSUInteger _currentCardIndex; //keep track of the current view's info in viewWasChosenWithDirection method
-    NSUInteger _currentCardTrackerIndex;//keep track of the current view's info in viewWasChosenWithDirection method
-    NSUInteger _viewBeforeCurrentViewHierarchyIndex;
+    NSUInteger _nextCardTrackerIndex;//keep track of the current view's info in viewWasChosenWithDirection method
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _realJobListings = [[NSMutableArray alloc] init];
     
     _currentCardIndex=0; //index of job listing array
-    _currentCardTrackerIndex=1;
-    
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
-    }];
-    
+    _nextCardTrackerIndex=1;
     
     [[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:^(NSArray *realJobListings, NSError *error)
      {
@@ -54,19 +50,17 @@
              
              //create first card
              NSLog(@"about to make first card, at index: %d", _currentCardIndex);
-             [self createSingleCardWithJobListingIndex:_currentCardIndex]; //create 1st card
-             
-             [self createStackOfCards]; //create rest of cards if there's any left
+             _frontCard = [self createSingleCardWithJobListingIndex:_currentCardIndex]; //create 1st card
+             _backCard = [self createSingleCardWithJobListingIndex:_nextCardTrackerIndex]; //create 2nd card
          }
          else
          {
              NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
          }
-         
      }];
 }
 
--(void) createStackOfCards{
+-(void) modifyReusableCards{
     NSLog(@"creating stack of cards, something may have deleted");
     if(_currentCardIndex == [_jobs count]) //BASE CASE
     {
@@ -74,17 +68,16 @@
     }
     else
     {
-        if (_currentCardIndex == _currentCardTrackerIndex)
+        if (_currentCardIndex == _nextCardTrackerIndex)
         {
-            NSLog(@"create new card because one just got deleted");
-            _currentCardTrackerIndex++;
-            [self createSingleCardWithJobListingIndex:_currentCardIndex];
+            NSLog(@"change data on card because one just got deleted");
+            _nextCardTrackerIndex++;
         }
     }
 }
 
-
--(void) createSingleCardWithJobListingIndex:(int) jobListIndex{
+//for reusable, only used TWICE to make first and second card
+-(UIView*) createSingleCardWithJobListingIndex:(int) jobListIndex {
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
@@ -99,36 +92,34 @@
     //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
                                                                      options:options];
-    SMJobCard *cardView = [[SMJobCard alloc] init];
-    //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
-    cardView.frame = self.placeholderView.frame;
+
+    [self changeDataOnCardAtIndex:jobListIndex atCard:view];
     
-    //testing fake data
-    //create a SMFakeJobsDataManager.h object which is where data is coming from
-    //usually this is where we dequeue a reusable cell but for now we are focusing on passing data to one card
-    // NSLog(self.jobs[jobListIndex]);
-    SMJobListing *jobPointer = self.jobs[jobListIndex];
-    //NSLog(jobPointer);
-    cardView.jobDescriptionLabel.text = jobPointer.title;
-    cardView.jobScheduleLabel.text = jobPointer.dates;
-    cardView.locationLabel.text = jobPointer.location;
-    cardView.dutiesLabel.text = @"N/A for this API";
-    
-    
-    
-    
-    //convert uiview to uiimage in order for it to show up as a card
-    //use the view file we created with CardViewXIB.xib and SMJobCard.m
-    view.imageView.image = [self imageWithView:cardView];
     [self.view addSubview:view];
     
-    NSLog(@"current card index: %d", _currentCardIndex);
-    NSLog(@"tracker index, %d", _currentCardTrackerIndex);
+    return view;
     
 }
 
+- (void) changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
+    SMJobCard *theCardView = [[SMJobCard alloc] init];
+    SMJobListing *jobPointer = self.jobs[ind];
+    
+    //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
+    theCardView.frame = self.placeholderView.frame;
+    
+    theCardView.jobDescriptionLabel.text = jobPointer.title;
+    theCardView.jobScheduleLabel.text = jobPointer.dates;
+    theCardView.locationLabel.text = jobPointer.location;
+    theCardView.dutiesLabel.text = @"Fill in..."; //jobPointer.description;
+    
+    //convert uiview to uiimage in order for it to show up as a card
+    //use the view file we created with CardViewXIB.xib and SMJobCard.m
+    theView.imageView.image = [self imageWithView:theCardView];
+}
+
 //NOTE: these methods work after you set the options.delegate = self in viewDidLoad. this would add it to array of applicant_swipes
-// Sent before a choice is made. Return `YES`.
+// Sent before a choice is made
 - (BOOL)view:(UIView *)view shouldBeChosenWithDirection:(MDCSwipeDirection)direction {
     return YES;
 }
@@ -139,18 +130,35 @@
     {
         [[SMJobsDataManagerProvider sharedDataManager] onRejectJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo deleted!");
-        _currentCardIndex++;
-        [self createStackOfCards];
         
+        [self switchAndMoveFrontAndBackCards];
     }
     else
     {
         [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo saved!");
-        _currentCardIndex++;
-        NSLog(@"current card index after incfrement: %d, ", _currentCardIndex);
-        [self createStackOfCards];
+        
+        [self switchAndMoveFrontAndBackCards];
     }
+}
+
+-(void) switchAndMoveFrontAndBackCards{
+    //reset where the first card will be placed after it was swiped away
+    _frontCard.frame = self.placeholderView.frame;
+    [self changeDataOnCardAtIndex:_nextCardTrackerIndex atCard:_frontCard];
+    
+    //add the _firstCard back to subview
+    [self.view addSubview:_frontCard];
+    [self.view sendSubviewToBack:_frontCard];
+    
+    //first card is now second card
+    //second card is what used to be the first card
+    UIView *temp = _frontCard;
+    _frontCard = _backCard;
+    _backCard = temp;
+    
+    _currentCardIndex++;
+    [self modifyReusableCards];
 }
 
 //convert uiiview to uiimage
@@ -162,5 +170,6 @@
     UIGraphicsEndImageContext();
     return img;
 }
+
 @end
 
