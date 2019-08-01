@@ -19,10 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UIView *cardDetailsView;
 
 //used this for storyboard
-@property (weak, nonatomic) IBOutlet UILabel *jobDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jobTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobScheduleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dutiesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jobTypeLabel;
 @property (strong, nonatomic) SMJobListing *listing;
 
 @end

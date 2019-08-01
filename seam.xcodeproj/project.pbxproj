@@ -165,7 +165,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9743F7D022DFA16A002FFB7E /* View Controllers */ = {
+		9743F7D022DFA16A002FFB7E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */,
@@ -179,7 +179,7 @@
 				9122078C22E0FC0500FB25CB /* ProfileViewController.h */,
 				9122078D22E0FC0500FB25CB /* ProfileViewController.m */,
 			);
-			path = "View Controllers";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		9743F7D922DFBBD5002FFB7E /* Views */ = {
@@ -219,7 +219,7 @@
 			children = (
 				97B6FE3622EF5ABF0030241A /* DataManager */,
 				9743F7D922DFBBD5002FFB7E /* Views */,
-				9743F7D022DFA16A002FFB7E /* View Controllers */,
+				9743F7D022DFA16A002FFB7E /* ViewControllers */,
 				9743F7CC22DD2D71002FFB7E /* Models */,
 				9794867C22D5070700E90DBD /* Main.storyboard */,
 				9794867F22D5070800E90DBD /* Assets.xcassets */,
