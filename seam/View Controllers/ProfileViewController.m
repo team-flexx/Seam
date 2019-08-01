@@ -116,17 +116,18 @@
     [ProgressHUD show:@"Please wait..."];
     
     //saves in background and allows for error checking
+    //saves in background and allows for error checking
     [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error){
             [ProgressHUD dismiss];
             [self showAlertViewController:false];
+            return;
         }
-        else{
-            NSString *text = updatedProfile.about;
-            NSLog(@"%@", text);
-            [ProgressHUD dismiss];
-            [self showAlertViewController:true];
-        }
+        
+        NSString *text = updatedProfile.about;
+        NSLog(@"%@", text);
+        [ProgressHUD dismiss];
+        [self showAlertViewController:true];
     }];
 }
 

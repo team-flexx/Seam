@@ -26,8 +26,6 @@
         //this (after setting up what the Authenticated View should be) allows the user to stay logged in
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
     }
-
-
     
     return YES;
 }

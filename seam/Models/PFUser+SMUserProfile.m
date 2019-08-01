@@ -10,12 +10,15 @@
 
 #import "SMUserProfile.h"
 
+//static NSString *const kConstant = @"myconstant";
+
+//makes category of basic NSObject with added functionality
 @implementation PFUser (SMUserProfile)
 
 //getter
 - (SMUserProfile*)userProfile {
     
-    //alloc
+    //alloc to initialie with keys
     return
     [[SMUserProfile alloc]
      initWithAbout:[self objectForKey:@"about"]

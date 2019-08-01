@@ -6,28 +6,23 @@
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
+#import "Parse/Parse.h"
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SMJobListing : NSObject
+@interface SMJobListing : PFObject <PFSubclassing>
 
 //properties used in SMJobCard
-@property (nonatomic, strong) NSString *jobCompany;
+@property (nonatomic, strong) PFUser *author;
+@property (nonatomic, strong) NSString *direction;
+@property (nonatomic, strong) NSString *typeOfJob;
+@property (nonatomic, strong) NSString *companyName;
+@property (nonatomic, strong) NSString *locationName;
+@property (nonatomic, strong) NSString *jobID;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *jobDescription;
-@property (nonatomic, strong) NSString *location;
-@property (nonatomic, strong) NSString *dates;
-@property (nonatomic, strong) NSString *duties;
-@property (nonatomic, strong) NSString *jobID;
-
-- (instancetype)initWithJobCompany:(NSString *)jobCompany
-                             title:(NSString *)title
-                    jobDescription:(NSString *)jobDescription
-                          location:(NSString *)location
-                             dates:(NSString *)dates
-                            duties:(NSString *)duties
-                             jobID:(NSString *)jobID;
 
 @end
 

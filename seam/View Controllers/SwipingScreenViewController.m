@@ -106,8 +106,7 @@
     theCardView.frame = self.placeholderView.frame;
     
     theCardView.jobDescriptionLabel.text = jobPointer.title;
-    theCardView.jobScheduleLabel.text = jobPointer.dates;
-    theCardView.locationLabel.text = jobPointer.location;
+    theCardView.locationLabel.text = jobPointer.locationName;
     theCardView.dutiesLabel.text = @"Fill in..."; //jobPointer.description;
     
     //convert uiview to uiimage in order for it to show up as a card
@@ -125,13 +124,13 @@
 - (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
     if (direction == MDCSwipeDirectionLeft)
     {
-        [[SMJobsDataManagerProvider sharedDataManager] onRejectJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
+        [[SMJobsDataManagerProvider sharedDataManager] onRejectJob:self.jobs[_currentCardIndex]];
         NSLog(@"Photo deleted!");
         [self switchAndMoveFrontAndBackCards];
     }
     else
     {
-        [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
+        [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:self.jobs[_currentCardIndex]];
         NSLog(@"Photo saved!");
         [self switchAndMoveFrontAndBackCards];
     }

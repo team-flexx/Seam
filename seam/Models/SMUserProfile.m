@@ -11,7 +11,7 @@
 #import "Parse/Parse.h"
 
 #import <Foundation/Foundation.h>
-#include <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 
 @implementation SMUserProfile
 
@@ -25,9 +25,8 @@
               applicantSwipes:(NSMutableArray *)applicantSwipes
           applicantRejections:(NSMutableArray *)applicantRejections
                    matchArray:(NSMutableArray *)matchArray
-
 {
-    if ((self = [super init])) {
+    if (self = [super init]) {
         _about = about;
         _education = education;
         _title = title;
@@ -39,6 +38,7 @@
         _applicantRejections = applicantRejections;
         _matchArray = matchArray;
     }
+    
     return self;
 }
 

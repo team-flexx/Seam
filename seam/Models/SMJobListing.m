@@ -8,27 +8,28 @@
 
 #import "SMJobListing.h"
 
+#import <Parse/PFObject+Subclass.h>
+
 @implementation SMJobListing
 
-//instantiates the jobListing type and passes the values into themselves to be viewable
-- (instancetype)initWithJobCompany:(NSString *)jobCompany
-                             title:(NSString *)title
-                    jobDescription:(NSString *)jobDescription
-                          location:(NSString *)location
-                             dates:(NSString *)dates
-                            duties:(NSString *)duties
-                             jobID:(NSString *)jobID
-{
-    if ((self = [super init])) {
-        _title = title;
-        _jobCompany = jobCompany;
-        _jobDescription = jobDescription;
-        _location = location;
-        _dates = dates;
-        _duties = duties;
-        _jobID = jobID;
-    }
-    return self;
+@dynamic author;
+@dynamic direction;
+@dynamic typeOfJob;
+@dynamic companyName;
+@dynamic locationName;
+@dynamic jobID;
+@dynamic title;
+@dynamic jobDescription;
+
+//can just use new/init alloc now instead of init
+
+//registers to Parse
++ (void)load {
+    [self registerSubclass];
+}
+
++ (nonnull NSString *)parseClassName {
+    return @"SMJobs";
 }
 
 @end
