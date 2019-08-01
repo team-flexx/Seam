@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SMRealJobsDataManager : NSObject <SMJobsDataManaging>
 
-- (void)fetchJobs;
-
 @end
 
 NS_ASSUME_NONNULL_END

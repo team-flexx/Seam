@@ -39,8 +39,8 @@
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _realJobListings = [[NSMutableArray alloc] init];
     
-    _currentCardIndex=0; //index of job listing array
-    _nextCardTrackerIndex=1;
+    _currentCardIndex = 0; //index of job listing array
+    _nextCardTrackerIndex = 1;
     
     [[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:^(NSArray *realJobListings, NSError *error)
      {
@@ -60,7 +60,7 @@
      }];
 }
 
--(void) modifyReusableCards{
+-(void)modifyReusableCards{
     NSLog(@"creating stack of cards, something may have deleted");
     if(_currentCardIndex == [_jobs count]) //BASE CASE
     {
@@ -77,7 +77,7 @@
 }
 
 //for reusable, only used TWICE to make first and second card
--(UIView*) createSingleCardWithJobListingIndex:(int) jobListIndex {
+- (UIView*)createSingleCardWithJobListingIndex:(int)jobListIndex{
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
@@ -94,14 +94,11 @@
                                                                      options:options];
 
     [self changeDataOnCardAtIndex:jobListIndex atCard:view];
-    
     [self.view addSubview:view];
-    
     return view;
-    
 }
 
-- (void) changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
+- (void)changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
     SMJobCard *theCardView = [[SMJobCard alloc] init];
     SMJobListing *jobPointer = self.jobs[ind];
     
@@ -130,22 +127,22 @@
     {
         [[SMJobsDataManagerProvider sharedDataManager] onRejectJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo deleted!");
-        
         [self switchAndMoveFrontAndBackCards];
     }
     else
     {
         [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:[NSMutableArray arrayWithObjects:self.jobs[_currentCardIndex], nil]];
         NSLog(@"Photo saved!");
-        
         [self switchAndMoveFrontAndBackCards];
     }
 }
 
--(void) switchAndMoveFrontAndBackCards{
+-(void)switchAndMoveFrontAndBackCards{
     //reset where the first card will be placed after it was swiped away
     _frontCard.frame = self.placeholderView.frame;
-    [self changeDataOnCardAtIndex:_nextCardTrackerIndex atCard:_frontCard];
+    
+    int nextNextCardIndex = _nextCardTrackerIndex++;
+    [self changeDataOnCardAtIndex:nextNextCardIndex atCard:_frontCard];
     
     //add the _firstCard back to subview
     [self.view addSubview:_frontCard];
@@ -166,7 +163,7 @@
 {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
 }
