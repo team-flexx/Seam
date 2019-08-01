@@ -104,12 +104,11 @@
     
     //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
     theCardView.frame = self.placeholderView.frame;
-    
-    
+
     theCardView.jobTitleLabel.text = jobPointer.title;
     theCardView.locationLabel.text = jobPointer.locationName;
     theCardView.jobTypeLabel.text = @"Fill in..."; //jobPointer.description;
-    
+
     //convert uiview to uiimage in order for it to show up as a card
     //use the view file we created with CardViewXIB.xib and SMJobCard.m
     theView.imageView.image = [self imageWithView:theCardView];
