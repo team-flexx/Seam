@@ -1,7 +1,3 @@
------------
-PFUser + file .h
-
-
 //
 //  PFUser+SMUserProfile.m
 //  seam
