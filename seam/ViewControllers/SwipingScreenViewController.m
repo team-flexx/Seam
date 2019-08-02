@@ -36,6 +36,30 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+   
+    //testing cloud code
+    
+//    [PFCloud callFunctionInBackground:@"hello"
+//                       withParameters:nil
+//                                block:^(NSString *hi, NSError *error) {
+//                                    if (error) {
+//                                        NSLog(@"something wrong with cloud function called hello");
+//                                    }
+//                                    NSLog(@"%@", hi);
+//                                    
+//                                }];
+//   
+    
+//    [PFCloud callFunctionInBackground:@"friday"
+//                       withParameters:nil
+//                                block:^(NSString *wat, NSError *error) {
+//                                    if (error) {
+//                                        NSLog(@"something is wrong with cloud function fridayx");
+//                                    }
+//                                    NSLog(@"%@", wat);
+//
+//                                }];
+    
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _realJobListings = [[NSMutableArray alloc] init];
     
@@ -99,16 +123,18 @@
 }
 
 - (void)changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
+    // check index
+
     SMJobCard *theCardView = [[SMJobCard alloc] init];
     SMJobListing *jobPointer = self.jobs[ind];
     
     //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
     theCardView.frame = self.placeholderView.frame;
-    
-    theCardView.jobDescriptionLabel.text = jobPointer.title;
+
+    theCardView.jobTitleLabel.text = jobPointer.title;
     theCardView.locationLabel.text = jobPointer.locationName;
-    theCardView.dutiesLabel.text = @"Fill in..."; //jobPointer.description;
-    
+    theCardView.jobTypeLabel.text = @"Fill in..."; //jobPointer.description;
+
     //convert uiview to uiimage in order for it to show up as a card
     //use the view file we created with CardViewXIB.xib and SMJobCard.m
     theView.imageView.image = [self imageWithView:theCardView];
@@ -144,7 +170,10 @@
     [self changeDataOnCardAtIndex:nextNextCardIndex atCard:_frontCard];
     
     //add the _firstCard back to subview
+    //retains _frontCard, which is needed to reuse this _frontCard view after removing it from the view hierarchy (from pod)
     [self.view addSubview:_frontCard];
+    
+    //Inserts a view among the view’s subviews so it’s displayed immediately above or below another view
     [self.view sendSubviewToBack:_frontCard];
     
     //first card is now second card
