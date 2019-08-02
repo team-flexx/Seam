@@ -91,11 +91,10 @@
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
         
-        if ([PFUser.currentUser.userProfile.applicantSwipes containsObject:obj[@"id"]]){
-            if ([PFUser.currentUser.userProfile.applicantRejections containsObject:obj[@"id"]]){
+        if (![PFUser.currentUser.userProfile.applicantSwipes containsObject:obj[@"id"]] &&
+            ![PFUser.currentUser.userProfile.applicantRejections containsObject:obj[@"id"]]) {
             [theJobListings addObject:aRealJob];
         }
-    }
     }
 }
     

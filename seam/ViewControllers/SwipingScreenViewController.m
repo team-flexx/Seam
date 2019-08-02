@@ -99,6 +99,8 @@
 }
 
 - (void)changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
+    // check index
+
     SMJobCard *theCardView = [[SMJobCard alloc] init];
     SMJobListing *jobPointer = self.jobs[ind];
     
