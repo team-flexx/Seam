@@ -88,6 +88,11 @@
         aRealJob.jobID = obj[@"id"];
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
+
+        if ([PFUser.currentUser.userProfile.applicantSwipes isKindOfClass:[NSNull class]] &&
+            [PFUser.currentUser.userProfile.applicantRejections isKindOfClass:[NSNull class]]) {
+            [theJobListings addObject:aRealJob];
+        }
         
         if (![PFUser.currentUser.userProfile.applicantSwipes containsObject:obj[@"id"]] &&
             ![PFUser.currentUser.userProfile.applicantRejections containsObject:obj[@"id"]]) {
