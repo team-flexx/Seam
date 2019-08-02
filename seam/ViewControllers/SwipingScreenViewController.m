@@ -36,6 +36,30 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+   
+    //testing cloud code
+    
+//    [PFCloud callFunctionInBackground:@"hello"
+//                       withParameters:nil
+//                                block:^(NSString *hi, NSError *error) {
+//                                    if (error) {
+//                                        NSLog(@"something wrong with cloud function called hello");
+//                                    }
+//                                    NSLog(@"%@", hi);
+//                                    
+//                                }];
+//   
+    
+//    [PFCloud callFunctionInBackground:@"friday"
+//                       withParameters:nil
+//                                block:^(NSString *wat, NSError *error) {
+//                                    if (error) {
+//                                        NSLog(@"something is wrong with cloud function fridayx");
+//                                    }
+//                                    NSLog(@"%@", wat);
+//
+//                                }];
+    
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _realJobListings = [[NSMutableArray alloc] init];
     

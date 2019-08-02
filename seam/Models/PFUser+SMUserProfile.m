@@ -43,10 +43,14 @@ static NSString *const jConstant = @"matchArray";
 }
 
 -(void)checkForNil:(id)inputVal :(NSString*)resultingVal {
-    if (inputVal = nil){
-        [self setObject:[NSNull null] forKey:resultingVal];
+    if (inputVal){
+        [self setObject:inputVal forKey:resultingVal];
     }
-    [self setObject:inputVal forKey:resultingVal];
+    else{
+        [self setObject:[NSNull null] forKey:resultingVal];
+      
+    }
+   
 }
 
 //setter

@@ -36,8 +36,6 @@
         _matchArray = [NSMutableArray new];
         _jobStack = [NSMutableArray new];
     }
-    _applicantSwipes = [PFUser.currentUser.userProfile.applicantSwipes mutableCopy];
-    _applicantRejections = [PFUser.currentUser.userProfile.applicantRejections mutableCopy];
     return self;
 }
 
