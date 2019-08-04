@@ -6,11 +6,11 @@
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
-#import "SMJobListing.h"
+#import "SMApplicantSwipeLeft.h"
 
 #import <Parse/PFObject+Subclass.h>
 
-@implementation SMJobListing
+@implementation SMApplicantSwipeLeft
 
 @dynamic author;
 @dynamic direction;
@@ -29,7 +29,7 @@
 }
 
 + (nonnull NSString *)parseClassName {
-    return @"SMJobListing";
+    return @"SMApplicantSwipeLeft";
 }
 
 @end

@@ -30,6 +30,9 @@
 		E4556F3E22EADFB100C50526 /* SMUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F3D22EADFB100C50526 /* SMUserProfile.m */; };
 		E4556F4122EADFD500C50526 /* SMFakeJobsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F4022EADFD500C50526 /* SMFakeJobsDataManager.m */; };
 		E4556F4722EAE05700C50526 /* SMRealJobsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F4622EAE05700C50526 /* SMRealJobsDataManager.m */; };
+		E4624F5522F50C5100DC5CD9 /* SMApplicantSwipeRight.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F5422F50C5100DC5CD9 /* SMApplicantSwipeRight.m */; };
+		E4624F5822F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */; };
+		E4624F6122F6B71900DC5CD9 /* SMEmployerSwipeRight.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F6022F6B71900DC5CD9 /* SMEmployerSwipeRight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,12 @@
 		E4556F4522EAE05700C50526 /* SMRealJobsDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRealJobsDataManager.h; sourceTree = "<group>"; };
 		E4556F4622EAE05700C50526 /* SMRealJobsDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRealJobsDataManager.m; sourceTree = "<group>"; };
 		E4556F5422EFC3F400C50526 /* SMJobsDataManaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMJobsDataManaging.h; sourceTree = "<group>"; };
+		E4624F5322F50C5100DC5CD9 /* SMApplicantSwipeRight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMApplicantSwipeRight.h; sourceTree = "<group>"; };
+		E4624F5422F50C5100DC5CD9 /* SMApplicantSwipeRight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMApplicantSwipeRight.m; sourceTree = "<group>"; };
+		E4624F5622F50CCA00DC5CD9 /* SMApplicantSwipeLeft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMApplicantSwipeLeft.h; sourceTree = "<group>"; };
+		E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMApplicantSwipeLeft.m; sourceTree = "<group>"; };
+		E4624F5F22F6B71900DC5CD9 /* SMEmployerSwipeRight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SMEmployerSwipeRight.h; path = /Users/festusojo/Desktop/Seam/seam/Models/SMEmployerSwipeRight.h; sourceTree = "<absolute>"; };
+		E4624F6022F6B71900DC5CD9 /* SMEmployerSwipeRight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SMEmployerSwipeRight.m; path = /Users/festusojo/Desktop/Seam/seam/Models/SMEmployerSwipeRight.m; sourceTree = "<absolute>"; };
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				9743F7CD22DD3590002FFB7E /* SMJobListing.h */,
+				E4624F5F22F6B71900DC5CD9 /* SMEmployerSwipeRight.h */,
+				E4624F6022F6B71900DC5CD9 /* SMEmployerSwipeRight.m */,
+				E4624F5322F50C5100DC5CD9 /* SMApplicantSwipeRight.h */,
+				E4624F5422F50C5100DC5CD9 /* SMApplicantSwipeRight.m */,
+				E4624F5622F50CCA00DC5CD9 /* SMApplicantSwipeLeft.h */,
+				E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */,
 				9743F7CE22DD3590002FFB7E /* SMJobListing.m */,
 				97B6FE3122ECFB5E0030241A /* PFUser+SMUserProfile.h */,
 				97B6FE3022ECFB5E0030241A /* PFUser+SMUserProfile.m */,
@@ -217,6 +232,8 @@
 		9794867522D5070700E90DBD /* seam */ = {
 			isa = PBXGroup;
 			children = (
+				9794867622D5070700E90DBD /* AppDelegate.h */,
+				9794867722D5070700E90DBD /* AppDelegate.m */,
 				97B6FE3622EF5ABF0030241A /* DataManager */,
 				9743F7D922DFBBD5002FFB7E /* Views */,
 				9743F7D022DFA16A002FFB7E /* ViewControllers */,
@@ -258,8 +275,6 @@
 				97B6FE3722EF5AEC0030241A /* SMJobsDataManagerProvider.h */,
 				97B6FE3822EF5AEC0030241A /* SMJobsDataManagerProvider.m */,
 				E4556F5422EFC3F400C50526 /* SMJobsDataManaging.h */,
-				9794867622D5070700E90DBD /* AppDelegate.h */,
-				9794867722D5070700E90DBD /* AppDelegate.m */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -485,11 +500,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4624F6122F6B71900DC5CD9 /* SMEmployerSwipeRight.m in Sources */,
+				E4624F5822F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m in Sources */,
 				97B6FE3222ECFB5F0030241A /* PFUser+SMUserProfile.m in Sources */,
 				97B6FE3922EF5AEC0030241A /* SMJobsDataManagerProvider.m in Sources */,
 				9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */,
 				911708AA22E7C80700DBCA22 /* MatchesViewController.m in Sources */,
 				9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */,
+				E4624F5522F50C5100DC5CD9 /* SMApplicantSwipeRight.m in Sources */,
 				E4556F4722EAE05700C50526 /* SMRealJobsDataManager.m in Sources */,
 				9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,

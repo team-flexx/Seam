@@ -6,6 +6,9 @@
 //
 
 #import "SMJobListing.h"
+#import "SMApplicantSwipeLeft.h"
+#import "SMApplicantSwipeRight.h"
+
 
 #import <Foundation/Foundation.h>
 

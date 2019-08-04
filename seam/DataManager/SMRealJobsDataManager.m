@@ -10,7 +10,8 @@
 
 #import "Parse/Parse.h"
 #import "PFUser+SMUserProfile.h"
-#import "SMJobListing.h"
+#import "SMApplicantSwipeLeft.h"
+#import "SMApplicantSwipeRight.h"
 #import "SMUserProfile.h"
 
 @interface SMRealJobsDataManager ()
@@ -106,6 +107,7 @@
     
     //instantiates profile and passes job into it
     SMUserProfile *updatedProfile = PFUser.currentUser.userProfile;
+    NSLog(@"%@", PFUser.currentUser.username);
     
     //adds new values to chosenJob selected before saving to Parse
     chosenJob.author = [PFUser currentUser];
@@ -113,9 +115,14 @@
     [chosenJob saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
     }];
     
+    SMApplicantSwipeRight *currentSwipe = [SMApplicantSwipeRight new];
+    currentSwipe.jobID = chosenJob.jobID;
+    currentSwipe.author = chosenJob.author;
+    [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+    }];
+    
     //saves applicantswipes and passes them into version on user's Parse account
-    [self.applicantSwipes addObject:chosenJob.jobID];
-    updatedProfile.applicantSwipes = [self.applicantSwipes mutableCopy];
+    [updatedProfile.applicantSwipes addObject:chosenJob];
     [PFObject saveAllInBackground:updatedProfile.applicantSwipes block:^(BOOL succeeded, NSError *error) {}];
     PFUser.currentUser.userProfile = updatedProfile;
     
@@ -137,9 +144,14 @@
     [chosenJob saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
     }];
     
+    SMApplicantSwipeLeft *currentSwipe = [SMApplicantSwipeLeft new];
+    currentSwipe.jobID = chosenJob.jobID;
+    currentSwipe.author = chosenJob.author;
+    [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+    }];
+    
     //saves applicantrejections and passes them into version on user's Parse account
-    [self.applicantRejections addObject:chosenJob.jobID];
-    updatedProfile.applicantRejections = [self.applicantRejections mutableCopy];
+    [updatedProfile.applicantRejections addObject:chosenJob];
     [PFObject saveAllInBackground:updatedProfile.applicantRejections block:^(BOOL succeeded, NSError *error) {}];
     PFUser.currentUser.userProfile = updatedProfile;
     
