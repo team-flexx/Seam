@@ -10,8 +10,9 @@
 #import <Parse/Parse.h>
 
 @interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *companyNameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *companyNameLabel;
+
 @end
 
 @implementation MatchesViewController

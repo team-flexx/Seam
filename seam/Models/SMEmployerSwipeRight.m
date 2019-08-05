@@ -13,13 +13,7 @@
 @implementation SMEmployerSwipeRight
 
 @dynamic author;
-@dynamic direction;
-@dynamic typeOfJob;
-@dynamic companyName;
-@dynamic locationName;
 @dynamic jobID;
-@dynamic title;
-@dynamic jobDescription;
 
 //can just use new/init alloc now instead of init
 

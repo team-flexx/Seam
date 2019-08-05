@@ -16,13 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //properties used in SMJobCard
 @property (nonatomic, strong) PFUser *author;
-@property (nonatomic, strong) NSString *direction;
-@property (nonatomic, strong) NSString *typeOfJob;
-@property (nonatomic, strong) NSString *companyName;
-@property (nonatomic, strong) NSString *locationName;
 @property (nonatomic, strong) NSString *jobID;
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *jobDescription;
 
 @end
 

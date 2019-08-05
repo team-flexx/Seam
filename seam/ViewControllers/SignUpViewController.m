@@ -8,6 +8,7 @@
 
 #import "SignUpViewController.h"
 
+#import "AppDelegate.h"
 #import "Parse/Parse.h"
 
 @interface SignUpViewController ()
@@ -60,7 +61,12 @@
             NSLog(@"User registered successfully");
             
             // manually segue to logged in view
-            [self performSegueWithIdentifier:@"showMainView" sender:nil];
+//            [self performSegueWithIdentifier:@"showMainView" sender:nil];
+            
+            // manually set new root VC 
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil];
+            UITabBarController *rootViewController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
         }
     }];
 }
