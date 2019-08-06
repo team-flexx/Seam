@@ -24,7 +24,7 @@
         //this verifies the user is authenticated after logging in
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         //this (after setting up what the Authenticated View should be) allows the user to stay logged in
-        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
     }
     
     return YES;
