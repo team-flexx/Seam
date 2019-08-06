@@ -90,11 +90,15 @@
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
 
-        [theJobListings addObject:aRealJob];
-        NSSet *tempSet = [NSSet setWithArray:theJobListings];
-        NSArray *tempArray = [tempSet allObjects];
-        NSMutableArray *finalVer = [tempArray mutableCopy];
-        theJobListings = finalVer;
+//        if ([PFUser.currentUser.userProfile.applicantSwipes isKindOfClass:[NSNull class]] &&
+//            [PFUser.currentUser.userProfile.applicantRejections isKindOfClass:[NSNull class]]) {
+//            [theJobListings addObject:aRealJob];
+//        }
+//
+//        if (![PFUser.currentUser.userProfile.applicantSwipes containsObject:obj[@"id"]] &&
+//            ![PFUser.currentUser.userProfile.applicantRejections containsObject:obj[@"id"]]) {
+            [theJobListings addObject:aRealJob];
+//        }
     }
 }
     
@@ -111,6 +115,7 @@
     [chosenJob saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
     }];
     
+    //saves to separate swipeRight array
     SMApplicantSwipeRight *currentSwipe = [SMApplicantSwipeRight new];
     currentSwipe.jobID = chosenJob.jobID;
     currentSwipe.author = chosenJob.author;
@@ -140,6 +145,7 @@
     [chosenJob saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
     }];
     
+    //saves to separate swipeLeft array
     SMApplicantSwipeLeft *currentSwipe = [SMApplicantSwipeLeft new];
     currentSwipe.jobID = chosenJob.jobID;
     currentSwipe.author = chosenJob.author;

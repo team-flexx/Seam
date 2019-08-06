@@ -35,7 +35,7 @@ static NSString *const jConstant = @"matchArray";
     }
 }
 
-- (NSMutableArray *)checkForNullArray:(id)inputVal {
+- (NSMutableArray *)checkForNullArray:(NSMutableArray *)inputVal {
     if (inputVal) {
         return inputVal;
     }
@@ -51,16 +51,16 @@ static NSString *const jConstant = @"matchArray";
     //alloc to initialize with keys
     return
     [[SMUserProfile alloc]
-     initWithAbout:[self checkForNullString:aConstant]
-     education:[self checkForNullString:bConstant]
-     title:[self checkForNullString:cConstant]
-     company:[self checkForNullString:dConstant]
-     jobDescription:[self checkForNullString:eConstant]
-     skills:[self checkForNullString:fConstant]
-     jobStack:[self checkForNullArray:gConstant]
-     applicantSwipes:[self checkForNullArray:hConstant]
-     applicantRejections:[self checkForNullArray:iConstant]
-     matchArray:[self checkForNullArray:jConstant]];
+     initWithAbout:[self checkForNullString:[self objectForKey:aConstant]]
+     education:[self checkForNullString:[self objectForKey:bConstant]]
+     title:[self checkForNullString:[self objectForKey:cConstant]]
+     company:[self checkForNullString:[self objectForKey:dConstant]]
+     jobDescription:[self checkForNullString:[self objectForKey:eConstant]]
+     skills:[self checkForNullString:[self objectForKey:fConstant]]
+     jobStack:[self checkForNullArray:[self objectForKey:gConstant]]
+     applicantSwipes:[self checkForNullArray:[self objectForKey:hConstant]]
+     applicantRejections:[self checkForNullArray:[self objectForKey:iConstant]]
+     matchArray:[self checkForNullArray:[self objectForKey:jConstant]]];
 }
 
 -(void)checkForNil:(id)inputVal :(NSString*)resultingVal {
