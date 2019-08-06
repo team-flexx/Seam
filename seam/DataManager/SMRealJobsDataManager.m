@@ -90,10 +90,11 @@
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
 
-        NSMutableArray *tempArray = [NSMutableArray new];
-        [tempArray addObject:aRealJob];
-        NSSet *tempSet = [NSSet setWithArray:tempArray];
-        NSArray *array = [tempSet allObjects];
+        [theJobListings addObject:aRealJob];
+        NSSet *tempSet = [NSSet setWithArray:theJobListings];
+        NSArray *tempArray = [tempSet allObjects];
+        NSMutableArray *finalVer = [tempArray mutableCopy];
+        theJobListings = finalVer;
     }
 }
     
