@@ -24,33 +24,52 @@ static NSString *const jConstant = @"matchArray";
 //makes category of basic NSObject with added functionality
 @implementation PFUser (SMUserProfile)
 
+
+//reading side, look for nil
+- (NSString *)checkForNullString:(id)inputVal {
+    if (inputVal) {
+        return inputVal;
+    }
+    else {
+        return @"";
+    }
+}
+
+- (NSMutableArray *)checkForNullArray:(id)inputVal {
+    if (inputVal) {
+        return inputVal;
+    }
+    else {
+        NSMutableArray *sampleInput = [NSMutableArray new];
+        return sampleInput;
+    }
+}
+
 //getter
 - (SMUserProfile*)userProfile {
     
-    //alloc to initialie with keys
+    //alloc to initialize with keys
     return
     [[SMUserProfile alloc]
-     initWithAbout:[self objectForKey:aConstant]
-     education:[self objectForKey:bConstant]
-     title:[self objectForKey:cConstant]
-     company:[self objectForKey:dConstant]
-     jobDescription:[self objectForKey:eConstant]
-     skills:[self objectForKey:fConstant]
-     jobStack:[self objectForKey:gConstant]
-     applicantSwipes:[self objectForKey:hConstant]
-     applicantRejections:[self objectForKey:iConstant]
-     matchArray:[self objectForKey:jConstant]];
+     initWithAbout:[self checkForNullString:aConstant]
+     education:[self checkForNullString:bConstant]
+     title:[self checkForNullString:cConstant]
+     company:[self checkForNullString:dConstant]
+     jobDescription:[self checkForNullString:eConstant]
+     skills:[self checkForNullString:fConstant]
+     jobStack:[self checkForNullArray:gConstant]
+     applicantSwipes:[self checkForNullArray:hConstant]
+     applicantRejections:[self checkForNullArray:iConstant]
+     matchArray:[self checkForNullArray:jConstant]];
 }
 
 -(void)checkForNil:(id)inputVal :(NSString*)resultingVal {
-    if (inputVal){
+    if (inputVal) {
         [self setObject:inputVal forKey:resultingVal];
     }
-    else{
+    else {
         [self setObject:[NSNull null] forKey:resultingVal];
-      
     }
-   
 }
 
 //setter

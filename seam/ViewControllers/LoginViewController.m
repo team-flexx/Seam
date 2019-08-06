@@ -52,8 +52,13 @@
         } else {
             NSLog(@"User logged in successfully");
     
-            // display view controller that needs to shown after successful login
-            [self performSegueWithIdentifier:@"showTabBar" sender:nil];
+            // manually segue to logged in view
+//            [self performSegueWithIdentifier:@"showMainView" sender:nil];
+            
+            // manually set new root VC
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *rootViewController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
 
         }
     }];
