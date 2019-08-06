@@ -70,7 +70,12 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         
         // PFUser.current() will now be nil
-        [self dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"User logged out successfully");
+        
+        // manually set new root VC
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController *rootViewController = [sb instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+        [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
     }];}
 
 //show alert controller
