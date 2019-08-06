@@ -89,16 +89,16 @@
         aRealJob.jobID = obj[@"id"];
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
-
-//        if ([PFUser.currentUser.userProfile.applicantSwipes isKindOfClass:[NSNull class]] &&
-//            [PFUser.currentUser.userProfile.applicantRejections isKindOfClass:[NSNull class]]) {
-//            [theJobListings addObject:aRealJob];
-//        }
-//
-//        if (![PFUser.currentUser.userProfile.applicantSwipes containsObject:obj[@"id"]] &&
-//            ![PFUser.currentUser.userProfile.applicantRejections containsObject:obj[@"id"]]) {
+        
+        if ([PFUser.currentUser.userProfile.applicantSwipes isKindOfClass:[NSNull class]] &&
+            [PFUser.currentUser.userProfile.applicantRejections isKindOfClass:[NSNull class]]) {
             [theJobListings addObject:aRealJob];
-//        }
+        }
+
+                if (![PFUser.currentUser.userProfile.applicantSwipes containsObject:aRealJob] &&
+           ![PFUser.currentUser.userProfile.applicantRejections containsObject:aRealJob]) {
+            [theJobListings addObject:aRealJob];
+        }
     }
 }
     
@@ -123,7 +123,7 @@
     }];
     
     //saves applicantswipes and passes them into version on user's Parse account
-    [updatedProfile.applicantSwipes addObject:chosenJob.jobID];
+    [updatedProfile.applicantSwipes addObject:chosenJob];
     [PFObject saveAllInBackground:updatedProfile.applicantSwipes block:^(BOOL succeeded, NSError *error) {}];
     PFUser.currentUser.userProfile = updatedProfile;
     
@@ -153,7 +153,7 @@
     }];
     
     //saves applicantrejections and passes them into version on user's Parse account
-    [updatedProfile.applicantRejections addObject:chosenJob.jobID];
+    [updatedProfile.applicantRejections addObject:chosenJob];
     [PFObject saveAllInBackground:updatedProfile.applicantRejections block:^(BOOL succeeded, NSError *error) {}];
     PFUser.currentUser.userProfile = updatedProfile;
     

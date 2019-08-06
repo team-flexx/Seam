@@ -10,16 +10,16 @@
 
 #import "SMUserProfile.h"
 
-static NSString *const aConstant = @"about";
-static NSString *const bConstant = @"education";
-static NSString *const cConstant = @"title";
-static NSString *const dConstant = @"company";
-static NSString *const eConstant = @"jobDescription";
-static NSString *const fConstant = @"skills";
-static NSString *const gConstant = @"jobStack";
-static NSString *const hConstant = @"applicantSwipes";
-static NSString *const iConstant = @"applicantRejections";
-static NSString *const jConstant = @"matchArray";
+static NSString *const aboutConstant = @"about";
+static NSString *const educationConstant = @"education";
+static NSString *const titleConstant = @"title";
+static NSString *const companyConstant = @"company";
+static NSString *const jobDescriptionConstant = @"jobDescription";
+static NSString *const skillsConstant = @"skills";
+static NSString *const jobStackConstant = @"jobStack";
+static NSString *const applicantSwipesConstant = @"applicantSwipes";
+static NSString *const applicantRejectionsConstant = @"applicantRejections";
+static NSString *const matchArrayConstant = @"matchArray";
 
 //makes category of basic NSObject with added functionality
 @implementation PFUser (SMUserProfile)
@@ -51,16 +51,16 @@ static NSString *const jConstant = @"matchArray";
     //alloc to initialize with keys
     return
     [[SMUserProfile alloc]
-     initWithAbout:[self checkForNullString:[self objectForKey:aConstant]]
-     education:[self checkForNullString:[self objectForKey:bConstant]]
-     title:[self checkForNullString:[self objectForKey:cConstant]]
-     company:[self checkForNullString:[self objectForKey:dConstant]]
-     jobDescription:[self checkForNullString:[self objectForKey:eConstant]]
-     skills:[self checkForNullString:[self objectForKey:fConstant]]
-     jobStack:[self checkForNullArray:[self objectForKey:gConstant]]
-     applicantSwipes:[self checkForNullArray:[self objectForKey:hConstant]]
-     applicantRejections:[self checkForNullArray:[self objectForKey:iConstant]]
-     matchArray:[self checkForNullArray:[self objectForKey:jConstant]]];
+     initWithAbout:[self checkForNullString:[self objectForKey:aboutConstant]]
+     education:[self checkForNullString:[self objectForKey:educationConstant]]
+     title:[self checkForNullString:[self objectForKey:titleConstant]]
+     company:[self checkForNullString:[self objectForKey:companyConstant]]
+     jobDescription:[self checkForNullString:[self objectForKey:jobDescriptionConstant]]
+     skills:[self checkForNullString:[self objectForKey:skillsConstant]]
+     jobStack:[self checkForNullArray:[self objectForKey:jobStackConstant]]
+     applicantSwipes:[self checkForNullArray:[self objectForKey:applicantSwipesConstant]]
+     applicantRejections:[self checkForNullArray:[self objectForKey:applicantRejectionsConstant]]
+     matchArray:[self checkForNullArray:[self objectForKey:matchArrayConstant]]];
 }
 
 -(void)checkForNil:(id)inputVal :(NSString*)resultingVal {
@@ -74,16 +74,16 @@ static NSString *const jConstant = @"matchArray";
 
 //setter
 - (void)setUserProfile:(SMUserProfile *)userProfile {
-    [self checkForNil:userProfile.about :aConstant];
-    [self checkForNil:userProfile.education :bConstant];
-    [self checkForNil:userProfile.title :cConstant];
-    [self checkForNil:userProfile.company :dConstant];
-    [self checkForNil:userProfile.jobDescription :eConstant];
-    [self checkForNil:userProfile.skills:fConstant];
-    [self checkForNil:userProfile.jobStack :gConstant];
-    [self checkForNil:userProfile.applicantSwipes :hConstant];
-    [self checkForNil:userProfile.applicantRejections :iConstant];
-    [self checkForNil:userProfile.matchArray :jConstant];
+    [self checkForNil:userProfile.about :aboutConstant];
+    [self checkForNil:userProfile.education :educationConstant];
+    [self checkForNil:userProfile.title :titleConstant];
+    [self checkForNil:userProfile.company :companyConstant];
+    [self checkForNil:userProfile.jobDescription :jobDescriptionConstant];
+    [self checkForNil:userProfile.skills:skillsConstant];
+    [self checkForNil:userProfile.jobStack :jobStackConstant];
+    [self checkForNil:userProfile.applicantSwipes :applicantSwipesConstant];
+    [self checkForNil:userProfile.applicantRejections :applicantRejectionsConstant];
+    [self checkForNil:userProfile.matchArray :matchArrayConstant];
 }
      
 @end
