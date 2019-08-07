@@ -197,11 +197,11 @@
             </objects>
             <point key="canvasLocation" x="1873.913043478261" y="261.83035714285711"/>
         </scene>
-        <!--Home-->
+        <!--Swipe-->
         <scene sceneID="egU-WD-6lb">
             <objects>
                 <navigationController id="yto-LU-Xo8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="zug-tE-Ajb"/>
+                    <tabBarItem key="tabBarItem" title="Swipe" image="finger-point-top-7" id="zug-tE-Ajb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CeE-Ws-162">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -395,7 +395,7 @@
         <scene sceneID="hZw-qQ-CPi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b8P-nc-tJh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="BnR-k5-cPQ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="circle-user-7" id="BnR-k5-cPQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z9X-rE-hSr">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -410,11 +410,11 @@
             </objects>
             <point key="canvasLocation" x="158" y="1019"/>
         </scene>
-        <!--Your Matches-->
+        <!--Matches-->
         <scene sceneID="BxT-2T-Ihe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ang-JS-R2v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Matches" id="uaH-RU-bS9"/>
+                    <tabBarItem key="tabBarItem" title="Matches" image="newspaper-7" id="uaH-RU-bS9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DaA-aP-YsO">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -432,6 +432,9 @@
     </scenes>
     <resources>
         <image name="Screen Shot 2019-07-23 at 3.47.41 PM" width="1234" height="812"/>
+        <image name="circle-user-7" width="30" height="30"/>
+        <image name="finger-point-top-7" width="30" height="30"/>
+        <image name="newspaper-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aTt-Gm-las"/>

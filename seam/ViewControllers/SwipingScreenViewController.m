@@ -61,6 +61,7 @@
 //                                }];
     
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
+    
     _realJobListings = [[NSMutableArray alloc] init];
     
     _currentCardIndex = 0; //index of job listing array
