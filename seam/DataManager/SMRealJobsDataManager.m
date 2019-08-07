@@ -113,24 +113,31 @@
     chosenJob.author = [PFUser currentUser];
     chosenJob.direction = @"right";
     [chosenJob saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        //saves to separate swipeRight array
+        SMApplicantSwipeRight *currentSwipe = [SMApplicantSwipeRight new];
+        currentSwipe.jobID = chosenJob.jobID;
+        currentSwipe.author = chosenJob.author;
+        [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            
+            //saves applicantswipes and passes them into version on user's Parse account
+            [updatedProfile.applicantSwipes addObject:chosenJob];
+            [PFObject saveAllInBackground:updatedProfile.applicantSwipes block:^(BOOL succeeded, NSError *error) {
+                
+                PFUser.currentUser.userProfile = updatedProfile;
+                
+                [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    NSLog(@"%@", error);
+                }];
+                
+                NSLog(@"17%@",PFUser.currentUser.userProfile.applicantSwipes);
+                
+            }];
+            
+        }];
+        
     }];
     
-    //saves to separate swipeRight array
-    SMApplicantSwipeRight *currentSwipe = [SMApplicantSwipeRight new];
-    currentSwipe.jobID = chosenJob.jobID;
-    currentSwipe.author = chosenJob.author;
-    [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-    }];
-    
-    //saves applicantswipes and passes them into version on user's Parse account
-    [updatedProfile.applicantSwipes addObject:chosenJob];
-    [PFObject saveAllInBackground:updatedProfile.applicantSwipes block:^(BOOL succeeded, NSError *error) {}];
-    PFUser.currentUser.userProfile = updatedProfile;
-    
-    [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        NSLog(@"%@", error);
-    }];
-    NSLog(@"17%@",PFUser.currentUser.userProfile.applicantSwipes);
 }
 
 //add jobs users swipe left on to their personal array
@@ -138,29 +145,36 @@
     
     //instantiates profile and passes job into it
     SMUserProfile *updatedProfile = PFUser.currentUser.userProfile;
+    NSLog(@"%@", PFUser.currentUser.username);
     
     //adds new values to chosenJob selected before saving to Parse
     chosenJob.author = [PFUser currentUser];
     chosenJob.direction = @"left";
     [chosenJob saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        //saves to separate swipeRight array
+        SMApplicantSwipeLeft *currentSwipe = [SMApplicantSwipeLeft new];
+        currentSwipe.jobID = chosenJob.jobID;
+        currentSwipe.author = chosenJob.author;
+        [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            
+            //saves applicant rejections and passes them into version on user's Parse account
+            [updatedProfile.applicantRejections addObject:chosenJob];
+            [PFObject saveAllInBackground:updatedProfile.applicantRejections block:^(BOOL succeeded, NSError *error) {
+                
+                PFUser.currentUser.userProfile = updatedProfile;
+                
+                [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    NSLog(@"%@", error);
+                }];
+                
+                NSLog(@"17%@",PFUser.currentUser.userProfile.applicantRejections);
+                
+            }];
+            
+        }];
+        
     }];
-    
-    //saves to separate swipeLeft array
-    SMApplicantSwipeLeft *currentSwipe = [SMApplicantSwipeLeft new];
-    currentSwipe.jobID = chosenJob.jobID;
-    currentSwipe.author = chosenJob.author;
-    [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-    }];
-    
-    //saves applicantrejections and passes them into version on user's Parse account
-    [updatedProfile.applicantRejections addObject:chosenJob];
-    [PFObject saveAllInBackground:updatedProfile.applicantRejections block:^(BOOL succeeded, NSError *error) {}];
-    PFUser.currentUser.userProfile = updatedProfile;
-    
-    [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        NSLog(@"%@", error);
-    }];
-    NSLog(@"17%@",PFUser.currentUser.userProfile.applicantRejections);
     
 }
 
