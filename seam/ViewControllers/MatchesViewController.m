@@ -7,6 +7,7 @@
 //
 
 #import "MatchesViewController.h"
+#import "Match.h"
 #import <Parse/Parse.h>
 
 @interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -25,18 +26,20 @@
 }
 
 - (void) callArrayWithMatches {
-     NSString *myMatch = self.companyNameLabel.text;
-    
-    //call the array from parse
-    //bring back the name of company
-    PFQuery *query = [PFQuery queryWithClassName:@"GameScore"];
-    [query getObjectInBackgroundWithId:@"xWMyZ4YEGZ" block:^(PFObject *gameScore, NSError *error) {
-        // Do something with the returned PFObject in the gameScore variable.
-        NSLog(@"%@", gameScore);
-    }];
-    // [myObject fetch];
+//     NSString *myMatch = self.companyNameLabel.text;
+//       load and refresh
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
+    Match *match = self.matches[indexPath.row];
+    cell.theNameLabel.text = matches[@"companyName"];
+    return cell;
+    
+}
 
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.matches.count;
+}
 
 @end
