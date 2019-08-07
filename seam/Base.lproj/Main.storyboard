@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="-678.26086956521749" y="261.16071428571428"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller View Controller-->
         <scene sceneID="pAU-Cl-Jju">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" definesPresentationContext="YES" id="o4F-ie-ZQT" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" definesPresentationContext="YES" id="o4F-ie-ZQT" customClass="SMUITabBarControllerViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zfV-JC-FeG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

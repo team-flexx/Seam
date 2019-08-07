@@ -85,7 +85,7 @@
      }];
 }
 
--(void)modifyReusableCards{
+- (void)modifyReusableCards{
     NSLog(@"creating stack of cards, something may have deleted");
     if(_currentCardIndex == [_jobs count]) //BASE CASE
     {

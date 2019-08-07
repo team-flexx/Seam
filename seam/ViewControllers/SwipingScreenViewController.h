@@ -16,7 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 //#import "SMJobCard.h"
 
-@interface SwipingScreenViewController : UIViewController<MDCSwipeToChooseDelegate>
+@interface SwipingScreenViewController : UIViewController <MDCSwipeToChooseDelegate>
 
 
 @end

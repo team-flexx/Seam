@@ -35,6 +35,7 @@
 		E4556F4722EAE05700C50526 /* SMRealJobsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F4622EAE05700C50526 /* SMRealJobsDataManager.m */; };
 		E4624F5522F50C5100DC5CD9 /* SMApplicantSwipeRight.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F5422F50C5100DC5CD9 /* SMApplicantSwipeRight.m */; };
 		E4624F5822F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */; };
+		E4624F6D22FB512900DC5CD9 /* SMUITabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		E4624F5422F50C5100DC5CD9 /* SMApplicantSwipeRight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMApplicantSwipeRight.m; sourceTree = "<group>"; };
 		E4624F5622F50CCA00DC5CD9 /* SMApplicantSwipeLeft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMApplicantSwipeLeft.h; sourceTree = "<group>"; };
 		E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMApplicantSwipeLeft.m; sourceTree = "<group>"; };
+		E4624F6B22FB512900DC5CD9 /* SMUITabBarControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMUITabBarControllerViewController.h; sourceTree = "<group>"; };
+		E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMUITabBarControllerViewController.m; sourceTree = "<group>"; };
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +194,8 @@
 			children = (
 				9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */,
 				9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */,
+				E4624F6B22FB512900DC5CD9 /* SMUITabBarControllerViewController.h */,
+				E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */,
 				E4556F0222E7BC9C00C50526 /* LoginViewController.h */,
 				E4556F0322E7BC9C00C50526 /* LoginViewController.m */,
 				911708A822E7C80700DBCA22 /* MatchesViewController.h */,
@@ -518,6 +523,7 @@
 				911708AA22E7C80700DBCA22 /* MatchesViewController.m in Sources */,
 				9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */,
 				E4624F5522F50C5100DC5CD9 /* SMApplicantSwipeRight.m in Sources */,
+				E4624F6D22FB512900DC5CD9 /* SMUITabBarControllerViewController.m in Sources */,
 				E4556F4722EAE05700C50526 /* SMRealJobsDataManager.m in Sources */,
 				9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */,
 				9794868622D5070800E90DBD /* main.m in Sources */,
