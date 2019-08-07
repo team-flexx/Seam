@@ -30,16 +30,16 @@
 //       load and refresh
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
-    Match *match = self.matches[indexPath.row];
-    cell.theNameLabel.text = matches[@"companyName"];
-    return cell;
-    
-}
-
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.matches.count;
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
+//    Match *match = self.matches[indexPath.row];
+//    cell.theNameLabel.text = matches[@"companyName"];
+//    return cell;
+//
+//}
+//
+//- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return self.matches.count;
+//}
 
 @end

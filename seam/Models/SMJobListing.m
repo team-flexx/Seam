@@ -20,6 +20,7 @@
 @dynamic jobID;
 @dynamic title;
 @dynamic jobDescription;
+@dynamic jobURL;
 
 //can just use new/init alloc now instead of init
 

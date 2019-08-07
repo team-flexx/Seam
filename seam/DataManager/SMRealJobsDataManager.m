@@ -89,6 +89,8 @@
         aRealJob.jobID = obj[@"id"];
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
+        NSString* resultURL = [NSString stringWithFormat:obj[@"url"]];
+        aRealJob.jobURL = resultURL;
         
         if ([PFUser.currentUser.userProfile.applicantSwipes isKindOfClass:[NSNull class]] &&
             [PFUser.currentUser.userProfile.applicantRejections isKindOfClass:[NSNull class]]) {
@@ -116,8 +118,9 @@
         
         //saves to separate swipeRight array
         SMApplicantSwipeRight *currentSwipe = [SMApplicantSwipeRight new];
-        currentSwipe.jobID = chosenJob.jobID;
         currentSwipe.author = chosenJob.author;
+        currentSwipe.companyName = chosenJob.companyName;
+        currentSwipe.jobURL = chosenJob.jobURL;
         [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             
             //saves applicantswipes and passes them into version on user's Parse account
@@ -129,8 +132,6 @@
                 [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     NSLog(@"%@", error);
                 }];
-                
-                NSLog(@"17%@",PFUser.currentUser.userProfile.applicantSwipes);
                 
             }];
             
@@ -167,8 +168,6 @@
                 [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     NSLog(@"%@", error);
                 }];
-                
-                NSLog(@"17%@",PFUser.currentUser.userProfile.applicantRejections);
                 
             }];
             

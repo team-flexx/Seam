@@ -14,6 +14,8 @@
 
 @dynamic author;
 @dynamic jobID;
+@dynamic jobURL;
+@dynamic companyName;
 
 //can just use new/init alloc now instead of init
 

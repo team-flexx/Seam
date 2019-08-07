@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *jobID;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *jobDescription;
+@property (nonatomic, strong) NSString *jobURL;
 
 @end
 
