@@ -8,18 +8,14 @@
 
 #import "Parse/Parse.h"
 
-#import <Foundation/Foundation.h>
+#import "SMJobListing.h"
 
-NS_ASSUME_NONNULL_BEGIN
+#import <Foundation/Foundation.h>
 
 @interface SMApplicantSwipeRight : PFObject <PFSubclassing>
 
 //properties used in SMJobCard
 @property (nonatomic, strong) PFUser *author;
-@property (nonatomic, strong) NSString *jobID;
-@property (nonatomic, strong) NSString *jobURL;
-@property (nonatomic, strong) NSString *companyName;
+@property (nonatomic, strong) SMJobListing *jobPointer;
 
 @end
-
-NS_ASSUME_NONNULL_END

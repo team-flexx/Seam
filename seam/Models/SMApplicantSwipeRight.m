@@ -13,9 +13,7 @@
 @implementation SMApplicantSwipeRight
 
 @dynamic author;
-@dynamic jobID;
-@dynamic jobURL;
-@dynamic companyName;
+@dynamic jobPointer;
 
 //can just use new/init alloc now instead of init
 

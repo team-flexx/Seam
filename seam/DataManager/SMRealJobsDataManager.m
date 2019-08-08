@@ -118,9 +118,10 @@
         
         //saves to separate swipeRight array
         SMApplicantSwipeRight *currentSwipe = [SMApplicantSwipeRight new];
+//        currentSwipe.jobID = chosenJob.objectId;
         currentSwipe.author = chosenJob.author;
-        currentSwipe.companyName = chosenJob.companyName;
-        currentSwipe.jobURL = chosenJob.jobURL;
+        currentSwipe.jobPointer = chosenJob;
+        
         [currentSwipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             
             //saves applicantswipes and passes them into version on user's Parse account
