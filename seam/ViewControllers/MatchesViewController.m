@@ -8,11 +8,15 @@
 
 #import "MatchesViewController.h"
 #import "Match.h"
+#import "MatchCell.h"
+#import "SMFakeJobsDataManager.h"
+#import "SMJobsDataManagerProvider.h"
 #import <Parse/Parse.h>
 
 @interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *companyNameLabel;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSMutableArray *matches;
 
 @end
 
@@ -23,6 +27,19 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    [[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:^(NSArray *realJobListings, NSError *error)
+     {
+         if (realJobListings)
+         {
+             self.matches = [NSMutableArray arrayWithArray:realJobListings]; //an array of dictionaries
+         }
+         else
+         {
+             NSLog(@" Error getting home timeline: %@", error.localizedDescription);
+         }
+                      [self.tableView reloadData];
+     }];
 }
 
 - (void) callArrayWithMatches {
@@ -30,16 +47,24 @@
 //       load and refresh
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
-//    Match *match = self.matches[indexPath.row];
-//    cell.theNameLabel.text = matches[@"companyName"];
-//    return cell;
-//
-//}
-//
-//- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.matches.count;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"helooooooo");
+    MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
+    Match *theMatch = self.matches[indexPath.row];
+//    cell.match = theMatch;
+    cell.theNameLabel.text = theMatch[@"companyName"];
+    
+    if (cell.theNameLabel) {
+    NSLog(@"stall2");
+    }
+    
+    return cell;
+
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"%d", self.matches.count);
+    return self.matches.count;
+}
 
 @end
