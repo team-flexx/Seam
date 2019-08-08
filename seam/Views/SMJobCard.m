@@ -10,6 +10,7 @@
 
 @interface SMJobCard()
 
+
 @end
 
 @implementation SMJobCard
@@ -40,5 +41,8 @@
     [[NSBundle mainBundle] loadNibNamed:@"CardViewXIB" owner:self options:nil];
     [self addSubview:self.cardDetailsView];
     self.cardDetailsView.frame = self.bounds;
+    
+   
+    _cardDetailsView.layer.shadowColor = (__bridge CGColorRef _Nullable)(UIColor.darkGrayColor);
 }
 @end
