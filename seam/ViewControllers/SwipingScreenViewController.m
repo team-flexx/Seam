@@ -39,26 +39,49 @@
    
     //testing cloud code
     
-//    [PFCloud callFunctionInBackground:@"hello"
-//                       withParameters:nil
-//                                block:^(NSString *hi, NSError *error) {
-//                                    if (error) {
-//                                        NSLog(@"something wrong with cloud function called hello");
-//                                    }
-//                                    NSLog(@"%@", hi);
-//                                    
-//                                }];
-//   
+    [PFCloud callFunctionInBackground:@"hello"
+                       withParameters:nil
+                                block:^(NSString *hi, NSError *error) {
+                                    if (error) {
+                                        NSLog(@"something wrong with cloud function called hello");
+                                    }
+                                    NSLog(@"%@", hi);
+                                    
+                                }];
+
     
-//    [PFCloud callFunctionInBackground:@"friday"
-//                       withParameters:nil
+    [PFCloud callFunctionInBackground:@"gettingData"
+                       withParameters:@{@"username": @"user5"}
+                                block:^(NSString *wat, NSError *error) {
+                                    if (error) {
+                                        NSLog(@"something is wrong with cloud function fridayx");
+                                    }
+                                    NSLog(@"heyyyy %@", wat);
+
+                                }];
+
+    //@"jobID": @"31530",
+    [PFCloud callFunctionInBackground:@"didEmployerSwipe"
+                       withParameters:@{@"jobID": @"31530", @"applicantIDPlainText": @"AvDGgEMpI3"}
+                                block:^(NSString *wat, NSError *error) {
+                                    if (error) {
+                                        NSLog(@"something is wrong with cloud function fridayx");
+                                    }
+                                    NSLog(@"did we get the data?! %@", wat);
+                                    
+                                }];
+    
+    
+//    [PFCloud callFunctionInBackground:@"getMatchedCardInfo"
+//                       withParameters:@{@"user": @"PZQXsYMv0H"}
 //                                block:^(NSString *wat, NSError *error) {
 //                                    if (error) {
 //                                        NSLog(@"something is wrong with cloud function fridayx");
 //                                    }
-//                                    NSLog(@"%@", wat);
+//                                    NSLog(@"matched data in array of dictionaries?! %@", wat);
 //
 //                                }];
+    
     
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     
@@ -166,6 +189,18 @@
 -(void)switchAndMoveFrontAndBackCards{
     //reset where the first card will be placed after it was swiped away
     _frontCard.frame = self.placeholderView.frame;
+    
+    //NEW:
+    [UIView animateWithDuration:0.16 animations:^{
+        _frontCard.transform = CGAffineTransformIdentity;
+        _frontCard.center = [_placeholderView superview].center;
+    }];
+    
+    
+    [UIView animateWithDuration:0.16 animations:^{
+        _backCard.transform = CGAffineTransformIdentity;
+        _backCard.center = [_placeholderView superview].center;
+    }];
     
     int nextNextCardIndex = _nextCardTrackerIndex++;
     [self changeDataOnCardAtIndex:nextNextCardIndex atCard:_frontCard];

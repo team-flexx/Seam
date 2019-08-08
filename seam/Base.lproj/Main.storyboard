@@ -222,13 +222,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-Lg-EV8">
-                                <rect key="frame" x="47" y="128" width="320" height="640"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-Lg-EV8">
+                                <rect key="frame" x="30" y="104" width="315" height="565"/>
                                 <color key="backgroundColor" red="1" green="0.27592850130000002" blue="0.81587703860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="565" id="8TN-iM-Xfa"/>
+                                    <constraint firstAttribute="width" constant="315" id="hO7-CG-ywP"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SQ7-Lg-EV8" firstAttribute="leading" secondItem="T2H-pk-ZKC" secondAttribute="leading" constant="30" id="PEZ-zd-sO9"/>
+                            <constraint firstItem="T2H-pk-ZKC" firstAttribute="trailing" secondItem="SQ7-Lg-EV8" secondAttribute="trailing" constant="30" id="bCM-Ke-mg7"/>
+                            <constraint firstItem="T2H-pk-ZKC" firstAttribute="bottom" secondItem="SQ7-Lg-EV8" secondAttribute="bottom" constant="60" id="sxr-WU-fP8"/>
+                            <constraint firstItem="SQ7-Lg-EV8" firstAttribute="top" secondItem="T2H-pk-ZKC" secondAttribute="top" constant="16" id="xK6-Aw-Ng0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="T2H-pk-ZKC"/>
                     </view>
                     <navigationItem key="navigationItem" id="CRc-DN-nLH"/>
@@ -238,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhi-z1-doi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678.26086956521749" y="1781.9196428571427"/>
+            <point key="canvasLocation" x="-679.20000000000005" y="1781.5270935960591"/>
         </scene>
         <!--Item-->
         <scene sceneID="cGm-y3-UUq">

@@ -70,7 +70,7 @@
 
 - (NSURLRequest*)beginURLRequest{
     //store the url as an NSString
-    NSString *urlString = @"https://authenticjobs.com/api/?api_key=6a1045b081eb8914a0b3fc5283a0e046&method=aj.jobs.get&format=json&method=aj.jobs.search";
+    NSString *urlString = @"https://authenticjobs.com/api/?api_key=6a1045b081eb8914a0b3fc5283a0e046&method=aj.jobs.get&format=json&method=aj.jobs.search&perpage=100";
     
     //create NSURL object initialized with a provided URL string
     NSURL *url = [NSURL URLWithString:urlString];
@@ -138,7 +138,6 @@
         }];
         
     }];
-    
 }
 
 //add jobs users swipe left on to their personal array
@@ -174,7 +173,6 @@
         }];
         
     }];
-    
 }
 
 //fetch jobs on main matching screen upon loading
