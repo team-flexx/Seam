@@ -78,10 +78,14 @@ static CGFloat const MDCSwipeToChooseViewLabelWidth = 65.f;
                               MDCSwipeToChooseViewTopPadding,
                               CGRectGetMidX(_imageView.bounds),
                               MDCSwipeToChooseViewLabelWidth);
-    self.likedView = [[UIView alloc] initWithFrame:frame];
-    [self.likedView constructBorderedLabelWithText:self.options.likedText
-                                             color:self.options.likedColor
-                                             angle:self.options.likedRotationAngle];
+    //self.likedView = [[UIView alloc] initWithFrame:frame]; //CHANGED THIS
+    //[self.likedView constructBorderedLabelWithText:self.options.likedText
+//                                             color:self.options.likedColor
+//                                             angle:self.options.likedRotationAngle];
+    //self.likedView = [[UIImageView alloc] initWithFrame: frame];
+    self.likedView = [[UIImageView alloc] initWithFrame:CGRectMake(30.0f, 100.0f, 100.0f, 100.0f)];
+    _likedView.image = [UIImage imageNamed:@"icons8-checkmark-64.png"];
+    
     self.likedView.alpha = 0.f;
     [self.imageView addSubview:self.likedView];
 }
@@ -96,6 +100,9 @@ static CGFloat const MDCSwipeToChooseViewLabelWidth = 65.f;
     [self.nopeView constructBorderedLabelWithText:self.options.nopeText
                                             color:self.options.nopeColor
                                             angle:self.options.nopeRotationAngle];
+    
+    self.nopeView = [[UIImageView alloc] initWithFrame:CGRectMake(180.0f, 100.0f, 100.0f, 100.0f)];
+    _nopeView.image = [UIImage imageNamed:@"nopeIcon.png"];
     self.nopeView.alpha = 0.f;
     [self.imageView addSubview:self.nopeView];
 }

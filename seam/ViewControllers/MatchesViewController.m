@@ -48,16 +48,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"helooooooo");
     MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
     Match *theMatch = self.matches[indexPath.row];
 //    cell.match = theMatch;
     cell.theNameLabel.text = theMatch[@"companyName"];
-    
-    if (cell.theNameLabel) {
-    NSLog(@"stall2");
-    }
-    
     return cell;
 
 }

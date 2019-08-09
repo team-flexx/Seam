@@ -27,7 +27,8 @@
 @property (nonatomic, strong) NSMutableArray<SMJobListing *> *realJobListings;
 @property (nonatomic, strong) UIView *frontCard;
 @property (nonatomic, strong) UIView *backCard;
-@property (nonatomic, strong) IBOutlet UIView *backgroundView;
+@property (nonatomic, strong) IBOutlet UIView *backgroundView; //the desk.jpg
+@property (weak, nonatomic) IBOutlet UIImageView *acceptJobImageView;
 
 @end
 
@@ -39,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   // _acceptJobImageView.hidden = YES;
     // Do any additional setup after loading the view.
    
     //testing cloud code
@@ -189,6 +191,7 @@
     }
     else
     {
+        //_acceptJobImageView.hidden = NO;
         [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:self.jobs[_currentCardIndex]];
         NSLog(@"Photo saved!");
         [self switchAndMoveFrontAndBackCards];
@@ -219,7 +222,7 @@
     [self.view addSubview:_frontCard];
     
     //Inserts a view among the view’s subviews so it’s displayed immediately above or below another view
-    [self.view sendSubviewToBack:_frontCard];
+    //[self.view sendSubviewToBack:_frontCard];
     [self.view insertSubview:_frontCard aboveSubview:_backgroundView];
     
     //first card is now second card
