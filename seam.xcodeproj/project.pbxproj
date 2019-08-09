@@ -203,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */,
+				9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */,
 				9706CFDE22FE1B32006ED1BD /* icons8-delete-trash-50.png */,
 				9706CFE022FE1E6C006ED1BD /* icons8-checkmark-64.png */,
 				9706CFE422FE1FDD006ED1BD /* nopeIcon.png */,
-				9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */,
 				E4624F6B22FB512900DC5CD9 /* SMUITabBarControllerViewController.h */,
 				E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */,
 				E4556F0222E7BC9C00C50526 /* LoginViewController.h */,
