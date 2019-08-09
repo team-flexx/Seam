@@ -16,6 +16,8 @@
 #import <QuartzCore/QuartzCore.h> //use for converting uiview to uiimage
 #import "Parse/Parse.h"
 
+#import "Match.h"
+
 
 @interface SwipingScreenViewController ()
 
@@ -72,15 +74,15 @@
                                 }];
     
     
-//    [PFCloud callFunctionInBackground:@"getMatchedCardInfo"
-//                       withParameters:@{@"user": @"PZQXsYMv0H"}
-//                                block:^(NSString *wat, NSError *error) {
-//                                    if (error) {
-//                                        NSLog(@"something is wrong with cloud function fridayx");
-//                                    }
-//                                    NSLog(@"matched data in array of dictionaries?! %@", wat);
-//
-//                                }];
+    [PFCloud callFunctionInBackground:@"getMatchedData"
+                       withParameters:@{@"user": @"AvDGgEMp"} //GET USER ID
+                                block:^(NSArray<Match *> *wat, NSError *error) {
+                                    if (error) {
+                                        NSLog(@"something is wrong with cloud function fridayx");
+                                    }
+                                    NSLog(@"matched data in array of dictionaries?! %@", [wat[0] objectForKey:@"jobPointer"]);
+                                }];
+    
     
     
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager

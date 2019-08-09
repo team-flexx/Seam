@@ -222,21 +222,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desk.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dHi-1E-8ma">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                            </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-Lg-EV8">
-                                <rect key="frame" x="30" y="104" width="315" height="565"/>
+                                <rect key="frame" x="37" y="149" width="300" height="475"/>
                                 <color key="backgroundColor" red="1" green="0.27592850130000002" blue="0.81587703860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="565" id="8TN-iM-Xfa"/>
-                                    <constraint firstAttribute="width" constant="315" id="hO7-CG-ywP"/>
+                                    <constraint firstAttribute="height" constant="475" id="8TN-iM-Xfa"/>
+                                    <constraint firstAttribute="width" constant="300" id="hO7-CG-ywP"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="SQ7-Lg-EV8" firstAttribute="leading" secondItem="T2H-pk-ZKC" secondAttribute="leading" constant="30" id="PEZ-zd-sO9"/>
-                            <constraint firstItem="T2H-pk-ZKC" firstAttribute="trailing" secondItem="SQ7-Lg-EV8" secondAttribute="trailing" constant="30" id="bCM-Ke-mg7"/>
-                            <constraint firstItem="T2H-pk-ZKC" firstAttribute="bottom" secondItem="SQ7-Lg-EV8" secondAttribute="bottom" constant="60" id="sxr-WU-fP8"/>
-                            <constraint firstItem="SQ7-Lg-EV8" firstAttribute="top" secondItem="T2H-pk-ZKC" secondAttribute="top" constant="16" id="xK6-Aw-Ng0"/>
+                            <constraint firstItem="dHi-1E-8ma" firstAttribute="leading" secondItem="T2H-pk-ZKC" secondAttribute="leading" id="D1Q-Fj-p32"/>
+                            <constraint firstItem="dHi-1E-8ma" firstAttribute="trailing" secondItem="T2H-pk-ZKC" secondAttribute="trailing" id="JpE-Ak-ar9"/>
+                            <constraint firstItem="SQ7-Lg-EV8" firstAttribute="leading" secondItem="T2H-pk-ZKC" secondAttribute="leading" constant="37" id="PEZ-zd-sO9"/>
+                            <constraint firstItem="dHi-1E-8ma" firstAttribute="top" secondItem="T2H-pk-ZKC" secondAttribute="top" id="Sl5-CV-iBF"/>
+                            <constraint firstItem="T2H-pk-ZKC" firstAttribute="trailing" secondItem="SQ7-Lg-EV8" secondAttribute="trailing" constant="38" id="bCM-Ke-mg7"/>
+                            <constraint firstItem="T2H-pk-ZKC" firstAttribute="bottom" secondItem="SQ7-Lg-EV8" secondAttribute="bottom" constant="105" id="sxr-WU-fP8"/>
+                            <constraint firstItem="dHi-1E-8ma" firstAttribute="bottom" secondItem="T2H-pk-ZKC" secondAttribute="bottom" id="upd-B7-qx0"/>
+                            <constraint firstItem="SQ7-Lg-EV8" firstAttribute="top" secondItem="T2H-pk-ZKC" secondAttribute="top" constant="61" id="xK6-Aw-Ng0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T2H-pk-ZKC"/>
                     </view>
@@ -442,6 +449,7 @@
     <resources>
         <image name="Screen Shot 2019-07-23 at 3.47.41 PM" width="1234" height="812"/>
         <image name="circle-user-7" width="30" height="30"/>
+        <image name="desk.jpg" width="480" height="800"/>
         <image name="finger-point-top-7" width="30" height="30"/>
         <image name="newspaper-7" width="30" height="30"/>
     </resources>
