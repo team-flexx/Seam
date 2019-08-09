@@ -28,7 +28,7 @@
 @property (nonatomic, strong) UIView *frontCard;
 @property (nonatomic, strong) UIView *backCard;
 @property (nonatomic, strong) IBOutlet UIView *backgroundView; //the desk.jpg
-@property (weak, nonatomic) IBOutlet UIImageView *acceptJobImageView;
+
 
 @end
 
@@ -40,11 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // _acceptJobImageView.hidden = YES;
     // Do any additional setup after loading the view.
-   
+
     //testing cloud code
-    
     [PFCloud callFunctionInBackground:@"hello"
                        withParameters:nil
                                 block:^(NSString *hi, NSError *error) {
@@ -191,7 +189,6 @@
     }
     else
     {
-        //_acceptJobImageView.hidden = NO;
         [[SMJobsDataManagerProvider sharedDataManager] onApplyForJob:self.jobs[_currentCardIndex]];
         NSLog(@"Photo saved!");
         [self switchAndMoveFrontAndBackCards];
