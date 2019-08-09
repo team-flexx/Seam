@@ -5,12 +5,6 @@
       location = "group:seam.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:seam">
-   </FileRef>
-   <FileRef
-      location = "group:seam">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
