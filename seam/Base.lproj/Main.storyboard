@@ -273,6 +273,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CRc-DN-nLH"/>
                     <connections>
+                        <outlet property="backgroundView" destination="dHi-1E-8ma" id="mdQ-fs-VMG"/>
                         <outlet property="placeholderView" destination="SQ7-Lg-EV8" id="IBa-fB-aHw"/>
                     </connections>
                 </viewController>

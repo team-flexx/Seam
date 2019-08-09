@@ -27,6 +27,8 @@
 @property (nonatomic, strong) NSMutableArray<SMJobListing *> *realJobListings;
 @property (nonatomic, strong) UIView *frontCard;
 @property (nonatomic, strong) UIView *backCard;
+@property (nonatomic, strong) IBOutlet UIView *backgroundView;
+
 @end
 
 @implementation SwipingScreenViewController {
@@ -218,6 +220,7 @@
     
     //Inserts a view among the view’s subviews so it’s displayed immediately above or below another view
     [self.view sendSubviewToBack:_frontCard];
+    [self.view insertSubview:_frontCard aboveSubview:_backgroundView];
     
     //first card is now second card
     //second card is what used to be the first card
