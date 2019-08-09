@@ -21,7 +21,9 @@
 @dynamic title;
 @dynamic jobDescription;
 @dynamic jobURL;
-
+@dynamic schedule;
+@dynamic category;
+@dynamic perks;
 //can just use new/init alloc now instead of init
 
 //registers to Parse

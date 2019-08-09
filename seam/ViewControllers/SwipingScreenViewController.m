@@ -158,8 +158,13 @@
     theCardView.frame = self.placeholderView.frame;
 
     theCardView.jobTitleLabel.text = jobPointer.title;
+    theCardView.companyLabel.text = jobPointer.companyName;
     theCardView.locationLabel.text = jobPointer.locationName;
-    theCardView.jobTypeLabel.text = @"Fill in..."; //jobPointer.description;
+    theCardView.jobScheduleLabel.text = jobPointer.schedule;
+    theCardView.jobTypeLabel.text = jobPointer.typeOfJob;
+    theCardView.jobPerks.text = jobPointer.perks;
+    theCardView.jobCategory.text = jobPointer.category;
+    
 
     //convert uiview to uiimage in order for it to show up as a card
     //use the view file we created with CardViewXIB.xib and SMJobCard.m

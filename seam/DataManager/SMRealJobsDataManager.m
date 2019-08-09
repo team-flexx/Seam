@@ -89,6 +89,10 @@
         aRealJob.jobID = obj[@"id"];
         aRealJob.locationName = obj[@"company"][@"location"][@"name"];
         aRealJob.title = obj[@"title"];
+        aRealJob.schedule = obj[@"post_date"];
+        aRealJob.category = obj[@"category"][@"name"];
+        aRealJob.typeOfJob = obj[@"type"][@"name"];
+        aRealJob.perks = obj[@"perks"];
         NSString* resultURL = [NSString stringWithFormat:obj[@"url"]];
         aRealJob.jobURL = resultURL;
         
