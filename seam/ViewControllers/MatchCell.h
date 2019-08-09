@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Match.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MatchCell : UITableViewCell
+
+//@property (strong, nonatomic) IBOutlet UILabel *theNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *theNameLabel;
+
+@property (strong, nonatomic) Match *match;
+
 @end
 
 NS_ASSUME_NONNULL_END

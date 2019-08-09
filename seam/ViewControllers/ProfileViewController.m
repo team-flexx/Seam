@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *skills;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *jobFilters;
+@property (weak, nonatomic) IBOutlet UIButton *addJob;
 
 @end
 
@@ -53,6 +54,7 @@
     _skills.editable = YES;
     _saveButton.hidden = NO;
     _jobFilters.hidden = NO;
+    _addJob.hidden = NO;
 }
 - (IBAction)saveData:(id)sender {
     _about.editable = NO;
@@ -63,6 +65,8 @@
     _skills.editable = NO;
     _saveButton.hidden = YES;
     _jobFilters.hidden =YES;
+    _addJob.hidden = YES;
+
 }
 
 //method to log out
