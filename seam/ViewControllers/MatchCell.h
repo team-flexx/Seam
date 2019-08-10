@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //@property (strong, nonatomic) IBOutlet UILabel *theNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *theNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jobTitleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *jobURLTextView;
 
 @property (strong, nonatomic) Match *match;
 

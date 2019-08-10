@@ -41,6 +41,8 @@
 		E4624F5522F50C5100DC5CD9 /* SMApplicantSwipeRight.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F5422F50C5100DC5CD9 /* SMApplicantSwipeRight.m */; };
 		E4624F5822F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */; };
 		E4624F6D22FB512900DC5CD9 /* SMUITabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */; };
+		E4624F7022FE695400DC5CD9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4624F6F22FE695400DC5CD9 /* WebKit.framework */; };
+		E4624F7622FE6AFE00DC5CD9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624F7522FE6AFE00DC5CD9 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,9 @@
 		E4624F5722F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMApplicantSwipeLeft.m; sourceTree = "<group>"; };
 		E4624F6B22FB512900DC5CD9 /* SMUITabBarControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMUITabBarControllerViewController.h; sourceTree = "<group>"; };
 		E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMUITabBarControllerViewController.m; sourceTree = "<group>"; };
+		E4624F6F22FE695400DC5CD9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E4624F7422FE6AFE00DC5CD9 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		E4624F7522FE6AFE00DC5CD9 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		E49C873531C3569F6AA8CED9 /* Pods-seamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.release.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4624F7022FE695400DC5CD9 /* WebKit.framework in Frameworks */,
 				1F6EBD0D6E9A9916D53399AB /* Pods_seam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +166,7 @@
 		2389F87C1A2DDE0D53E0FC70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4624F6F22FE695400DC5CD9 /* WebKit.framework */,
 				713710A9F6691A1B402F9C4C /* Pods_seam.framework */,
 				F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */,
 				7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */,
@@ -213,6 +220,8 @@
 				E4556F0322E7BC9C00C50526 /* LoginViewController.m */,
 				911708A822E7C80700DBCA22 /* MatchesViewController.h */,
 				911708A922E7C80700DBCA22 /* MatchesViewController.m */,
+				E4624F7422FE6AFE00DC5CD9 /* WebViewController.h */,
+				E4624F7522FE6AFE00DC5CD9 /* WebViewController.m */,
 				91B8790E22FA3C07003CAA37 /* Match.h */,
 				91B8790F22FA3C07003CAA37 /* Match.m */,
 				91B8791122FA3C3B003CAA37 /* MatchCell.h */,
@@ -542,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B8790D22FA3850003CAA37 /* SMEmployerSwipeRight.m in Sources */,
+				E4624F7622FE6AFE00DC5CD9 /* WebViewController.m in Sources */,
 				E4624F5822F50CCA00DC5CD9 /* SMApplicantSwipeLeft.m in Sources */,
 				97B6FE3222ECFB5F0030241A /* PFUser+SMUserProfile.m in Sources */,
 				97B6FE3922EF5AEC0030241A /* SMJobsDataManagerProvider.m in Sources */,

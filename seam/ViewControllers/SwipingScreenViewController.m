@@ -41,52 +41,6 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-
-    //testing cloud code
-    [PFCloud callFunctionInBackground:@"hello"
-                       withParameters:nil
-                                block:^(NSString *hi, NSError *error) {
-                                    if (error) {
-                                        NSLog(@"something wrong with cloud function called hello");
-                                    }
-                                    NSLog(@"%@", hi);
-                                    
-                                }];
-
-    
-    [PFCloud callFunctionInBackground:@"gettingData"
-                       withParameters:@{@"username": @"user5"}
-                                block:^(NSString *wat, NSError *error) {
-                                    if (error) {
-                                        NSLog(@"something is wrong with cloud function fridayx");
-                                    }
-                                    NSLog(@"heyyyy %@", wat);
-
-                                }];
-
-    //@"jobID": @"31530",
-    [PFCloud callFunctionInBackground:@"didEmployerSwipe"
-                       withParameters:@{@"jobID": @"31530", @"applicantIDPlainText": @"AvDGgEMpI3"}
-                                block:^(NSString *wat, NSError *error) {
-                                    if (error) {
-                                        NSLog(@"something is wrong with cloud function fridayx");
-                                    }
-                                    NSLog(@"did we get the data?! %@", wat);
-                                    
-                                }];
-    
-    
-    [PFCloud callFunctionInBackground:@"getMatchedData"
-                       withParameters:@{@"user": @"AvDGgEMp"} //GET USER ID
-                                block:^(NSArray<Match *> *wat, NSError *error) {
-                                    if (error) {
-                                        NSLog(@"something is wrong with cloud function fridayx");
-                                    }
-                                    NSLog(@"matched data in array of dictionaries?! %@", [wat[0] objectForKey:@"jobPointer"]);
-                                }];
-    
-    
-    
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     
     _realJobListings = [[NSMutableArray alloc] init];
@@ -144,7 +98,7 @@
     //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
                                                                      options:options];
-
+    
     [self changeDataOnCardAtIndex:jobListIndex atCard:view];
     [self.view addSubview:view];
     return view;
@@ -152,13 +106,13 @@
 
 - (void)changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
     // check index
-
+    
     SMJobCard *theCardView = [[SMJobCard alloc] init];
     SMJobListing *jobPointer = self.jobs[ind];
     
     //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
     theCardView.frame = self.placeholderView.frame;
-
+    
     theCardView.jobTitleLabel.text = jobPointer.title;
     theCardView.companyLabel.text = jobPointer.companyName;
     theCardView.locationLabel.text = jobPointer.locationName;
@@ -167,7 +121,7 @@
     theCardView.jobPerks.text = jobPointer.perks;
     theCardView.jobCategory.text = jobPointer.category;
     
-
+    
     //convert uiview to uiimage in order for it to show up as a card
     //use the view file we created with CardViewXIB.xib and SMJobCard.m
     theView.imageView.image = [self imageWithView:theCardView];
@@ -243,4 +197,3 @@
 }
 
 @end
-
