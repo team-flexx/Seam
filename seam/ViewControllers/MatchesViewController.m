@@ -18,6 +18,8 @@
 @property (strong, nonatomic) NSMutableArray <SMJobListing *>  *matches;
 @property (strong, nonatomic) NSMutableArray <SMJobListing *>  *filteredMatches;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *refreshIndicator;
 
 @end
 
@@ -31,6 +33,13 @@
     self.searchBar.delegate = self;
     self.matches = [NSMutableArray new];
     self.filteredMatches = self.matches;
+    
+    [self.refreshIndicator startAnimating];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    
+    [self.refreshControl addTarget:self action:@selector(cellForRowAtIndexPath:) forControlEvents:(UIControlEventValueChanged)];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     //testing cloud code
     [PFCloud callFunctionInBackground:@"hello"
@@ -81,10 +90,12 @@
                                     self.filteredMatches = self.matches;
                                     [self.tableView reloadData];
                                 }];
-    
+    [self.refreshControl endRefreshing];
+    [self.refreshIndicator stopAnimating];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
     cell.jobURLTextView.delegate = self;
     Match *theMatch = self.filteredMatches[indexPath.row];
@@ -102,6 +113,7 @@
 //    NSURLRequest *req = [NSURLRequest requestWithURL:url];
 //    [_webView loadRequest:req];
     return cell;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

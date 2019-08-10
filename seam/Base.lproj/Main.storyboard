@@ -247,14 +247,19 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QUJ-tF-gxG"/>
                     <connections>
+                        <outlet property="refreshIndicator" destination="uci-Vp-q39" id="acs-tI-onb"/>
                         <outlet property="searchBar" destination="NIX-Oe-qPW" id="YaJ-5u-ONw"/>
                         <outlet property="tableView" destination="Lhu-my-IA1" id="Ikc-Uz-Jhq"/>
                         <segue destination="yIF-ED-s2b" kind="presentation" id="xda-t0-sGv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3th-oC-nNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="uci-Vp-q39">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
-            <point key="canvasLocation" x="1872.8" y="261.57635467980299"/>
+            <point key="canvasLocation" x="1873" y="261"/>
         </scene>
         <!--Matches View Controller-->
         <scene sceneID="HJX-o2-gAh">
