@@ -13,9 +13,11 @@
 #import "SMJobsDataManagerProvider.h"
 #import <Parse/Parse.h>
 
-@interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
+@interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray <SMJobListing *>  *matches;
+@property (strong, nonatomic) NSMutableArray <SMJobListing *>  *filteredMatches;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -26,7 +28,9 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.searchBar.delegate = self;
     self.matches = [NSMutableArray new];
+    self.filteredMatches = self.matches;
     
     //testing cloud code
     [PFCloud callFunctionInBackground:@"hello"
@@ -74,6 +78,7 @@
                                          SMJobListing *var = [match objectForKey:@"jobPointer"];
                                          [self.matches addObject:var];
                                     }
+                                    self.filteredMatches = self.matches;
                                     [self.tableView reloadData];
                                 }];
     
@@ -82,7 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
     cell.jobURLTextView.delegate = self;
-    Match *theMatch = self.matches[indexPath.row];
+    Match *theMatch = self.filteredMatches[indexPath.row];
     cell.theNameLabel.text = theMatch[@"companyName"];
     cell.jobTitleLabel.text = theMatch[@"title"];
     cell.jobURLTextView.text = theMatch[@"jobURL"];
@@ -123,8 +128,26 @@
 }
 
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        self.filteredMatches = [self.matches filteredArrayUsingPredicate:predicate];
+        
+    }
+    else {
+        self.filteredMatches = self.matches;
+    }
+    
+    [self.tableView reloadData];
+    
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.matches.count;
+    return self.filteredMatches.count;
 }
 
 @end

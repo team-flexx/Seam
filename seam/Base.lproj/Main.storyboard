@@ -179,9 +179,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="NIX-Oe-qPW">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MatchCell" rowHeight="132" id="X3j-ls-uOh" customClass="MatchCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="132"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X3j-ls-uOh" id="QL3-GA-QSK" customClass="MatchCell">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="131.66666666666666"/>
@@ -242,6 +247,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QUJ-tF-gxG"/>
                     <connections>
+                        <outlet property="searchBar" destination="NIX-Oe-qPW" id="YaJ-5u-ONw"/>
                         <outlet property="tableView" destination="Lhu-my-IA1" id="Ikc-Uz-Jhq"/>
                         <segue destination="yIF-ED-s2b" kind="presentation" id="xda-t0-sGv"/>
                     </connections>
