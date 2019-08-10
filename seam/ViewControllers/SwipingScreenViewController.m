@@ -43,6 +43,7 @@
     // Do any additional setup after loading the view.
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     
+    [self alertTrigger];
     _realJobListings = [[NSMutableArray alloc] init];
     
     _currentCardIndex = 0; //index of job listing array
@@ -64,6 +65,27 @@
              NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
          }
      }];
+}
+
+- (void)alertTrigger{
+    PFQuery *query = [PFQuery queryWithClassName:@"SMMatches"];
+    [query whereKey:@"userPointer" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *a, NSError *error) {
+        if (query) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome Back"
+                                                                           message:@"You have matches. Go check them out!"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
+            // create an OK action
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                             }];
+            // add the OK action to the alert controller
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:^{
+            }];
+        }
+    }];
 }
 
 - (void)modifyReusableCards{

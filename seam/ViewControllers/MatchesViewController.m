@@ -9,8 +9,8 @@
 #import "MatchesViewController.h"
 #import "Match.h"
 #import "MatchCell.h"
-#import "SMFakeJobsDataManager.h"
 #import "SMJobsDataManagerProvider.h"
+#import "SMJobListing.h"
 #import <Parse/Parse.h>
 
 @interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITextViewDelegate>
@@ -33,14 +33,17 @@
     self.searchBar.delegate = self;
     self.matches = [NSMutableArray new];
     self.filteredMatches = self.matches;
+    [self fetchCloudData];
     
     [self.refreshIndicator startAnimating];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     
-    [self.refreshControl addTarget:self action:@selector(cellForRowAtIndexPath:) forControlEvents:(UIControlEventValueChanged)];
+    [self.refreshControl addTarget:self action:@selector(fetchCloudData) forControlEvents:(UIControlEventValueChanged)];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-    
+}
+
+- (void)fetchCloudData{
     //testing cloud code
     [PFCloud callFunctionInBackground:@"hello"
                        withParameters:nil
@@ -51,7 +54,6 @@
                                     NSLog(@"%@", hi);
                                     
                                 }];
-    
     
     [PFCloud callFunctionInBackground:@"gettingData"
                        withParameters:@{@"username": @"user5"}
@@ -71,7 +73,7 @@
                                         NSLog(@"something is wrong with cloud function fridayx");
                                     }
                                     NSLog(@"did we get the data?! %@", wat);
-                                
+                                    
                                 }];
     
     [PFCloud callFunctionInBackground:@"getMatchedData"
@@ -80,18 +82,18 @@
                                     if (error) {
                                         NSLog(@"something is wrong with cloud function fridayx");
                                     }
-//                                    NSLog(@"matched data in array of dictionaries?! %@", [wat[0] objectForKey:@"jobPointer"]);
-//                                    NSLog(@"look at me!%@", [[wat[0] objectForKey:@"jobPointer"] class]);
+                                    //                                    NSLog(@"matched data in array of dictionaries?! %@", [wat[0] objectForKey:@"jobPointer"]);
+                                    //                                    NSLog(@"look at me!%@", [[wat[0] objectForKey:@"jobPointer"] class]);
                                     for (Match* match in matches)
                                     {
-                                         SMJobListing *var = [match objectForKey:@"jobPointer"];
-                                         [self.matches addObject:var];
+                                        SMJobListing *var = [match objectForKey:@"jobPointer"];
+                                        [self.matches addObject:var];
                                     }
                                     self.filteredMatches = self.matches;
                                     [self.tableView reloadData];
+                                    [self.refreshControl endRefreshing];
+                                    [self.refreshIndicator stopAnimating];
                                 }];
-    [self.refreshControl endRefreshing];
-    [self.refreshIndicator stopAnimating];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
