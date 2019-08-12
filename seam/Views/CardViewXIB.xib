@@ -15,7 +15,7 @@
                 <outlet property="cardDetailsView" destination="iN0-l3-epB" id="Rvj-3w-tP4"/>
                 <outlet property="companyLabel" destination="ih8-jv-Zum" id="1nC-Da-PjQ"/>
                 <outlet property="jobCategory" destination="Uqq-76-9LB" id="C09-wq-BrC"/>
-                <outlet property="jobPerks" destination="ZW4-dY-l5M" id="7db-5A-nuk"/>
+                <outlet property="jobPerks" destination="wb1-Pq-n9l" id="66q-qe-1ym"/>
                 <outlet property="jobScheduleLabel" destination="fhl-d4-96a" id="Xwj-JI-7eT"/>
                 <outlet property="jobTitleLabel" destination="4Rv-S6-NLy" id="wiF-xA-NEi"/>
                 <outlet property="jobTypeLabel" destination="o4s-HT-xYP" id="yTd-0G-bbc"/>
@@ -27,19 +27,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CompanyName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih8-jv-Zum">
-                    <rect key="frame" x="93" y="81" width="210" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CompanyName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih8-jv-Zum">
+                    <rect key="frame" x="62" y="88" width="329" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mwu-62-nTc">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwu-62-nTc">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="67.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-S6-NLy">
-                            <rect key="frame" x="8" y="20" width="398" height="27"/>
-                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Job Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-S6-NLy">
+                            <rect key="frame" x="8" y="5" width="391" height="55"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -47,76 +46,122 @@
                     <color key="backgroundColor" red="0.088882308210087815" green="0.17890471451966017" blue="0.36364556347150256" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="4Rv-S6-NLy" firstAttribute="leading" secondItem="Mwu-62-nTc" secondAttribute="leading" constant="8" id="EdN-1L-Jsi"/>
-                        <constraint firstAttribute="trailing" secondItem="4Rv-S6-NLy" secondAttribute="trailing" constant="8" id="cHP-SP-tMi"/>
-                        <constraint firstItem="4Rv-S6-NLy" firstAttribute="top" secondItem="Mwu-62-nTc" secondAttribute="top" constant="20" id="w3k-NY-sxq"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4Rv-S6-NLy" secondAttribute="bottom" constant="8" id="Gt7-0w-cps"/>
+                        <constraint firstAttribute="trailing" secondItem="4Rv-S6-NLy" secondAttribute="trailing" constant="8" id="INZ-YR-xkY"/>
+                        <constraint firstItem="4Rv-S6-NLy" firstAttribute="centerY" secondItem="Mwu-62-nTc" secondAttribute="centerY" id="INq-qV-JIN"/>
+                        <constraint firstItem="4Rv-S6-NLy" firstAttribute="top" secondItem="Mwu-62-nTc" secondAttribute="top" constant="24" id="bYd-Pm-2k9"/>
+                        <constraint firstItem="4Rv-S6-NLy" firstAttribute="leading" secondItem="Mwu-62-nTc" secondAttribute="leading" constant="8" id="ywv-WB-iNZ"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here is where the job is offered..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbV-9r-mfY">
-                    <rect key="frame" x="93" y="136" width="249" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is where the job is offered..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbV-9r-mfY">
+                    <rect key="frame" x="62" y="132" width="336" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-place-marker-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Md1-H4-YFb">
-                    <rect key="frame" x="22" y="131" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-place-marker-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Md1-H4-YFb">
+                    <rect key="frame" x="16" y="129.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="5fT-1l-ufw"/>
+                        <constraint firstAttribute="height" constant="30" id="aAf-t8-XlZ"/>
+                    </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-calendar-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="zzV-Bk-qnd">
-                    <rect key="frame" x="30" y="165" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-calendar-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="zzV-Bk-qnd">
+                    <rect key="frame" x="16" y="175.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="I1x-TC-9cI"/>
+                        <constraint firstAttribute="height" constant="30" id="NKz-If-iNQ"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="job schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-d4-96a">
-                    <rect key="frame" x="85" y="227" width="287" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="job schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-d4-96a">
+                    <rect key="frame" x="62" y="226" width="336" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-time-span-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="H4g-ui-sMJ">
-                    <rect key="frame" x="30" y="218" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-time-span-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="H4g-ui-sMJ">
+                    <rect key="frame" x="16" y="221.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ADj-Tp-h7n"/>
+                        <constraint firstAttribute="width" constant="30" id="V7Y-7v-bGh"/>
+                    </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-company-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="QlE-Ck-R0E">
-                    <rect key="frame" x="26" y="74" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-company-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="QlE-Ck-R0E">
+                    <rect key="frame" x="16" y="83.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="OHq-uy-7c1"/>
+                        <constraint firstAttribute="height" constant="30" id="xqZ-fc-1aB"/>
+                    </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-smiling-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="b8t-Sj-r2v">
-                    <rect key="frame" x="27" y="264" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-opened-folder-50" translatesAutoresizingMaskIntoConstraints="NO" id="b8t-Sj-r2v">
+                    <rect key="frame" x="16" y="267.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ZCA-jP-0rP"/>
+                        <constraint firstAttribute="height" constant="30" id="aKi-Eo-ekV"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Perks are unavailable. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW4-dY-l5M">
-                    <rect key="frame" x="96" y="280" width="287" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqq-76-9LB">
+                    <rect key="frame" x="62" y="272" width="336" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-opened-folder-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="fok-Kt-Xj4">
-                    <rect key="frame" x="19" y="327" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqq-76-9LB">
-                    <rect key="frame" x="85" y="333" width="287" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full time..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4s-HT-xYP">
+                    <rect key="frame" x="62" y="180" width="336" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full time..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4s-HT-xYP">
-                    <rect key="frame" x="93" y="189" width="79" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-smiling-50" translatesAutoresizingMaskIntoConstraints="NO" id="JzF-kC-Wdv">
+                    <rect key="frame" x="16" y="313.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="KNt-xG-cBJ"/>
+                        <constraint firstAttribute="width" constant="30" id="xLR-CA-ign"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No Perks Available." textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-Pq-n9l">
+                    <rect key="frame" x="62" y="301" width="336" height="533"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="0.84284661159999996" green="0.96662601510000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Mwu-62-nTc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="J8c-Gg-tNh"/>
-                <constraint firstItem="Mwu-62-nTc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aet-b9-IN0"/>
-                <constraint firstItem="Mwu-62-nTc" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="kFB-eq-jVQ"/>
+                <constraint firstItem="wb1-Pq-n9l" firstAttribute="leading" secondItem="ih8-jv-Zum" secondAttribute="leading" id="0KA-Jr-m3j"/>
+                <constraint firstItem="Md1-H4-YFb" firstAttribute="leading" secondItem="QlE-Ck-R0E" secondAttribute="leading" id="75I-0d-JJC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fhl-d4-96a" secondAttribute="trailing" constant="16" id="7JS-HL-dtc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wb1-Pq-n9l" secondAttribute="bottom" constant="28" id="7Xt-jK-U0A"/>
+                <constraint firstItem="QlE-Ck-R0E" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="D3R-ET-0jv"/>
+                <constraint firstItem="sbV-9r-mfY" firstAttribute="leading" secondItem="ih8-jv-Zum" secondAttribute="leading" id="DAW-8x-Wr9"/>
+                <constraint firstItem="ih8-jv-Zum" firstAttribute="leading" secondItem="QlE-Ck-R0E" secondAttribute="trailing" constant="16" id="Dq9-J8-fbW"/>
+                <constraint firstItem="Mwu-62-nTc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FH9-Ha-BMX"/>
+                <constraint firstItem="H4g-ui-sMJ" firstAttribute="top" secondItem="zzV-Bk-qnd" secondAttribute="bottom" constant="16" id="JPg-uC-Vf2"/>
+                <constraint firstItem="zzV-Bk-qnd" firstAttribute="leading" secondItem="QlE-Ck-R0E" secondAttribute="leading" id="JUD-Q8-V7r"/>
+                <constraint firstItem="fhl-d4-96a" firstAttribute="leading" secondItem="ih8-jv-Zum" secondAttribute="leading" id="LI6-Ta-RNb"/>
+                <constraint firstItem="b8t-Sj-r2v" firstAttribute="top" secondItem="H4g-ui-sMJ" secondAttribute="bottom" constant="16" id="LyN-bd-diN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uqq-76-9LB" secondAttribute="trailing" constant="16" id="MT1-87-ngc"/>
+                <constraint firstItem="JzF-kC-Wdv" firstAttribute="top" secondItem="b8t-Sj-r2v" secondAttribute="bottom" constant="16" id="Olx-LV-UNo"/>
+                <constraint firstItem="H4g-ui-sMJ" firstAttribute="leading" secondItem="QlE-Ck-R0E" secondAttribute="leading" id="Uz7-Qb-Py6"/>
+                <constraint firstItem="Mwu-62-nTc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vnd-A5-XaL"/>
+                <constraint firstItem="sbV-9r-mfY" firstAttribute="top" secondItem="ih8-jv-Zum" secondAttribute="bottom" constant="23.5" id="Xbz-9J-lrq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wb1-Pq-n9l" secondAttribute="trailing" constant="16" id="Yzd-uz-1C3"/>
+                <constraint firstItem="wb1-Pq-n9l" firstAttribute="top" secondItem="Uqq-76-9LB" secondAttribute="bottom" constant="8" id="bNN-12-e5u"/>
+                <constraint firstItem="Uqq-76-9LB" firstAttribute="top" secondItem="fhl-d4-96a" secondAttribute="bottom" constant="25" id="c3n-2o-Vo7"/>
+                <constraint firstItem="JzF-kC-Wdv" firstAttribute="leading" secondItem="QlE-Ck-R0E" secondAttribute="leading" id="cDh-Qo-fLW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sbV-9r-mfY" secondAttribute="trailing" constant="16" id="cIE-zh-s1d"/>
+                <constraint firstItem="Uqq-76-9LB" firstAttribute="leading" secondItem="ih8-jv-Zum" secondAttribute="leading" id="h8s-u7-Sa3"/>
+                <constraint firstItem="o4s-HT-xYP" firstAttribute="top" secondItem="sbV-9r-mfY" secondAttribute="bottom" constant="27" id="hZk-rG-dCd"/>
+                <constraint firstAttribute="trailing" secondItem="ih8-jv-Zum" secondAttribute="trailing" constant="23" id="ht3-ET-02z"/>
+                <constraint firstItem="ih8-jv-Zum" firstAttribute="top" secondItem="Mwu-62-nTc" secondAttribute="bottom" constant="20.5" id="kKi-dc-Tog"/>
+                <constraint firstItem="fhl-d4-96a" firstAttribute="top" secondItem="o4s-HT-xYP" secondAttribute="bottom" constant="25.5" id="keC-ta-4Xb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="o4s-HT-xYP" secondAttribute="trailing" constant="16" id="kih-AE-uif"/>
+                <constraint firstItem="b8t-Sj-r2v" firstAttribute="leading" secondItem="QlE-Ck-R0E" secondAttribute="leading" id="nDL-pu-1CB"/>
+                <constraint firstItem="o4s-HT-xYP" firstAttribute="leading" secondItem="ih8-jv-Zum" secondAttribute="leading" id="u8f-aJ-z0C"/>
+                <constraint firstItem="Md1-H4-YFb" firstAttribute="top" secondItem="QlE-Ck-R0E" secondAttribute="bottom" constant="16" id="uIX-vs-3X0"/>
+                <constraint firstItem="zzV-Bk-qnd" firstAttribute="top" secondItem="Md1-H4-YFb" secondAttribute="bottom" constant="16" id="uPO-uF-xSl"/>
+                <constraint firstItem="QlE-Ck-R0E" firstAttribute="top" secondItem="Mwu-62-nTc" secondAttribute="bottom" constant="16" id="vlQ-bM-nJD"/>
+                <constraint firstItem="Mwu-62-nTc" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="yq7-kT-0FD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -126,9 +171,9 @@
     <resources>
         <image name="icons8-calendar-50.png" width="50" height="50"/>
         <image name="icons8-company-50.png" width="50" height="50"/>
-        <image name="icons8-opened-folder-50.png" width="50" height="50"/>
+        <image name="icons8-opened-folder-50" width="50" height="50"/>
         <image name="icons8-place-marker-50.png" width="50" height="50"/>
-        <image name="icons8-smiling-50.png" width="50" height="50"/>
+        <image name="icons8-smiling-50" width="50" height="50"/>
         <image name="icons8-time-span-50.png" width="50" height="50"/>
     </resources>
 </document>

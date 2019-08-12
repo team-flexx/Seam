@@ -24,8 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobScheduleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobTypeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *jobPerks;
 @property (weak, nonatomic) IBOutlet UILabel *jobCategory;
+@property (weak, nonatomic) IBOutlet UITextView *jobPerks;
 
 
 @property (strong, nonatomic) SMJobListing *listing;
