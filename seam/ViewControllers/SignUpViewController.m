@@ -64,7 +64,7 @@
 //            [self performSegueWithIdentifier:@"showMainView" sender:nil];
             
             // manually set new root VC 
-            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UITabBarController *rootViewController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
             [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
         }

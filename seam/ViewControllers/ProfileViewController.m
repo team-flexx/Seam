@@ -29,11 +29,11 @@
 
 @implementation ProfileViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _saveButton.hidden = YES;
     _jobFilters.hidden =YES;
+    _addJob.hidden = YES;
     self.userProfile = PFUser.currentUser.userProfile;
     
     //loads user's info from Parse and passes it into textViews
