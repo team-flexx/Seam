@@ -40,6 +40,8 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    _placeholderView.layer.cornerRadius = 30;
+    _placeholderView.clipsToBounds = true;
 
     [self alertTrigger];
     _currentCardIndex = 2; //index for _jobs, since we initially created 2 cards
@@ -128,8 +130,7 @@
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
                                                                      options:options];
     
-    self.view.layer.cornerRadius = 30;
-    self.view.clipsToBounds = true;
+    
     
    //add shadows 
     view.layer.shadowRadius  = 1.5f;
