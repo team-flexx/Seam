@@ -127,6 +127,20 @@
     //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
                                                                      options:options];
+    
+    self.view.layer.cornerRadius = 30;
+    self.view.clipsToBounds = true;
+    
+   //add shadows 
+    view.layer.shadowRadius  = 1.5f;
+    view.layer.shadowColor   = [UIColor colorWithRed:176.f/255.f green:199.f/255.f blue:226.f/255.f alpha:1.f].CGColor;
+    view.layer.shadowOffset  = CGSizeMake(0.0f, 0.0f);
+    view.layer.shadowOpacity = 0.9f;
+    view.layer.masksToBounds = NO;
+    
+    UIEdgeInsets shadowInsets     = UIEdgeInsetsMake(0, 0, -1.5f, 0);
+    UIBezierPath *shadowPath      = [UIBezierPath bezierPathWithRect:UIEdgeInsetsInsetRect(view.bounds, shadowInsets)];
+    view.layer.shadowPath    = shadowPath.CGPath;
     [self changeDataOnCardAtIndex:jobListIndex atCard:view];
     return view;
 }
