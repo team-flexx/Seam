@@ -68,6 +68,10 @@
     _addJob.hidden = YES;
 
 }
+//dismissing keyboard on login screen
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
 
 //method to log out
 - (void)logoutUser{

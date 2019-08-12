@@ -482,7 +482,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="8LM-q5-PCq"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vAU-cx-1fo" appends="YES" id="bPf-ub-FP0"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Xhs-AX-FJm"/>
                     <navigationItem key="navigationItem" id="iLn-b0-Ffn">
@@ -510,6 +514,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpv-02-7AJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vAU-cx-1fo">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="839-ve-Hi3" id="qD8-ES-K7p"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1028" y="1018.2266009852217"/>
         </scene>
