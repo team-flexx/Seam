@@ -34,21 +34,19 @@
 
 @implementation SwipingScreenViewController {
     NSUInteger _currentCardIndex; //keep track of the current view's info in viewWasChosenWithDirection method
-    NSUInteger _nextCardTrackerIndex;//keep track of the current view's info in viewWasChosenWithDirection method
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
-    
     [self alertTrigger];
+    _currentCardIndex = 2; //index for _jobs
+    
+    //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _realJobListings = [[NSMutableArray alloc] init];
-    
-    _currentCardIndex = 0; //index of job listing array
-    _nextCardTrackerIndex = 1;
-    
     [[SMJobsDataManagerProvider sharedDataManager] fetchJobsWithCompletion:^(NSArray *realJobListings, NSError *error)
      {
          if (realJobListings)
@@ -57,8 +55,12 @@
              
              //create first card
              NSLog(@"about to make first card, at index: %d", _currentCardIndex);
-             _frontCard = [self createSingleCardWithJobListingIndex:_currentCardIndex]; //create 1st card
-             _backCard = [self createSingleCardWithJobListingIndex:_nextCardTrackerIndex]; //create 2nd card
+             _backCard = [self createSingleCardWithJobListingIndex:0]; //create 1st card
+             _frontCard = [self createSingleCardWithJobListingIndex:1]; //create 2nd card
+             
+             //order of view hierarchy matters. adding in subviews is like a stack.
+            [self.view addSubview:_backCard];
+            [self.view addSubview:_frontCard]; //stacks on top
          }
          else
          {
@@ -88,65 +90,66 @@
     }];
 }
 
-- (void)modifyReusableCards{
-    NSLog(@"creating stack of cards, something may have deleted");
-    if(_currentCardIndex == [_jobs count]) //BASE CASE
-    {
-        NSLog(@"done");
-    }
-    else
-    {
-        if (_currentCardIndex == _nextCardTrackerIndex)
-        {
-            NSLog(@"change data on card because one just got deleted");
-            _nextCardTrackerIndex++;
-        }
-    }
-}
 
+- (void)noMoreCardsAlert{
+    //alert
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Currently no more jobs"
+                                                                   message:@"Please update your profile to view more job options or wait for new job postings. "
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    // create an OK action
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                         // handle response here.
+                                                     }];
+    
+    // add the OK action to the alert controller
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:^{
+        
+        // optional code for what happens after the alert controller has finished presenting
+    }];
+}
 //for reusable, only used TWICE to make first and second card
 - (UIView*)createSingleCardWithJobListingIndex:(int)jobListIndex{
+    if (jobListIndex >= [_jobs count] ){
+       return nil;
+    }
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
+    
     //set the delegate to this view controller in order to detect the swiping direction per view to work
     options.delegate = self;
-    //text box you see at the top left or right corner of card in the home screen when you're swiping
-    options.likedText = @"Get job";
-    options.likedColor = [UIColor blueColor];
-    options.nopeText = @"Delete";
     
     //define size of card. we are using the placeholderView's frame from the storyboard
     //let image serve as a card for now. Need to connect this to the views which will be connect to SMJobListing.h model
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.placeholderView.frame
                                                                      options:options];
-    
     [self changeDataOnCardAtIndex:jobListIndex atCard:view];
-    [self.view addSubview:view];
     return view;
 }
 
 - (void)changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
-    // check index
+    if (ind <= [self.jobs count]){
+        SMJobCard *theCardView = [[SMJobCard alloc] init];
+        SMJobListing *jobPointer = self.jobs[ind];
+        
+        //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
+        theCardView.frame = self.placeholderView.frame;
+        theCardView.jobTitleLabel.text = jobPointer.title;
+        theCardView.companyLabel.text = jobPointer.companyName;
+        theCardView.locationLabel.text = jobPointer.locationName;
+        theCardView.jobScheduleLabel.text = jobPointer.schedule;
+        theCardView.jobTypeLabel.text = jobPointer.typeOfJob;
+        theCardView.jobPerks.text = jobPointer.perks;
+        theCardView.jobCategory.text = jobPointer.category;
     
-    SMJobCard *theCardView = [[SMJobCard alloc] init];
-    SMJobListing *jobPointer = self.jobs[ind];
-    
-    //define the cardView's frame using the size we made the placeHolderView in Main.storyboard
-    theCardView.frame = self.placeholderView.frame;
-    
-    theCardView.jobTitleLabel.text = jobPointer.title;
-    theCardView.companyLabel.text = jobPointer.companyName;
-    theCardView.locationLabel.text = jobPointer.locationName;
-    theCardView.jobScheduleLabel.text = jobPointer.schedule;
-    theCardView.jobTypeLabel.text = jobPointer.typeOfJob;
-    theCardView.jobPerks.text = jobPointer.perks;
-    theCardView.jobCategory.text = jobPointer.category;
-    
-    
-    //convert uiview to uiimage in order for it to show up as a card
-    //use the view file we created with CardViewXIB.xib and SMJobCard.m
-    theView.imageView.image = [self imageWithView:theCardView];
+        //convert uiview to uiimage in order for it to show up as a card
+        //use the view file we created with CardViewXIB.xib and SMJobCard.m
+        theView.imageView.image = [self imageWithView:theCardView];
+    }
 }
 
 //NOTE: these methods work after you set the options.delegate = self in viewDidLoad. this would add it to array of applicant_swipes
@@ -172,40 +175,22 @@
 }
 
 -(void)switchAndMoveFrontAndBackCards{
-    //reset where the first card will be placed after it was swiped away
-    _frontCard.frame = self.placeholderView.frame;
-    
-    //NEW:
-    [UIView animateWithDuration:0.16 animations:^{
-        _frontCard.transform = CGAffineTransformIdentity;
-        _frontCard.center = [_placeholderView superview].center;
-    }];
-    
-    
-    [UIView animateWithDuration:0.16 animations:^{
-        _backCard.transform = CGAffineTransformIdentity;
-        _backCard.center = [_placeholderView superview].center;
-    }];
-    
-    int nextNextCardIndex = _nextCardTrackerIndex++;
-    [self changeDataOnCardAtIndex:nextNextCardIndex atCard:_frontCard];
-    
-    //add the _firstCard back to subview
-    //retains _frontCard, which is needed to reuse this _frontCard view after removing it from the view hierarchy (from pod)
-    [self.view addSubview:_frontCard];
-    
-    //Inserts a view among the view’s subviews so it’s displayed immediately above or below another view
-    //[self.view sendSubviewToBack:_frontCard];
-    [self.view insertSubview:_frontCard aboveSubview:_backgroundView];
-    
     //first card is now second card
-    //second card is what used to be the first card
-    UIView *temp = _frontCard;
+    //second card is a new card
+    UIView *newCard = [self createSingleCardWithJobListingIndex: _currentCardIndex];
     _frontCard = _backCard;
-    _backCard = temp;
+    _backCard = newCard;
     
-    _currentCardIndex++;
-    [self modifyReusableCards];
+    if (newCard != nil){ //at createSingleCard.. method, it returns nil if there are no more cards
+        [self.view insertSubview:_backCard aboveSubview:_backgroundView];
+        
+        //reset where the first card will be placed after it was swiped away
+        _backCard.frame = self.placeholderView.frame;
+        _currentCardIndex++;
+    }
+    else{ //no more cards/data so:
+        [self noMoreCardsAlert];
+    }
 }
 
 //convert uiiview to uiimage
