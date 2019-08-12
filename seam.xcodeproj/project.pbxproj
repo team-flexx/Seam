@@ -18,9 +18,6 @@
 		91B8790D22FA3850003CAA37 /* SMEmployerSwipeRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B8790C22FA3850003CAA37 /* SMEmployerSwipeRight.m */; };
 		91B8791022FA3C07003CAA37 /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B8790F22FA3C07003CAA37 /* Match.m */; };
 		91B8791322FA3C3B003CAA37 /* MatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B8791222FA3C3B003CAA37 /* MatchCell.m */; };
-		9706CFDF22FE1B32006ED1BD /* icons8-delete-trash-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9706CFDE22FE1B32006ED1BD /* icons8-delete-trash-50.png */; };
-		9706CFE122FE1E6C006ED1BD /* icons8-checkmark-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 9706CFE022FE1E6C006ED1BD /* icons8-checkmark-64.png */; };
-		9706CFE522FE1FDD006ED1BD /* nopeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9706CFE422FE1FDD006ED1BD /* nopeIcon.png */; };
 		9743F7CF22DD3590002FFB7E /* SMJobListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7CE22DD3590002FFB7E /* SMJobListing.m */; };
 		9743F7D622DFA21D002FFB7E /* SwipingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */; };
 		9743F7DC22DFBD98002FFB7E /* SMJobCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9743F7DB22DFBD98002FFB7E /* SMJobCard.m */; };
@@ -82,9 +79,6 @@
 		91B8790F22FA3C07003CAA37 /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		91B8791122FA3C3B003CAA37 /* MatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchCell.h; sourceTree = "<group>"; };
 		91B8791222FA3C3B003CAA37 /* MatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchCell.m; sourceTree = "<group>"; };
-		9706CFDE22FE1B32006ED1BD /* icons8-delete-trash-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-delete-trash-50.png"; path = "../../../../Downloads/icons8-delete-trash-50.png"; sourceTree = "<group>"; };
-		9706CFE022FE1E6C006ED1BD /* icons8-checkmark-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-checkmark-64.png"; path = "../../../../Downloads/icons8-checkmark-64.png"; sourceTree = "<group>"; };
-		9706CFE422FE1FDD006ED1BD /* nopeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nopeIcon.png; path = ../../../../Downloads/nopeIcon.png; sourceTree = "<group>"; };
 		9743F7CD22DD3590002FFB7E /* SMJobListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobListing.h; sourceTree = "<group>"; };
 		9743F7CE22DD3590002FFB7E /* SMJobListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJobListing.m; sourceTree = "<group>"; };
 		9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipingScreenViewController.h; sourceTree = "<group>"; };
@@ -211,9 +205,6 @@
 			children = (
 				9743F7D422DFA21D002FFB7E /* SwipingScreenViewController.h */,
 				9743F7D522DFA21D002FFB7E /* SwipingScreenViewController.m */,
-				9706CFDE22FE1B32006ED1BD /* icons8-delete-trash-50.png */,
-				9706CFE022FE1E6C006ED1BD /* icons8-checkmark-64.png */,
-				9706CFE422FE1FDD006ED1BD /* nopeIcon.png */,
 				E4624F6B22FB512900DC5CD9 /* SMUITabBarControllerViewController.h */,
 				E4624F6C22FB512900DC5CD9 /* SMUITabBarControllerViewController.m */,
 				E4556F0222E7BC9C00C50526 /* LoginViewController.h */,
@@ -428,15 +419,6 @@
 				977DA93222E654F5000BD66B /* CardViewXIB.xib in Resources */,
 				910496BD22FE0219003AF9A9 /* desk.jpg in Resources */,
 				910496B622FE0219003AF9A9 /* keyboard.jpg in Resources */,
-				97B529B822FD455700B9CEE1 /* keyboard.jpg in Resources */,
-				97B529B422FD3FE100B9CEE1 /* desk.jpg in Resources */,
-				9706CFE122FE1E6C006ED1BD /* icons8-checkmark-64.png in Resources */,
-				97B529BA22FD49B000B9CEE1 /* icons8-place-marker-50.png in Resources */,
-				9706CFDF22FE1B32006ED1BD /* icons8-delete-trash-50.png in Resources */,
-				97B529C222FD4BA700B9CEE1 /* icons8-smiling-50.png in Resources */,
-				97B529BC22FD4A2F00B9CEE1 /* icons8-calendar-50.png in Resources */,
-				9706CFE522FE1FDD006ED1BD /* nopeIcon.png in Resources */,
-				97B529C022FD4AE900B9CEE1 /* icons8-company-50.png in Resources */,
 				9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */,
 				9794868022D5070800E90DBD /* Assets.xcassets in Resources */,
 				9794867E22D5070700E90DBD /* Main.storyboard in Resources */,

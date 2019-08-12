@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/festusojo/Desktop/Seam/seam/Models/SMEmployerSwipeRight.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/festusojo/Desktop/Seam/seam/Models/SMEmployerSwipeRight.m">
+   </FileRef>
+   <FileRef
       location = "group:seam.xcodeproj">
    </FileRef>
    <FileRef

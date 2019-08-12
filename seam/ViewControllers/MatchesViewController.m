@@ -12,6 +12,7 @@
 #import "SMJobsDataManagerProvider.h"
 #import "SMJobListing.h"
 #import <Parse/Parse.h>
+#import "WebViewController.h"
 
 @interface MatchesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -96,26 +97,20 @@
                                 }];
 }
 
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MatchCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell"];
-    cell.jobURLTextView.delegate = self;
     Match *theMatch = self.filteredMatches[indexPath.row];
+    cell.tag = indexPath.row;
+    [cell.webButton addTarget:self action:@selector(yourButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     cell.theNameLabel.text = theMatch[@"companyName"];
     cell.jobTitleLabel.text = theMatch[@"title"];
-    cell.jobURLTextView.text = theMatch[@"jobURL"];
-    cell.jobURLTextView.editable = NO;
-    cell.jobURLTextView.dataDetectorTypes = UIDataDetectorTypeAll;
-    
-//    cell.jobURLTextView.delegate=self;
-//    cell.jobURLTextView.selectable=YES;
-//    cell.jobURLTextView.dataDetectorTypes = UIDataDetectorTypeLink;
-//
-//    NSURL *url = [NSURL URLWithString:theMatch[@"jobURL"]];
-//    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-//    [_webView loadRequest:req];
+    cell.webButton.tag = indexPath.row;
+
     return cell;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -125,20 +120,8 @@
     return tableView.rowHeight;
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
-    
-    if (navigationType == UIWebViewNavigationTypeLinkClicked){
-        //open it on browser if you want to open it in same web view remove return NO;
-        NSURL *url = request.URL;
-        if ([[UIApplication sharedApplication] canOpenURL:url]) {
-            UIApplication *application = [UIApplication sharedApplication];
-            [application openURL:url options:@{} completionHandler:nil];
-        }
-        return NO;
-    }
-    return YES;
-    
+- (IBAction)onClick:(id)sender {
+     [self performSegueWithIdentifier:@"goToChat" sender:nil];
 }
 
 
@@ -162,6 +145,22 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredMatches.count;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Match *theMatch = self.filteredMatches[indexPath.row];
+    WebViewController *webVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebVC"];
+    webVC.jobURL = theMatch[@"jobURL"];
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+
+- (IBAction)yourButtonClicked:(id)sender {
+//    Match *theMatch = self.filteredMatches[indexPath.row];
+//    WebViewController *webVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebVC"];
+//    webVC.jobURL = theMatch[@"jobURL"];
+//    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 @end

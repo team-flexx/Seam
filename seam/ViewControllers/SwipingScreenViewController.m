@@ -197,6 +197,7 @@
     
     if (_backCard == nil){ //at createSingleCard.. method, it returns nil if there are no more cards
         NSLog(@"no more cards");
+        [self.view insertSubview:_backCard aboveSubview:_backgroundView];
         [self noMoreCardsAlert];
     }
     else{ //no more cards or data so:

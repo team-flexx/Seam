@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WebViewController : UIViewController
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
+@property (strong, nonatomic) NSURL* jobURL;
 
 @end
 

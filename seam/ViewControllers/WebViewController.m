@@ -9,6 +9,7 @@
 #import "WebViewController.h"
 #import <WebKit/WKWebView.h>
 #import <WebKit/WKWebViewConfiguration.h>
+#import "MatchesViewController.h"
 
 @implementation WebViewController
 
@@ -17,7 +18,8 @@
     
     WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:theConfiguration];
-    NSURL *nsurl=[NSURL URLWithString:@"https://www.google.com"];
+    NSLog(@"url here, %@", _jobURL);
+    NSURL *nsurl= [NSURL URLWithString:_jobURL];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
     [webView loadRequest:nsrequest];
     [self.view addSubview:webView];

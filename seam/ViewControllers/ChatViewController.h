@@ -1,8 +1,8 @@
 //
-//  MatchesViewController.h
+//  ChatViewController.h
 //  seam
 //
-//  Created by alexamorales on 7/23/19.
+//  Created by festusojo on 8/12/19.
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MatchesViewController : UIViewController
+@interface ChatViewController : UITableViewController
 
 @end
 

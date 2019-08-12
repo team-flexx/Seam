@@ -212,51 +212,42 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apply for the role here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-0g-eKG">
-                                            <rect key="frame" x="36" y="67" width="175" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-company-50" translatesAutoresizingMaskIntoConstraints="NO" id="eKD-3y-VwR">
                                             <rect key="frame" x="16" y="5" width="72" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Apply here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hpi-VZ-uTM">
-                                            <rect key="frame" x="36" y="95" width="215" height="36"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" link="YES"/>
-                                            </accessibility>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEU-Cg-6ho">
+                                            <rect key="frame" x="113" y="67" width="206" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <state key="normal" title="Click here to learn more!"/>
+                                        </button>
                                     </subviews>
                                     <connections>
                                         <outlet property="theNameLabel" destination="39p-Uz-Wkb" id="UAe-94-sEc"/>
                                     </connections>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="Hpi-VZ-uTM" firstAttribute="top" secondItem="X3j-ls-uOh" secondAttribute="top" constant="95" id="7jT-cn-gVc"/>
-                                    <constraint firstItem="Hpi-VZ-uTM" firstAttribute="leading" secondItem="X3j-ls-uOh" secondAttribute="leading" constant="36" id="DTp-QR-1gi"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hpi-VZ-uTM" secondAttribute="trailing" constant="124" id="hZV-PG-ga9"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hpi-VZ-uTM" secondAttribute="bottom" constant="1" id="vLn-EV-dhn"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="jobTitleLabel" destination="0d9-wG-X7s" id="de1-q3-Ygt"/>
-                                    <outlet property="jobURLTextView" destination="Hpi-VZ-uTM" id="aqw-ye-Wzk"/>
                                     <outlet property="theNameLabel" destination="39p-Uz-Wkb" id="5ZC-Ji-afk"/>
+                                    <outlet property="webButton" destination="OEU-Cg-6ho" id="q0z-1m-Ro3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="QUJ-tF-gxG"/>
+                    <navigationItem key="navigationItem" id="QUJ-tF-gxG">
+                        <barButtonItem key="rightBarButtonItem" title="Chat" id="WMf-9s-WwM">
+                            <connections>
+                                <action selector="onClick:" destination="0tu-1z-iqr" id="4D6-0G-6Yy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="refreshIndicator" destination="uci-Vp-q39" id="acs-tI-onb"/>
                         <outlet property="searchBar" destination="NIX-Oe-qPW" id="YaJ-5u-ONw"/>
                         <outlet property="tableView" destination="Lhu-my-IA1" id="Ikc-Uz-Jhq"/>
-                        <segue destination="yIF-ED-s2b" kind="presentation" id="xda-t0-sGv"/>
+                        <segue destination="yIF-ED-s2b" kind="push" identifier="toWeb" id="fwO-vk-aHi"/>
+                        <segue destination="ZAA-fn-KYG" kind="push" identifier="goToChat" id="mNY-wg-J8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3th-oC-nNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="1873" y="261"/>
         </scene>
-        <!--Matches View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="HJX-o2-gAh">
             <objects>
-                <viewController storyboardIdentifier="WebVC" id="yIF-ED-s2b" customClass="MatchesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebVC" id="yIF-ED-s2b" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBM-Vg-Eci">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,17 +278,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NdJ-Bl-f2x"/>
-                        <connections>
-                            <outlet property="webView" destination="PI0-uV-hoh" id="bDi-82-j1o"/>
-                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="dRO-ji-UIB"/>
                     <connections>
-                        <outlet property="webView" destination="PI0-uV-hoh" id="Fcl-66-NAD"/>
+                        <outlet property="webView" destination="PI0-uV-hoh" id="d6p-8J-z8H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3w-Ti-sIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2736.8000000000002" y="261.57635467980299"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7yR-6B-qUZ">
+            <objects>
+                <viewController id="ZAA-fn-KYG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tco-cG-r9q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5Uf-DY-CD9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MCc-wW-nCE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aF-cm-ZVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3657" y="264"/>
         </scene>
         <!--Swipe-->
         <scene sceneID="egU-WD-6lb">
