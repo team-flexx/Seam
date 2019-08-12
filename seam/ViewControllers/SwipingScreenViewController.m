@@ -41,9 +41,8 @@
     
     // Do any additional setup after loading the view.
 
-    //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     [self alertTrigger];
-    _currentCardIndex = 2; //index for _jobs
+    _currentCardIndex = 2; //index for _jobs, since we initially created 2 cards
     
     //setting the array of jobs we defined in the interface to the jobListings accessed from the SMFakeJobsDataManager
     _realJobListings = [[NSMutableArray alloc] init];
@@ -113,8 +112,9 @@
 }
 //for reusable, only used TWICE to make first and second card
 - (UIView*)createSingleCardWithJobListingIndex:(int)jobListIndex{
-    if (jobListIndex >= [_jobs count] ){
+    if (jobListIndex >= [_jobs count]-1 ){
        return nil;
+        NSLog(@"GREATER THAN NUMBER OF JOBS AT THIS POINT");
     }
     //swiping yes or no
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
@@ -132,7 +132,7 @@
 }
 
 - (void)changeDataOnCardAtIndex:(int) ind atCard:(MDCSwipeToChooseView *) theView{
-    if (ind <= [self.jobs count]){
+    if (ind < [self.jobs count]){
         SMJobCard *theCardView = [[SMJobCard alloc] init];
         SMJobListing *jobPointer = self.jobs[ind];
         
@@ -181,15 +181,17 @@
     _frontCard = _backCard;
     _backCard = newCard;
     
-    if (newCard != nil){ //at createSingleCard.. method, it returns nil if there are no more cards
+    if (_backCard == nil){ //at createSingleCard.. method, it returns nil if there are no more cards
+        NSLog(@"no more cards");
+        [self noMoreCardsAlert];
+    }
+    else{ //no more cards or data so:
         [self.view insertSubview:_backCard aboveSubview:_backgroundView];
         
         //reset where the first card will be placed after it was swiped away
         _backCard.frame = self.placeholderView.frame;
         _currentCardIndex++;
-    }
-    else{ //no more cards/data so:
-        [self noMoreCardsAlert];
+        
     }
 }
 
