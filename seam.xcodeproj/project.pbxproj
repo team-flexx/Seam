@@ -10,8 +10,6 @@
 		1F6EBD0D6E9A9916D53399AB /* Pods_seam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713710A9F6691A1B402F9C4C /* Pods_seam.framework */; };
 		3C083B67A26ADBAA9CFA5A99 /* Pods_seamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3180292FF84C43E522DBCA4 /* Pods_seamTests.framework */; };
 		53788022358DD74F500DD3A5 /* Pods_seamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */; };
-		910496B622FE0219003AF9A9 /* keyboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910496AD22FE0219003AF9A9 /* keyboard.jpg */; };
-		910496BD22FE0219003AF9A9 /* desk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910496B422FE0219003AF9A9 /* desk.jpg */; };
 		911708AA22E7C80700DBCA22 /* MatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911708A922E7C80700DBCA22 /* MatchesViewController.m */; };
 		9122078E22E0FC0500FB25CB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122078D22E0FC0500FB25CB /* ProfileViewController.m */; };
 		9122079E22E68E6E00FB25CB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9122079D22E68E6E00FB25CB /* SignUpViewController.m */; };
@@ -29,12 +27,6 @@
 		9794868622D5070800E90DBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868522D5070800E90DBD /* main.m */; };
 		9794869022D5070800E90DBD /* seamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794868F22D5070800E90DBD /* seamTests.m */; };
 		9794869B22D5070800E90DBD /* seamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9794869A22D5070800E90DBD /* seamUITests.m */; };
-		97A002BE230230BF0004175C /* darkplants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A002BD230230BF0004175C /* darkplants.jpg */; };
-		97A002C0230235400004175C /* icons8-360-degrees-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A002BF230235400004175C /* icons8-360-degrees-24.png */; };
-		97A002C22302357B0004175C /* icons8-bookmark-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A002C12302357B0004175C /* icons8-bookmark-16.png */; };
-		97A002C5230236040004175C /* icons8-bookmark-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A002C4230236040004175C /* icons8-bookmark-80.png */; };
-		97A002C723023A1B0004175C /* another_building.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A002C623023A1A0004175C /* another_building.png */; };
-		97A002C923023BAC0004175C /* icons8-left-click-96.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A002C823023BAC0004175C /* icons8-left-click-96.png */; };
 		97B6FE3222ECFB5F0030241A /* PFUser+SMUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6FE3022ECFB5E0030241A /* PFUser+SMUserProfile.m */; };
 		97B6FE3922EF5AEC0030241A /* SMJobsDataManagerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6FE3822EF5AEC0030241A /* SMJobsDataManagerProvider.m */; };
 		E4556F0422E7BC9C00C50526 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4556F0322E7BC9C00C50526 /* LoginViewController.m */; };
@@ -71,8 +63,6 @@
 		2A7D78D84A3A69E46F3E2E61 /* Pods-seamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seamTests.debug.xcconfig"; path = "Target Support Files/Pods-seamTests/Pods-seamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		713710A9F6691A1B402F9C4C /* Pods_seam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A25C5CD81476C78D4C0BA8E /* Pods_seamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		910496AD22FE0219003AF9A9 /* keyboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keyboard.jpg; sourceTree = SOURCE_ROOT; };
-		910496B422FE0219003AF9A9 /* desk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = desk.jpg; sourceTree = SOURCE_ROOT; };
 		911708A822E7C80700DBCA22 /* MatchesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchesViewController.h; sourceTree = "<group>"; };
 		911708A922E7C80700DBCA22 /* MatchesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchesViewController.m; sourceTree = "<group>"; };
 		9122078C22E0FC0500FB25CB /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -106,13 +96,6 @@
 		9794869622D5070800E90DBD /* seamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9794869A22D5070800E90DBD /* seamUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seamUITests.m; sourceTree = "<group>"; };
 		9794869C22D5070800E90DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97A002BD230230BF0004175C /* darkplants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = darkplants.jpg; path = ../../../../Downloads/darkplants.jpg; sourceTree = "<group>"; };
-		97A002BF230235400004175C /* icons8-360-degrees-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-360-degrees-24.png"; path = "../../../Downloads/icons8-360-degrees-24.png"; sourceTree = "<group>"; };
-		97A002C12302357B0004175C /* icons8-bookmark-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-bookmark-16.png"; path = "../../../../Downloads/icons8-bookmark-16.png"; sourceTree = "<group>"; };
-		97A002C3230235850004175C /* icons8-bookmark-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-bookmark-16.png"; sourceTree = "<group>"; };
-		97A002C4230236040004175C /* icons8-bookmark-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-bookmark-80.png"; path = "../../../Downloads/icons8-bookmark-80.png"; sourceTree = "<group>"; };
-		97A002C623023A1A0004175C /* another_building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = another_building.png; path = ../../../Downloads/another_building.png; sourceTree = "<group>"; };
-		97A002C823023BAC0004175C /* icons8-left-click-96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-left-click-96.png"; path = "../../../Downloads/icons8-left-click-96.png"; sourceTree = "<group>"; };
 		97B6FE3022ECFB5E0030241A /* PFUser+SMUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFUser+SMUserProfile.m"; sourceTree = "<group>"; };
 		97B6FE3122ECFB5E0030241A /* PFUser+SMUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFUser+SMUserProfile.h"; sourceTree = "<group>"; };
 		97B6FE3722EF5AEC0030241A /* SMJobsDataManagerProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJobsDataManagerProvider.h; sourceTree = "<group>"; };
@@ -209,7 +192,6 @@
 				97B6FE3022ECFB5E0030241A /* PFUser+SMUserProfile.m */,
 				E4556F3C22EADFB100C50526 /* SMUserProfile.h */,
 				E4556F3D22EADFB100C50526 /* SMUserProfile.m */,
-				97A002C12302357B0004175C /* icons8-bookmark-16.png */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,7 +207,6 @@
 				E4556F0322E7BC9C00C50526 /* LoginViewController.m */,
 				911708A822E7C80700DBCA22 /* MatchesViewController.h */,
 				911708A922E7C80700DBCA22 /* MatchesViewController.m */,
-				97A002BD230230BF0004175C /* darkplants.jpg */,
 				E4624F7422FE6AFE00DC5CD9 /* WebViewController.h */,
 				E4624F7522FE6AFE00DC5CD9 /* WebViewController.m */,
 				91B8790E22FA3C07003CAA37 /* Match.h */,
@@ -282,14 +263,7 @@
 				9743F7D022DFA16A002FFB7E /* ViewControllers */,
 				9743F7CC22DD2D71002FFB7E /* Models */,
 				9794867C22D5070700E90DBD /* Main.storyboard */,
-				97A002C823023BAC0004175C /* icons8-left-click-96.png */,
-				97A002C623023A1A0004175C /* another_building.png */,
-				97A002C4230236040004175C /* icons8-bookmark-80.png */,
-				97A002BF230235400004175C /* icons8-360-degrees-24.png */,
-				97A002C3230235850004175C /* icons8-bookmark-16.png */,
-				910496B422FE0219003AF9A9 /* desk.jpg */,
 				9794867F22D5070800E90DBD /* Assets.xcassets */,
-				910496AD22FE0219003AF9A9 /* keyboard.jpg */,
 				9794868122D5070800E90DBD /* LaunchScreen.storyboard */,
 				9794868422D5070800E90DBD /* Info.plist */,
 				9794868522D5070800E90DBD /* main.m */,
@@ -436,16 +410,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97A002C22302357B0004175C /* icons8-bookmark-16.png in Resources */,
 				977DA93222E654F5000BD66B /* CardViewXIB.xib in Resources */,
-				97A002C923023BAC0004175C /* icons8-left-click-96.png in Resources */,
-				97A002BE230230BF0004175C /* darkplants.jpg in Resources */,
-				97A002C5230236040004175C /* icons8-bookmark-80.png in Resources */,
-				910496BD22FE0219003AF9A9 /* desk.jpg in Resources */,
-				910496B622FE0219003AF9A9 /* keyboard.jpg in Resources */,
 				9794868322D5070800E90DBD /* LaunchScreen.storyboard in Resources */,
-				97A002C723023A1B0004175C /* another_building.png in Resources */,
-				97A002C0230235400004175C /* icons8-360-degrees-24.png in Resources */,
 				9794868022D5070800E90DBD /* Assets.xcassets in Resources */,
 				9794867E22D5070700E90DBD /* Main.storyboard in Resources */,
 			);
