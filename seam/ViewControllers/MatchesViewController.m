@@ -121,7 +121,9 @@
 }
 
 - (IBAction)onClick:(id)sender {
-     [self performSegueWithIdentifier:@"goToChat" sender:nil];
+    WebViewController *webVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebVC"];
+    webVC.jobURL = @"https://www.wireclub.com/chat/room/seam8.12";
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 
