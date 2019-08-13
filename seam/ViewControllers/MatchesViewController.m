@@ -29,6 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //design
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"darkplants.jpg"]];
+    self.tableView.opaque = NO;
+    self.tableView.separatorColor = [UIColor clearColor];
+    
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
