@@ -10,6 +10,12 @@ Tinder for Jobs. Job Hunting in the 21st Century
 ## Overview
 ### Description
    - **Description**: Employers can view unemployed peoples' resumes and both groups can swipe right to match, left to not
+   
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/ti8ywpp1SY.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
    - **Category:** everything
