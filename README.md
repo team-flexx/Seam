@@ -16,6 +16,7 @@ Tinder for Jobs. Job Hunting in the 21st Century
 Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/ti8ywpp1SY.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/Ptxqgi71S4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
    - **Category:** everything
