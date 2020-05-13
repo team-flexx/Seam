@@ -21,17 +21,17 @@ Here's a walkthrough of implemented user stories:
 ### App Evaluation
    - **Category:** everything
    - **Mobile:** yes
-   - **Story:** Have you ever wanted to apply for a job, but had to take hours to fill out the application? Companies only send 60 seconds on a resume anyway. Why should you require extra time to go in person, fill out an application, and turn in your resume?
+   - **Story:** Have you ever wanted to apply for a job, but had to take hours to fill out the application? Companies only spend 60 seconds on a resume anyway. Why should you require extra time to go in person, fill out an application, and turn in your resume?
    - **Market:** the unemployed and employers   
    - **Habit:** Daily
    - **Scope:** mr. international baby
    - **Features:**
-       -membership for companies to bookmark people
-       -choose how long/when/location of job 
-       -help you set up career path
-       -bio name, age limit, profile pic,
-       -job rating out of 5 stars (for one - time jobs)
-       -references
+       *-membership for companies to bookmark people
+       *-choose how long/when/location of job 
+       *-help you set up career path
+       *-bio name, age limit, profile pic,
+       *-job rating out of 5 stars (for one - time jobs)
+       *-references
 
 ## Product Spec
 
