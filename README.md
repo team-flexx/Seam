@@ -26,12 +26,12 @@ Here's a walkthrough of implemented user stories:
    - **Habit:** Daily
    - **Scope:** mr. international baby
    - **Features:**
-       *-membership for companies to bookmark people
-       *-choose how long/when/location of job 
-       *-help you set up career path
-       *-bio name, age limit, profile pic,
-       *-job rating out of 5 stars (for one - time jobs)
-       *-references
+       -membership for companies to bookmark people
+       -choose how long/when/location of job 
+       -help you set up career path
+       -bio name, age limit, profile pic,
+       -job rating out of 5 stars (for one - time jobs)
+       -references
 
 ## Product Spec
 
